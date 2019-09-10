@@ -8,6 +8,7 @@
 	<title>Login</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/styles/login.css"/>
+	<link rel="stylesheet" href="/styles/main.css">
 
 	<style>
 		.error {
@@ -62,8 +63,9 @@
 					</div>
 					<div class="col-xs-12">
 						<div class="form-group">
-							<input type="password" name="password" id="password" class="form-control" value="" placeholder="Password"
-								   required />
+							<input type="password" name="password" id="password" class="form-control" value=""
+								   placeholder="Password"
+								   required/>
 							<p class="error"><?= $params['password_error'] ?? null ?></p>
 						</div>
 					</div>

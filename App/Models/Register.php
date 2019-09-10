@@ -68,19 +68,19 @@ class Register extends \Core\Model
 	public function validFirstLastName()
 	{
 		if (strlen($this->first_name) > 15) {
-			$this->errors['first_name_error'] = 'Too long';
+			$this->errors['first_name_error'] = 'First name too long';
 		}
 
 		if (strlen($this->last_name) > 15) {
-			$this->errors['last_name_error'] = 'Too long';
+			$this->errors['last_name_error'] = 'Last name too long';
 		}
 
 		if (strlen($this->first_name) < 5) {
-			$this->errors['first_name_error'] = 'Too short';
+			$this->errors['first_name_error'] = 'First name too short';
 		}
 
 		if (strlen($this->last_name) < 5) {
-			$this->errors['last_name_error'] = 'Too short';
+			$this->errors['last_name_error'] = 'Last name too short';
 		}
 
 		if (!(ctype_alnum($this->first_name))) {

@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="/styles/register.css"/>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/styles/account.css">
+	<link rel="stylesheet" href="/styles/main.css">
+
 	<title>Settings</title>
 	<style>
 
