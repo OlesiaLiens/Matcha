@@ -21,6 +21,8 @@ class Setup extends \Core\Model
 		$db->exec("CREATE TABLE IF NOT EXISTS users(
 	id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	username     varchar(50)  NOT NULL,
+	first_name     varchar(50)  NOT NULL,
+	last_name    varchar(50)  NOT NULL,
 	email        varchar(255) NOT NULL,
 	password     varchar(255) NOT NULL,
 	active       varchar(50)  NOT NULL,

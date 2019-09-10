@@ -8,7 +8,7 @@
 	<title>Registration</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/styles/register.css"/>
-<!--	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	<!--	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 	<!--	<link rel="stylesheet" type="text/css" href="/styles/gallery.css">-->
 	<!--	<link rel="stylesheet" href="../../../styles/register.css"/>-->
 
@@ -54,6 +54,21 @@
 							<p class="error"><?= $params['user_error'] ?? null ?></p>
 						</div>
 					</div>
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" name="first_name" id="first_name" class="form-control"
+								   placeholder="First name" required/>
+							<p class="error"><?= $params['first_name_error'] ?? null ?></p>
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" name="last_name" id="last_name" class="form-control"
+								   placeholder="Last name" required/>
+							<p class="error"><?= $params['last_name_error'] ?? null ?></p>
+						</div>
+					</div>
+
 					<div class="col-xs-12">
 						<div class="form-group">
 							<input type="email" name="email" id="email" class="form-control" placeholder="Email"

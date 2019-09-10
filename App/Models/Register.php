@@ -12,10 +12,14 @@ class Register extends \Core\Model
 		'user_error'            => null,
 		'password_error'        => null,
 		'repeat_password_error' => null,
-		'email_error'           => null
+		'email_error'           => null,
+		'first_name_error'      => null,
+		'last_name_error'       => null
 	];
 
 	private $username;
+	private $first_name;
+	private $last_name;
 	private $email;
 	private $password;
 	private $repeat_password;
@@ -27,6 +31,8 @@ class Register extends \Core\Model
 		$this->email = htmlspecialchars($data['email'] ?? null);
 		$this->password = htmlspecialchars(trim($data['password'] ?? null));
 		$this->repeat_password = htmlspecialchars(trim($data['repeat_password'] ?? null));
+		$this->first_name = htmlspecialchars(trim($data['first_name'] ?? null));
+		$this->last_name = htmlspecialchars(trim($data['last_name'] ?? null));
 	}
 
 	public static function getAll()
@@ -59,6 +65,33 @@ class Register extends \Core\Model
 		}
 	}
 
+	public function validFirstLastName()
+	{
+		if (strlen($this->first_name) > 15) {
+			$this->errors['first_name_error'] = 'Too long';
+		}
+
+		if (strlen($this->last_name) > 15) {
+			$this->errors['last_name_error'] = 'Too long';
+		}
+
+		if (strlen($this->first_name) < 5) {
+			$this->errors['first_name_error'] = 'Too short';
+		}
+
+		if (strlen($this->last_name) < 5) {
+			$this->errors['last_name_error'] = 'Too short';
+		}
+
+		if (!(ctype_alnum($this->first_name))) {
+			$this->errors['first_name_error'] = 'Use only numbers and letters';
+		}
+
+		if (!(ctype_alnum($this->last_name))) {
+			$this->errors['last_name_error'] = 'Use only numbers and letters';
+		}
+	}
+
 	private function validation()
 	{
 		$this->checkPass();
@@ -67,6 +100,15 @@ class Register extends \Core\Model
 			$this->errors['user_error'] = 'empty field';
 		} else if (isset($this->username)) {
 			$this->validName();
+		}
+
+		if (!isset($this->first_name) || $this->first_name === '') {
+			$this->errors['first_name_error'] = 'empty field';
+		}
+		if (!isset($this->last_name) || $this->last_name === '') {
+			$this->errors['last_name_error'] = 'empty field';
+		} else if (isset($this->first_name) || isset($this->last_name)) {
+			$this->validFirstLastName();
 		}
 
 		if (!isset($this->email) || $this->email === '') {
@@ -141,20 +183,22 @@ class Register extends \Core\Model
 		$this->token = md5(uniqid(rand(), TRUE));
 
 		if ($this->errors['user_error'] === null && $this->errors['password_error'] === null && $this->errors['repeat_password_error'] === null
-			&& $this->errors['email_error'] === null && $_POST['submit']) {
+			&& $this->errors['email_error'] === null && $_POST['submit'] && $this->errors['first_name_error'] === null &&
+			$this->errors['last_name_error'] === null) {
 			try {
 				$db = static::getDB();
 
-				$insert = $db->prepare("INSERT USERS(username, email, password, active, token)
-						VALUES(?, ?, ?, ?, ?)");
-				return $insert->execute([$this->username, $this->email, $this->password, 0, $this->token]);
+				$insert = $db->prepare("INSERT USERS(username, first_name, last_name, email, password, active, token)
+						VALUES(?, ?, ?, ?, ?, ?, ?)");
+				return $insert->execute([$this->username, $this->first_name, $this->last_name, $this->email, $this->password, 0, $this->token]);
 			} catch (\PDOException $e) {
 				echo $e->getMessage();
 			}
 		}
 	}
 
-	private function sendActivationMail()
+	private
+	function sendActivationMail()
 	{
 		$message = <<<TXT
 To activate your profile, follow this link http://localhost:1997/login/activate/{$this->token}
