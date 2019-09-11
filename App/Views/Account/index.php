@@ -32,6 +32,11 @@
 			margin-top       : 150px;
 		}
 
+		.btn-default {
+			background-color : white;
+
+		}
+
 		.booth-capture-button {
 			display          : block;
 			margin           : 10px 0;
@@ -69,6 +74,10 @@
 			width       : 400px;
 		}
 
+		[hidden] {
+			display : none !important;
+		}
+
 		.hiden {
 			height : 100px;
 
@@ -78,6 +87,10 @@
 			padding-top      : 30px;
 			background-color : antiquewhite;
 			text-align       : center;
+		}
+
+		#image {
+			background-image: url("");
 		}
 
 		#computer {
@@ -170,6 +183,7 @@
 		</div>
 	</section>
 
+
 	<section id="dg">
 		<div class="container">
 			<div class="row centered">
@@ -177,7 +191,11 @@
 				<br/>
 				<div class="col-lg-4">
 					<div class="tilt">
-						<a href="#"><img src="../images/1photo.png" alt="img1"></a>
+						<label for="computer" class="btn btn-default">
+							<div id="image"></div>
+							Upload avatar<input type="file" id="computer" hidden style="display:none">
+						</label>
+						<img id="avatar" src="../images/1photo.png" alt="img1">
 					</div>
 				</div>
 
@@ -252,6 +270,8 @@
 <footer>
 </footer>
 
+
+<script src="/js/photo.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/styles/bootstrap.min.js"></script>
 
