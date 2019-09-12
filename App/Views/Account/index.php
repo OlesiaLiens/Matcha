@@ -90,7 +90,7 @@
 		}
 
 		#image {
-			background-image: url("");
+			background-image : url("");
 		}
 
 		#computer {
@@ -159,21 +159,21 @@
 		<div class="row centered">
 
 			<div class="col-lg-4">
-				<img src="../images/idea.png">
+				<img src="/images/idea.png">
 				<h4>Info</h4>
 				<p> Idea. It's firs that you need for good and successful trip. Which country to choose, how to plan
 					correctly your budget, how to make a good company?</p>
 			</div>
 
 			<div class="col-lg-4">
-				<img src="../images/plane.png">
+				<img src="/images/plane.png">
 				<h4>Interests</h4>
 				<p> In psychology, decision-making is regarded as the cognitive process resulting in the selection of a
 					belief or a course of action among several alternative possibilities.</p>
 			</div>
 
 			<div class="col-lg-4">
-				<img src="../images/planet.png">
+				<img src="/images/planet.png">
 				<h4>Action</h4>
 				<p> Action - it is the fact or process of doing something, typically to achieve an aim.
 					Reasons for traveling include recreation, tourism or vacationing,research travel the
@@ -195,7 +195,7 @@
 							<div id="image"></div>
 							Upload avatar<input type="file" id="computer" hidden style="display:none">
 						</label>
-						<img id="avatar" src="../images/1photo.png" alt="img1">
+						<img id="avatar" src="<?= $args['avatars'] ?>" alt="img1">
 					</div>
 				</div>
 
@@ -230,11 +230,16 @@
 
 			<div class="col-lg-2"></div>
 			<div class="col-lg-10 col-lg-offset-1">
-				<img src="../images/d.jpg" alt="img" class="img-responsive">
-
-				<img src="../images/g.jpg" alt="img" class="img-responsive">
-
-				<img src="../images/l.jpg" alt="img" class="img-responsive">
+				<?php if (count($args['photos']) < 4): ?>
+					<label for="photos" class="btn btn-default">
+						<div id="image_2"></div>
+						Upload photos<input type="file" id="photos" hidden style="display:none">
+					</label>
+					<img id="empty_photo" src="" alt="img" class="img-responsive" style="display: none">
+				<?php endif; ?>
+				<?php foreach ($args['photos'] as $photo): ?>
+					<img id="" src="<?= $photo['path'] ?>" alt="img" class="img-responsive">
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

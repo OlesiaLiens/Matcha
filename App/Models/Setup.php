@@ -16,7 +16,7 @@ class Setup extends \Core\Model
 		$db = static::getDB();
 
 
-		$db->exec("DROP TABLE IF EXISTS `users`, `tokens`, `photos`, `likes`, `comments`");
+		$db->exec("DROP TABLE IF EXISTS `users`, `tokens`, `photos`, `likes`, `comments`, `avatars`");
 
 		$db->exec("CREATE TABLE IF NOT EXISTS users(
 	id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -26,6 +26,7 @@ class Setup extends \Core\Model
 	email        varchar(255) NOT NULL,
 	password     varchar(255) NOT NULL,
 	active       varchar(50)  NOT NULL,
+	avatars      varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
 	notification INT          NOT NULL DEFAULT 1,
 	token        varchar(255) NOT NULL);");
 
@@ -37,6 +38,14 @@ class Setup extends \Core\Model
 );");
 
 		$db->exec("CREATE TABLE IF NOT EXISTS photos
+(
+	id      INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	path    VARCHAR(255)                        NOT NULL,
+	user_id INT(11) UNSIGNED                    NOT NULL,
+	date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+);");
+
+		$db->exec("CREATE TABLE IF NOT EXISTS avatars
 (
 	id      INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	path    VARCHAR(255)                        NOT NULL,
@@ -58,5 +67,7 @@ class Setup extends \Core\Model
 	`user_id`    INT(10) UNSIGNED NOT NULL,
 	`photo_id`   INT(10) UNSIGNED NOT NULL)");
 
+		$db->exec("INSERT USERS(username, first_name, last_name, email, password, active, token)
+						VALUES('olesia', 'olesia', 'liens', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
 	}
 }

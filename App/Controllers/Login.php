@@ -4,6 +4,8 @@
 namespace App\Controllers;
 
 //use App\Models\ResetPassword;
+use App\Models\Photo as PhotoModel;
+use App\Models\User;
 use Core\View;
 use App\Models\Login as LoginModel;
 use App\Models\Activation as ActivationModel;
@@ -41,7 +43,7 @@ class Login extends \Core\Controller
 		}
 	}
 
-	public static function loginAction()
+	public  function loginAction()
 	{
 		$form = [];
 

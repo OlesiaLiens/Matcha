@@ -4,9 +4,9 @@ namespace Core;
 
 class View
 {
-	public static function render($view, $args = [])
+	public static function render($view, $args = '', $avatar = false)
 	{
-		extract($args, EXTR_SKIP);
+//		extract($args, EXTR_SKIP);
 
 		$file = "../App/Views/$view";
 
