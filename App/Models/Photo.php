@@ -9,13 +9,11 @@ class Photo extends \Core\Model
 	public function savePhoto()
 	{
 		$data = $_POST['img'];
-//		echo "Hey! . $data";
 		$img = str_replace('data:image/png;base64,', '', $data);
 		$img = str_replace(' ', '+', $img);
 		$fileData = base64_decode($img);
 		$pathToSave = BASE_PATH . '/images/';
 		$fileName = $pathToSave . time() . ".png";
-//		echo json_encode($_POST['img']);
 		file_put_contents($fileName, $fileData);
 		$pathToDB = 'http://localhost:1997/images/' . time() . ".png";
 //		echo json_encode(["status" => 200, "path" => $pathToDB]);

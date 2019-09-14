@@ -10,13 +10,13 @@ class Setup extends \Core\Model
 	{
 		$db = static::getConnection();
 
-		$create = "CREATE DATABASE IF NOT EXISTS camagru";
+		$create = "CREATE DATABASE IF NOT EXISTS matcha";
 		$db->exec($create);
 
 		$db = static::getDB();
 
 
-		$db->exec("DROP TABLE IF EXISTS `users`, `tokens`, `photos`, `likes`, `comments`, `avatars`");
+		$db->exec("DROP TABLE IF EXISTS `users`, `tokens`, `photos`, `likes`, `comments`");
 
 		$db->exec("CREATE TABLE IF NOT EXISTS users(
 	id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -38,14 +38,6 @@ class Setup extends \Core\Model
 );");
 
 		$db->exec("CREATE TABLE IF NOT EXISTS photos
-(
-	id      INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	path    VARCHAR(255)                        NOT NULL,
-	user_id INT(11) UNSIGNED                    NOT NULL,
-	date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-);");
-
-		$db->exec("CREATE TABLE IF NOT EXISTS avatars
 (
 	id      INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	path    VARCHAR(255)                        NOT NULL,

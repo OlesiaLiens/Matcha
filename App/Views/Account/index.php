@@ -13,12 +13,6 @@
 	<link rel="stylesheet" href="/styles/main.css">
 
 	<style>
-		.main {
-			display         : flex;
-			justify-content : center;
-			margin-bottom   : 40px;
-		}
-
 		.container {
 			display         : flex;
 			flex-direction  : column;
@@ -26,42 +20,16 @@
 			align-items     : center;
 		}
 
-		.booth {
-			width            : 400px;
-			background-color : #ccc;
-			margin-top       : 150px;
-		}
-
 		.btn-default {
-			background-color : white;
+			background-color : #f2f2f2;;;
 
 		}
 
-		.booth-capture-button {
-			display          : block;
-			margin           : 10px 0;
-			padding          : 10px 20px;
-			height           : 40px;
-			background-color : cornflowerblue;
-			color            : #fff;
-			text-align       : center;
-			text-decoration  : none;
-		}
-
-		#save_photo {
-			text-align    : center;
-			margin-bottom : 10px;
-			height        : 40px;
-			width         : 400px;
-		}
-
-		.photo-active {
-			border : solid 5px blueviolet;
-		}
-
-		#canvas {
-			display : none;
-		}
+		/*@media (min-width : 494px;) {*/
+		/*	.btn-default {*/
+		/*		width: 100px;*/
+		/*	}*/
+		/*}*/
 
 		img {
 			margin-left   : 10px;
@@ -83,25 +51,11 @@
 
 		}
 
-		#frame-container {
-			padding-top      : 30px;
-			background-color : antiquewhite;
-			text-align       : center;
-		}
-
-		#image {
-			background-image : url("");
-		}
-
 		#computer {
 			text-align    : center;
 			margin-bottom : 10px;
 			height        : 40px;
 			width         : 400px;
-		}
-
-		#photos-container {
-			margin-left : 30px;
 		}
 
 		#photos-container img {
@@ -195,10 +149,10 @@
 							<div id="image"></div>
 							Upload avatar<input type="file" id="computer" hidden style="display:none">
 						</label>
+						<p class="error" id="show_errors"></p>
 						<img id="avatar" src="<?= $args['avatars'] ?>" alt="img1">
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>
@@ -235,6 +189,7 @@
 						<div id="image_2"></div>
 						Upload photos<input type="file" id="photos" hidden style="display:none">
 					</label>
+					<p class="error" id="show_photos_errors"></p>
 					<img id="empty_photo" src="" alt="img" class="img-responsive" style="display: none">
 				<?php endif; ?>
 				<?php foreach ($args['photos'] as $photo): ?>

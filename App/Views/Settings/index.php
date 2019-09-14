@@ -29,18 +29,23 @@
 			align-items     : center;
 		}
 
+
+		.hiden {
+			height : 20px;
+		}
+
 		p {
 			color : green;
 		}
 
-		@media (max-width : 749px) {
+		@media (max-width : 1166px) {
 			.flex {
 				flex-direction  : column;
 				justify-content : center;
 				align-items     : center;
 				margin-top      : 100px;
 				margin-bottom   : 100px;
-				margin-left     : 50px;
+				margin-left     : 250px;
 				margin-right    : 50px;
 				flex-basis      : 400px;
 				width           : 400px;
@@ -55,6 +60,69 @@
 			}
 		}
 
+		@media (max-width : 415px) {
+			.row {
+				width : 200px;
+			}
+
+			.container {
+				margin-left  : 0;
+				padding-left : 0;
+			}
+
+			.flex {
+				margin-left  : 0;
+				padding-left : 0;
+			}
+		}
+
+		@media (max-width : 850px) {
+			.row {
+				width : 200px;
+			}
+
+			.container {
+				margin-left : 20px;
+			}
+		}
+
+		@media (max-width : 414px) {
+
+			.container {
+				margin-left : 100px;
+			}
+		}
+
+		@media (max-width : 320px) {
+			.row {
+				width : 200px;
+			}
+
+			.container {
+				margin-left : -20px;
+			}
+		}
+
+		@media (max-width : 375px) {
+			.container {
+				margin-left : 15px;
+			}
+		}
+
+		@media (max-width : 768px) {
+			.container {
+				margin-left : -40px;
+			}
+		}
+
+		@media (max-width : 1024px) {
+			.container {
+				margin-left : -20px;
+			}
+
+			.flex {
+				text-align : center;
+			}
 	</style>
 </head>
 <body>
@@ -171,13 +239,14 @@
 	</div>
 
 </div>
-<footer>
-	<div class="container">
-		<div class="row centered myhover">
-		</div>
-	</div>
-</footer>
 
+<div class="hiden">
+
+</div>
+
+<footer>
+
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/styles/bootstrap.min.js"></script>
 </body>
