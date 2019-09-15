@@ -84,8 +84,3 @@ function readURLPhotos() {
 		console.log("Error");
 	}
 }
-
-//todo пофиксить кнопку в аккацнте
-//todo пофиксить верстку в settings
-//todo сверстать настройки
-//todo открыть доступ на репозиторий Андрею

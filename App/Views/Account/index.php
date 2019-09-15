@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/styles/account.css">
 	<link rel="stylesheet" href="../styles/bootstrap.css">
-	<!--	<link rel="stylesheet" href="../styles/font-awesome.min.css">-->
+		<link rel="stylesheet" href="../styles/font-awesome.css">
 	<link rel="stylesheet" href="/styles/main.css">
 
 	<style>
@@ -25,11 +25,9 @@
 
 		}
 
-		/*@media (min-width : 494px;) {*/
-		/*	.btn-default {*/
-		/*		width: 100px;*/
-		/*	}*/
-		/*}*/
+		.photos img{
+			flex-direction: row;
+		}
 
 		img {
 			margin-left   : 10px;
@@ -91,6 +89,7 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="#">Account</a></li>
+				<li class=""><a href="/info/index">Information</a></li>
 				<li><a href="/logout/index">Logout</a></li>
 				<li><a href="/settings/index">Settings</a></li>
 			</ul>

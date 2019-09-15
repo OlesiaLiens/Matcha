@@ -16,7 +16,6 @@ class Photo extends \Core\Model
 		$fileName = $pathToSave . time() . ".png";
 		file_put_contents($fileName, $fileData);
 		$pathToDB = 'http://localhost:1997/images/' . time() . ".png";
-//		echo json_encode(["status" => 200, "path" => $pathToDB]);
 		return ($pathToDB);
 	}
 

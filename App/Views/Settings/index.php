@@ -8,8 +8,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/styles/register.css"/>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/styles/account.css">
-	<link rel="stylesheet" href="/styles/main.css">
 
 	<title>Settings</title>
 	<style>
@@ -140,6 +138,7 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class=""><a href="/account/index">Account</a></li>
+				<li class=""><a href="/info/index">Information</a></li>
 				<li><a href="/login/login">Logout</a></li>
 				<li class="active"><a href="/settings/index">Settings</a></li>
 			</ul>
