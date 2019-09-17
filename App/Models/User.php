@@ -67,4 +67,32 @@ class User extends \Core\Model
 		else
 			return false;
 	}
+
+	public function get_id_tags()
+	{
+		$db = static::getDB();
+
+		$teg_id = $db->prepare("SELECT `tag_id` FROM `users_tags` WHERE  user_id = ?");
+		$teg_id->execute([$this->user_id]);
+		$teg_id = $teg_id->fetchColumn();
+
+		if ($teg_id)
+			return $teg_id;
+		else
+			return false;
+	}
+
+	public function get_all_tags($tag_id)
+	{
+		$db = static::getDB();
+
+		$tags= $db->prepare("SELECT `id` FROM `tags` WHERE  id = ?");
+		$tags->execute([$tag_id]);
+		$tags = $tags->fetchAll();
+
+		if ($tags)
+			return $tags;
+		else
+			return false;
+	}
 }

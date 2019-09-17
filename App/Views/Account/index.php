@@ -114,16 +114,26 @@
 
 			<div class="col-lg-4">
 				<img src="/images/idea.png">
-				<h4>Info</h4>
-				<p> Idea. It's firs that you need for good and successful trip. Which country to choose, how to plan
-					correctly your budget, how to make a good company?</p>
+				<h4>Information</h4>
+				<p> <?= 'Username : '. $args['username'] .  ' '?> <br>
+					 <?= 'Preference:' . ' ' . $args['preference'] ?> <br>
+					<?=  'Location:' . ' ' . $args['location']?> <br>
+					<?= 'Gender:' . ' '  .  $args['gender'] ?> <br>
+					<?=  'Age:' . ' ' . $args['bday']?> <br>
+				</p>
 			</div>
 
 			<div class="col-lg-4">
 				<img src="/images/plane.png">
 				<h4>Interests</h4>
-				<p> In psychology, decision-making is regarded as the cognitive process resulting in the selection of a
-					belief or a course of action among several alternative possibilities.</p>
+<!--					--><?php //todo вывести масив тегов (правильно вытащить с базы)
+				////foreach ($args['tags'] as $tag): ?>
+				<p>
+					ling for 5 years and is ‘killing it’. This girl has some amazing girl power! She works with
+						top brands and sponsors from all over the globe.
+<!--					--><?//= $tag . ' '?><!-- <br>-->
+				</p>
+<!--					--><?php //endforeach; ?>
 			</div>
 
 			<div class="col-lg-4">
