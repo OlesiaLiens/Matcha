@@ -1,9 +1,9 @@
 <?PHP
 
-/*
- * This request contains an API token, so, for safety reasons,
- * it must be formed and executed on server side only.
- */
+/*\
+|*| This request contains an API token, so, for safety reasons,
+|*| it must be formed and executed on server side only.
+\*/
 
 function getCoordinates($ipAddress) {
 	$result = array();

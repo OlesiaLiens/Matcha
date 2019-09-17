@@ -12,22 +12,27 @@
 //      "*%%%%%%**~  ""    "**"`    //
 //——————————————————————————————————//
 
-/*
- * This function tries to get GPS from a browser, which will succeed
- * if a user's browser supports it and if a user grants a permisson to
- * use their location.
- *
- * In case of success, a POST request is sent to a file specified in
- * the single parameter. The request contains "gps=success" followed
- * by the latitute and longtitude the browser provided.
- *
- * In case of fail for any reason, it makes a request to ipify.org to
- * obtain the user's IP, and sends it to the specified receiver
- * along with "gps=fail".
- *
- * NOTE: serverSideReceiver may be hardcoded later, no reason to
- * keep it a variable.
- */
+/*\
+|*| This function tries to get GPS from a browser, which will succeed
+|*| if a user's browser supports it and if a user grants a permisson to
+|*| use their location.
+|*|
+|*| In case of success, a POST request is sent to a file specified in
+|*| the single parameter. The request contains "gps=success" followed
+|*| by the latitute and longtitude the browser provided.
+|*|
+|*| In case of fail for any reason, it makes a request to ipify.org to
+|*| obtain the user's IP, and sends it to the specified receiver
+|*| alongside with "gps=fail".
+|*|
+|*| If a request to ipify.org returns an error or times out, it sends
+|*| a specified receiver a request that states a failure to obtain
+|*| either GPS or IP, and an error that caused the latter fail.
+|*| (Can be used for logging or something)
+|*|
+|*| NOTE: serverSideReceiver may be hardcoded later, no reason to
+|*| keep it a variable.
+\*/
 
 const getGPS = serverSideReceiver => {
 	const xhr = new XMLHttpRequest();
@@ -43,6 +48,8 @@ const getGPS = serverSideReceiver => {
 			ipReq.onload = () => {
 				xhr.send('gps=fail&ip=' + ipReq.responseText);
 			}
+			ipReq.onerror = e => {xhr.send('gps=fail&err=' + e)};
+			ipReq.ontimeout = () => {xhr.send('gps=fail&err=timeout')};
 			ipReq.open("GET", 'https://api.ipify.org', true);
 			ipReq.send(null);
 		});		
