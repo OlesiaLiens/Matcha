@@ -28,6 +28,7 @@ class Setup extends \Core\Model
 	active       varchar(50)  NOT NULL,
 	avatars      varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
 	notification INT          NOT NULL DEFAULT 1,
+	rating       INTEGER      DEFAULT 0 NOT NULL,
 	token        varchar(255) NOT NULL);");
 
 		$db->exec("CREATE TABLE IF NOT EXISTS tokens

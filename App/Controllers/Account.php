@@ -18,6 +18,7 @@ class Account extends \Core\LoginController
 		$params = [];
 
 		$params['avatars'] = $user['avatars'];
+		$params['rating'] = $user['rating'];
 		$all_photos = new PhotoModel();
 		$params['photos'] = $all_photos->getAllPhotos();
 

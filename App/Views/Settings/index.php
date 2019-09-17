@@ -12,6 +12,18 @@
 	<title>Settings</title>
 	<style>
 
+		footer {
+			position       : absolute;
+			bottom         : 0;
+			width          : 100%;
+			height         : 90px;
+			margin-right   : 0px;
+			background     : #2d2d2d;
+			padding-top    : 30px;
+			padding-bottom : 20px;
+			text-align     : center;
+		}
+
 		.flex {
 			display      : flex;
 			text-align   : center;
@@ -28,8 +40,8 @@
 		}
 
 
-		.hiden {
-			height : 20px;
+		.hidden {
+			height : 100px;
 		}
 
 		p {
@@ -55,6 +67,10 @@
 				align-items     : center;
 				margin-left     : 60px;
 				margin-right    : 20px;
+			}
+
+			.hiden {
+				height : 300px;
 			}
 		}
 
@@ -237,10 +253,8 @@
 		</div>
 	</div>
 
-</div>
-
-<div class="hiden">
-
+	<div class="hiden">
+	</div>
 </div>
 
 <footer>

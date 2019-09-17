@@ -5,13 +5,14 @@
 	<title>Account</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--	<link rel="stylesheet" href="/styles/bootstrap.css">-->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/styles/account.css">
 	<link rel="stylesheet" href="../styles/bootstrap.css">
-		<link rel="stylesheet" href="../styles/font-awesome.css">
+	<link rel="stylesheet" href="../styles/font-awesome.css">
 	<link rel="stylesheet" href="/styles/main.css">
-
+<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
+<!--		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.m,in.css">-->
 	<style>
 		.container {
 			display         : flex;
@@ -25,8 +26,8 @@
 
 		}
 
-		.photos img{
-			flex-direction: row;
+		.photos img {
+			flex-direction : row;
 		}
 
 		img {
@@ -127,10 +128,8 @@
 
 			<div class="col-lg-4">
 				<img src="/images/planet.png">
-				<h4>Action</h4>
-				<p> Action - it is the fact or process of doing something, typically to achieve an aim.
-					Reasons for traveling include recreation, tourism or vacationing,research travel the
-					gatherings. </p>
+				<h4>Fame Rating</h4>
+				<p> <?= $args['rating'] ?> </p>
 			</div>
 
 		</div>
@@ -224,6 +223,42 @@
 	</section>
 
 </main>
+
+<!--<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">-->
+<!--	<!-- Position it -->-->
+<!--	<div style="position: absolute; top: 0; right: 0;">-->
+<!---->
+<!--		<!-- Then put toasts within -->-->
+<!--		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">-->
+<!--			<div class="toast-header">-->
+<!--				<img src="..." class="rounded mr-2" alt="...">-->
+<!--				<strong class="mr-auto">Bootstrap</strong>-->
+<!--				<small class="text-muted">just now</small>-->
+<!--				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">-->
+<!--					<span aria-hidden="true">&times;</span>-->
+<!--				</button>-->
+<!--			</div>-->
+<!--			<div class="toast-body">-->
+<!--				See? Just like this.-->
+<!--			</div>-->
+<!--		</div>-->
+<!---->
+<!--		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">-->
+<!--			<div class="toast-header">-->
+<!--				<img src="..." class="rounded mr-2" alt="...">-->
+<!--				<strong class="mr-auto">Bootstrap</strong>-->
+<!--				<small class="text-muted">2 seconds ago</small>-->
+<!--				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">-->
+<!--					<span aria-hidden="true">&times;</span>-->
+<!--				</button>-->
+<!--			</div>-->
+<!--			<div class="toast-body">-->
+<!--				Heads up, toasts will stack automatically-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
 <div class="hiden"></div>
 
 <footer>
@@ -231,8 +266,63 @@
 
 
 <script src="/js/photo.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/styles/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+		crossorigin="anonymous"></script>
+
+<script src="/js/hullabaloo.js"></script>
+
+<script>
+	var hulla = new hullabaloo();
+
+	hulla.send("Success Message", "success");
+	hulla.send("Info Message", "info");
+	hulla.send("Warning Message", "warning");
+	hulla.send('Danger Message', 'danger');
+</script>
+
+<script>
+	var hulla = new hullabaloo({
+		ele: "body",
+		offset: {
+			from: "top",
+			amount: 20
+		},
+		align: "right",
+		width: 250,
+		delay: 5000,
+		allow_dismiss: true,
+		stackup_spacing: 10,
+		// notification message here
+		text: "<a href="https:www.jqueryscript.net / tags.php ? /Notification/">Notification</a> Message Here",
+		icon: {
+			success: "fa fa-check-circle",
+			info: "fa fa-info-circle",
+			warning: "fa fa-life-ring",
+			danger: "fa fa-exclamation-circle",
+			light: "fa fa-sun",
+			dark: "fa fa-moon"
+		},
+
+		status: "danger",
+		alertClass: "",
+		fnStart: false,
+		fnEnd: false,
+		fnEndHide: false,
+	});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 
 </body>
 </html>

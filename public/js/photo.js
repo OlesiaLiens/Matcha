@@ -84,3 +84,10 @@ function readURLPhotos() {
 		console.log("Error");
 	}
 }
+
+//$.getJSON("https://ipfind.co/?ip=178.214.196.34&auth=0ac6d115-a822-4816-91df-758840e64763", function(result){
+//	console.log('res', result);
+//});
+
+//todo сделать вывод юзеров, которые посмотрели твой аккаунт
+//todo сделать fame rating (вывод количества пользователей, которые посмотрели твой аккаунт)
