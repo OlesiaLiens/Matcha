@@ -21,7 +21,7 @@
  * the single parameter. The request contains "gps=success" followed
  * by the latitute and longtitude the browser provided.
  *
- * In case of fail for any reason, it makes a request to ipify to
+ * In case of fail for any reason, it makes a request to ipify.org to
  * obtain the user's IP, and sends it to the specified receiver
  * along with "gps=fail".
  *
