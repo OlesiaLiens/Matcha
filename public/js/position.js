@@ -48,7 +48,7 @@ const getGPS = serverSideReceiver => {
 			ipReq.onload = () => {
 				xhr.send('gps=fail&ip=' + ipReq.responseText);
 			}
-			ipReq.onerror = e => {xhr.send('gps=fail&err=' + e)};
+			ipReq.onerror = e => {xhr.send('gps=fail&err=' + e.message)};
 			ipReq.ontimeout = () => {xhr.send('gps=fail&err=timeout')};
 			ipReq.open("GET", 'https://api.ipify.org', true);
 			ipReq.send(null);
