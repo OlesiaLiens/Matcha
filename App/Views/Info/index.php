@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <head>
 	<title>Info</title>
 	<meta charset="utf-8">
@@ -21,6 +21,9 @@
 	<link rel="stylesheet" type="text/css" href="/styles/account.css">
 	<link rel="stylesheet" href="../styles/bootstrap.css">
 	<link rel="stylesheet" href="/styles/main.css">
+
+	<script src="js/onload.js"></script>
+	<script src="js/info.js"></script>
 
 	<style>
 
@@ -226,6 +229,10 @@
 									<?php endforeach; ?>
 								</select>
 							</div>
+						</div>
+
+						<div class="form-group" id="selectedTags">
+
 						</div>
 
 						<div class="form-group">
