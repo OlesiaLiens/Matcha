@@ -29,19 +29,49 @@
 			/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 		}
 
-		legend{
-		text-align: center;
+
+		input[type="button"]:not(.default), input[type="submit"]:not(.default) {
+			-webkit-border-radius   : 3px;
+			-webkit-background-clip : padding-box;
+			-moz-border-radius      : 3px;
+			-moz-background-clip    : padding;
+			border-radius           : 3px;
+			background-clip         : padding-box;
+			-webkit-transition      : color 0.2s ease, border 0.2s ease, background 0.2s ease, -webkit-box-shadow 0.2s ease;
+			-moz-transition         : color 0.2s ease, border 0.2s ease, background 0.2s ease, -moz-box-shadow 0.2s ease;
+			-o-transition           : color 0.2s ease, border 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+			transition              : color 0.2s ease, border 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+			position                : relative;
+			margin                  : 0 7px;
+			display                 : inline-block;
+			min-width               : 144px;
+			max-width               : 100%;
+			padding                 : 15px 25px;
+			font-family             : "Arial", "Helvetica Neue", Arial, Helvetica, sans-serif;
+			font-size               : 14px;
+			font-weight             : 600;
+			text-transform          : uppercase;
+			line-height             : 1;
+			border-width            : 1px;
+			border-style            : solid;
+			background-color        : steelblue;
+			color                   : #ddd;
+		}
+
+
+		legend {
+			text-align : center;
 
 		}
 
 		.othertop {
-			text-align: center;
+			text-align : center;
 
 		}
 
-		main{
-			border: black solid 1px;
-			display: flex;
+		main {
+			border  : black solid 1px;
+			display : flex;
 		}
 
 		.container {
@@ -74,6 +104,7 @@
 			height : 100px;
 
 		}
+
 		#photos-container img {
 			height : 300px;
 			width  : 400px;
@@ -103,7 +134,7 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class=""><a href="/account/index">Account</a></li>
-				<li class="active"><a href="/info/index">User Info</a></li>
+				<li class="active"><a href="/info/index">Information</a></li>
 				<li><a href="/logout/index">Logout</a></li>
 				<li><a href="/settings/index">Settings</a></li>
 			</ul>
@@ -119,120 +150,109 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 ">
-				<form class="form-horizontal">
+				<form class="form-horizontal" method="post" action="/info/info">
 					<fieldset>
 						<legend>User profile information</legend>
+
+						<!--					Date Of Birth-->
 						<div class="form-group">
-							<label class="col-md-4 control-label" for="Date Of Birth">Date Of Birth</label>
+							<label class="col-md-4 control-label" for="Date Of Birth">How old are you?</label>
 							<div class="col-md-4">
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-birthday-cake"></i>
 									</div>
-									<input id="Date Of Birth" name="Date Of Birth" type="text"
-										   placeholder="Date Of Birth"
-										   class="form-control input-md">
+									<input id="bday" name="bday" type="text"
+										   placeholder=""
+										   class="form-control input-md"/>
 								</div>
 							</div>
 						</div>
 
+						<!--					Gender-->
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="Gender">Gender</label>
 							<div class="col-md-4">
 								<label class="radio-inline" for="Gender-0">
-									<input type="radio" name="Gender" id="Gender-0" value="1" checked="checked">
+									<input type="radio" name="gender" id="gender-0" value="male" checked="checked">
 									Male
 								</label>
 								<label class="radio-inline" for="Gender-1">
-									<input type="radio" name="Gender" id="Gender-1" value="2">
+									<input type="radio" name="gender" id="gender-1" value="female">
 									Female
 								</label>
 							</div>
 						</div>
 
+						<!--					Sexual preferences:-->
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="radios">Sexual preferences:</label>
 							<div class="col-md-4">
 								<label class="radio-inline" for="radios-0">
-									<input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+									<input type="radio" name="preferences" id="man" value="man" checked="checked">
 									Man
 								</label>
 								<label class="radio-inline" for="radios-1">
-									<input type="radio" name="radios" id="radios-1" value="2">
+									<input type="radio" name="preferences" id="women" value="women">
 									Women
 								</label>
 								<label class="radio-inline" for="radios-1">
-									<input type="radio" name="radios" id="radios-1" value="2">
+									<input type="radio" name="preferences" id="both" value="both">
 									Both
 								</label>
 							</div>
 						</div>
 
+						<!--					City-->
 						<div class="form-group">
-							<label class="col-md-4 control-label col-xs-12" for="Permanent Address">City</label>
+							<label class="col-md-4 control-label col-xs-12" for="city">City</label>
 							<div class="col-md-2 col-xs-4">
-								<input id="Permanent Address" name="Permanent Address" type="text" placeholder="City"
+								<input id="city" name="city" type="text" placeholder="City"
 									   class="form-control input-md ">
 							</div>
 						</div>
 
-<!--						//interests-->
+
+						<!--					interests>-->
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="">A list of interests</label>
-							<div class="col-md-4">
-								<div class="checkbox">
-									<label for="">
-										<input type="checkbox" name="" id="" value="1">Sport</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<label class="input-group-text" for="">Options</label>
 								</div>
-								<div class="checkbox">
-									<label for="">
-										<input type="checkbox" name="" id="" value="2">Music</label>
-								</div>
-								<div class="checkbox">
-									<label for="">
-										<input type="checkbox" name="" id="" value="3">Dancing</label>
-								</div>
-								<div class="checkbox">
-									<label for="">
-										<input type="checkbox" name="" id="" value="4">Cooking</label>
-								</div>
-								<div class="othertop">
-									<label for="">
-									</label>
-									<input type="input" name="interest" id="interest"
-										   placeholder="Other interests ">
-								</div>
+								<select class="custom-select" id="interest" name="interest">
+									<?php foreach ($params as $param => $tag): ?>
+										<option selected><?= $tag['tag'] ?></option>
+									<?php endforeach; ?>
+								</select>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="Overview (max 200 words)">A biography</label>
 							<div class="col-md-4">
-							<textarea class="form-control" rows="10" id="Overview (max 200 words)"
-									  name="Overview (max 200 words)">Overview</textarea>
+							<textarea class="form-control" rows="10" id="biography"
+									  name="bio">Overview</textarea>
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="col-md-4 control-label"></label>
-							<div class="col-md-6">
-								<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>
-									Submit</a>
-								<a href="#" class="btn btn-danger" value=""><span
-											class="glyphicon glyphicon-remove-sign"></span> Clear</a>
-							</div>
-						</div>
+
 					</fieldset>
+
+					<div class="text-center col-xs-12">
+						<input type="submit" name="submit" value="OK" class="btn btn-default"/>
+					</div>
+
 				</form>
 			</div>
 		</div>
 	</div>
 </main>
-<footer>
-</footer>
 
 <div class="hiden">
 </div>
 
+<footer>
+</footer>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

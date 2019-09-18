@@ -30,7 +30,7 @@ class Setup extends \Core\Model
 	gender      VARCHAR(6)   DEFAULT 'male' NOT NULL,
   	preference  VARCHAR(6)   DEFAULT 'both' NOT NULL,
     bio         TEXT,
- 	location    VARCHAR(6)   DEFAULT 'Kiev' NOT NULL,
+ 	location    VARCHAR(50)   DEFAULT 'Kiev' NOT NULL,
 	avatars      varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
 	notification INT          NOT NULL DEFAULT 1,
 	rating       INTEGER      DEFAULT 0 NOT NULL,
