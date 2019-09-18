@@ -65,9 +65,9 @@ class Setup extends \Core\Model
 
 		$db->exec("CREATE TABLE users_tags
 		(
+			id  INTEGER PRIMARY KEY AUTO_INCREMENT,
 			user_id INTEGER,
-			tag_id  INTEGER,
-			CONSTRAINT primary_id PRIMARY KEY (user_id, tag_id)
+			tag_id  INTEGER
 		);");
 
 		$db->exec("

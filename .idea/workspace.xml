@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68b0cbb4-f22f-4374-a4c5-5f202011e8c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Models/Info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/Info.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Info.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Models/Setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Setup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/Info/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Info/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +17,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Controllers/Info.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="570">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Core/Router.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -28,8 +35,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Models/Info.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="641">
+              <caret line="49" column="86" lean-forward="true" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Models/Setup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2046">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -37,8 +53,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Views/Info/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="226" column="41" lean-forward="true" selection-start-line="226" selection-start-column="41" selection-end-line="226" selection-end-column="41" />
+            <state relative-caret-position="-33">
+              <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Views/Account/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -85,8 +110,8 @@
         <option value="$PROJECT_DIR$/App/Controllers/Account.php" />
         <option value="$PROJECT_DIR$/App/Views/Account/index.php" />
         <option value="$PROJECT_DIR$/App/Controllers/Login.php" />
-        <option value="$PROJECT_DIR$/App/Views/Info/index.php" />
         <option value="$PROJECT_DIR$/App/Controllers/Info.php" />
+        <option value="$PROJECT_DIR$/App/Views/Info/index.php" />
         <option value="$PROJECT_DIR$/App/Models/Setup.php" />
         <option value="$PROJECT_DIR$/App/Models/Info.php" />
       </list>
@@ -104,10 +129,10 @@
     </servers>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="702" />
+    <option name="x" value="810" />
     <option name="y" value="23" />
-    <option name="width" value="1952" />
-    <option name="height" value="1332" />
+    <option name="width" value="1670" />
+    <option name="height" value="1300" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -226,30 +251,31 @@
       <workItem from="1568726547869" duration="615000" />
       <workItem from="1568730362515" duration="10500000" />
       <workItem from="1568796095176" duration="12524000" />
-      <workItem from="1568816613810" duration="1249000" />
+      <workItem from="1568816613810" duration="6686000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83105000" />
+    <option name="totallyTimeSpent" value="88542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="732" y="23" width="1952" height="1332" extended-state="0" />
+    <frame x="810" y="23" width="1670" height="1300" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15811518" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550369" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.31290323" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.20778146" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.19742143" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.25248346" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -346,12 +372,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
-          <line>47</line>
+          <line>50</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
-          <line>44</line>
+          <line>46</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -366,17 +392,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
-          <line>42</line>
+          <line>44</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
-          <line>46</line>
+          <line>49</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -393,6 +419,41 @@
           <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
           <line>20</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
+          <line>52</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
+          <line>53</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
+          <line>51</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
+          <line>55</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
+          <line>57</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
+          <line>56</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/Info.php</url>
+          <line>58</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -503,13 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/Account/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="114" column="34" lean-forward="true" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -627,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Core/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -641,38 +688,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Setup.php">
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Setup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        <state relative-caret-position="228">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/Setup.php">
+    <entry file="file://$PROJECT_DIR$/App/Views/Account/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        <state relative-caret-position="90">
+          <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Views/Info/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="226" column="41" lean-forward="true" selection-start-line="226" selection-start-column="41" selection-end-line="226" selection-end-column="41" />
+        <state relative-caret-position="-33">
+          <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Models/Setup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2046">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Controllers/Info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="570">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Models/Info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="641">
+          <caret line="49" column="86" lean-forward="true" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
         </state>
       </provider>
     </entry>
