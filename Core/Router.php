@@ -28,7 +28,7 @@ class Router
 
 	public function match($url)
 	{
-		file_put_contents('../Logs/log.txt', 'Tryna match ' . $url . PHP_EOL, FILE_APPEND);
+//		file_put_contents('../Logs/log.txt', 'Tryna match ' . $url . PHP_EOL, FILE_APPEND);
 		foreach ($this->routes as $route => $params) {
 			if (preg_match($route, $url, $matches)) {
 				foreach ($matches as $key => $match) {

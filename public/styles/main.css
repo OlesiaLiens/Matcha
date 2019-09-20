@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
-@import url('common.css');
- 
 
 #headerwrap {
 	background: url(../images/a.jpg) no-repeat center top;
-	opacity: 0.8; 
+	opacity: 0.8;
 	margin-top: -10px;
 	padding-top: 20px;
 	text-align: center;
-	background-attachment: relative; 
+	background-attachment: relative;
 	background-position: center center;
 	min-height: 500px;
 	width: 100%;
@@ -48,22 +46,22 @@ letter-spacing: 2px;
 
 .w p {
 
-	margin-left: 25px; 
+	margin-left: 25px;
 	margin-right: 25px;
 	font-size: 15px;
-	margin-bottom: 7px;	
+	margin-bottom: 7px;
 }
 
 .w h4 {
 	font-size: 25px;
 }
 
-.w img { 
+.w img {
 	 width: 30px;
 	 height: 30px;
 }
 
-#dg { 
+#dg {
 	background: #e0e0e0;
 	padding-top: 25px;
 	padding-bottom: 20px;

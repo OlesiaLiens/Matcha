@@ -26,6 +26,7 @@ class Info extends \Core\Model
 			$this->preferences = htmlspecialchars($data['preferences'] ?? null);
 			$this->tags = htmlspecialchars($data['interest'] ?? null);
 			$this->bio = htmlspecialchars($data['bio'] ?? null);
+			file_put_contents('../Logs/log.txt', 'There was data' . PHP_EOL, FILE_APPEND);
 		} else {
 			file_put_contents('../Logs/log.txt', $param . PHP_EOL, FILE_APPEND);
 		}
