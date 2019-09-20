@@ -13,9 +13,5 @@
 //——————————————————————————————————//
 
 window.onload = function () {
-	let interestSelection = document.getElementById('interest');
-	let selectedTags = document.getElementById('selectedTags');
-	let okBtn = document.getElementById('okBtn');
-
-	tagsInteraction();
+	infoFunction();
 }

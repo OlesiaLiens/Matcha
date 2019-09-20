@@ -15,16 +15,20 @@ class Info extends \Core\Model
 	private $bio;
 
 
-	public function __construct(array $data)
+	public function __construct(array $data, string $param = '')
 	{
-		if (is_numeric($data['bday'])) {
-			$this->date = htmlspecialchars($data['bday'] ?? null);
+		if (isset($data) && count($data) > 0) {
+			if (is_numeric($data['bday'])) {
+				$this->date = htmlspecialchars($data['bday'] ?? null);
+			}
+			$this->city = htmlspecialchars($data['city'] ?? null);
+			$this->gender = htmlspecialchars($data['gender'] ?? null);
+			$this->preferences = htmlspecialchars($data['preferences'] ?? null);
+			$this->tags = htmlspecialchars($data['interest'] ?? null);
+			$this->bio = htmlspecialchars($data['bio'] ?? null);
+		} else {
+			file_put_contents('../Logs/log.txt', $param . PHP_EOL, FILE_APPEND);
 		}
-		$this->city = htmlspecialchars($data['city'] ?? null);
-		$this->gender = htmlspecialchars($data['gender'] ?? null);
-		$this->preferences = htmlspecialchars($data['preferences'] ?? null);
-		$this->tags = htmlspecialchars($data['interest'] ?? null);
-		$this->bio = htmlspecialchars($data['bio'] ?? null);
 	}
 
 	public function get_tags_from_base()

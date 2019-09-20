@@ -32,4 +32,13 @@ class Info extends \Core\LoginController
 			$info->save_user_info($_SESSION['user_id']);
 		}
 	}
+
+	public function tagsAction($tagsList)
+	{
+		session_start();
+
+//		file_put_contents('../Logs/log.txt', $tagsList . PHP_EOL, FILE_APPEND);
+		$info = new InfoModel(array(), $tagsList);
+
+	}
 }

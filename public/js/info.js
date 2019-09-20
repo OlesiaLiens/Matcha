@@ -14,7 +14,7 @@
 
 let tags = [];
 
-function tagsInteraction() {
+function infoFunction() {
 	let interestSelection = document.getElementById('interest');
 	let selectedTags = document.getElementById('selectedTags');
 	let okBtn = document.getElementById('okBtn');
@@ -35,5 +35,17 @@ function tagsInteraction() {
 			tags.splice(idx, 1);
 			console.log(tags);
 		}
+	};
+
+	okBtn.onclick = () => {
+		const xhr = new XMLHttpRequest();
+		let url = '/info/tags/' + encodeURIComponent(JSON.stringify(tags));
+		xhr.open("POST", url);
+		xhr.onload = () => {console.log(xhr.responseText)};
+		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		// xhr.send('tags=' + encodeURIComponent(JSON.stringify(tags)));
+		xhr.send();
+		console.log('v4');
+		console.log(url);
 	};
 }
