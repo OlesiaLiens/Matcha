@@ -246,7 +246,7 @@
 					</fieldset>
 
 					<div class="text-center col-xs-12">
-						<input id="okBtn" type="submit" name="submit" value="OK" class="btn btn-default"/>
+						<input id="okBtn" type="button" name="submit" value="OK" class="btn btn-default"/>
 					</div>
 
 				</form>
