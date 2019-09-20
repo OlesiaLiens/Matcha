@@ -46,7 +46,7 @@ class Info extends \Core\Model
 	{
 		$db = static::getDB();
 
-		if ($this->date && $this->gender && $this->preferences  && ctype_alpha($this->city) && $this->tags && $this->bio) {
+		if ($this->date && $this->gender && $this->preferences  && ctype_alpha($this->city) && $this->bio) {
 			$save = $db->prepare("UPDATE USERS SET bday = ?, gender = ?, preference = ?, bio = ?, location = ? WHERE  id = ?");
 			$save->execute([$this->date, $this->gender, $this->preferences, $this->bio, $this->city, $user]);
 			$tag_id = $db->prepare("SELECT id FROM tags WHERE tag = ?");
