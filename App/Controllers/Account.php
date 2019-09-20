@@ -28,11 +28,15 @@ class Account extends \Core\LoginController
 		$all_photos = new PhotoModel();
 		$params['photos'] = $all_photos->getAllPhotos();
 
-//		$tag = new User(null, $user);
-//		$tag_id = $tag->get_id_tags();
-//		if ($tag_id)
-//			$params['tags'] = $tag->get_all_tags($tag_id);
+		$tag = new User(null, $user);
 
+		$id_tags = $tag->get_id_tags();
+		if ($id_tags) {
+			foreach ($id_tags as $tags) {
+				$par = $tag->get_all_tags($tags['tag_id']);
+				array_push($params, $par);
+			}
+		}
 		View::render('Account/index.php', $params);
 	}
 

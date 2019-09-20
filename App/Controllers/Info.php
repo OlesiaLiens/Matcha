@@ -25,10 +25,11 @@ class Info extends \Core\LoginController
 	public function infoAction()
 	{
 		session_start();
+		View::getTemplate('Info/index.php');
 
-		if (isset($_POST['submit']) && $_POST['submit'] === 'OK'){
-		$info = new InfoModel($_POST);
-		 $info->save_user_info($_SESSION['user_id']);
+		if (isset($_POST['submit']) && $_POST['submit'] === 'OK') {
+			$info = new InfoModel($_POST);
+			$info->save_user_info($_SESSION['user_id']);
 		}
 	}
 }

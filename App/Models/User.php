@@ -72,23 +72,23 @@ class User extends \Core\Model
 	{
 		$db = static::getDB();
 
-		$teg_id = $db->prepare("SELECT `tag_id` FROM `users_tags` WHERE  user_id = ?");
-		$teg_id->execute([$this->user_id]);
-		$teg_id = $teg_id->fetchColumn();
+		$teg_id = $db->prepare("SELECT * FROM `users_tags` WHERE  user_id = ? ORDER BY DATE DESC");
+		$teg_id->execute([$_SESSION['user_id']]);
+		$res = $teg_id->fetchAll(PDO::FETCH_ASSOC);
 
-		if ($teg_id)
-			return $teg_id;
+		if ($res)
+			return $res;
 		else
 			return false;
 	}
 
-	public function get_all_tags($tag_id)
+	public function get_all_tags($tags_id)
 	{
 		$db = static::getDB();
 
-		$tags= $db->prepare("SELECT `id` FROM `tags` WHERE  id = ?");
-		$tags->execute([$tag_id]);
-		$tags = $tags->fetchAll();
+		$tags= $db->prepare("SELECT tag FROM `tags` WHERE  id = ?");
+		$tags->execute([$tags_id]);
+		$tags = $tags->fetchColumn();
 
 		if ($tags)
 			return $tags;

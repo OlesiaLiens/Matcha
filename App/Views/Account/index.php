@@ -10,9 +10,9 @@
 	<link rel="stylesheet" href="../styles/bootstrap.css">
 	<link rel="stylesheet" href="../styles/font-awesome.css">
 	<link rel="stylesheet" href="/styles/main.css">
-<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
-<!--		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
-<!--	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.m,in.css">-->
+	<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
+	<!--		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+	<!--	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.m,in.css">-->
 	<style>
 		.container {
 			display         : flex;
@@ -115,25 +115,23 @@
 			<div class="col-lg-4">
 				<img src="/images/idea.png">
 				<h4>Information</h4>
-				<p> <?= 'Username : '. $args['username'] .  ' '?> <br>
-					 <?= 'Preference:' . ' ' . $args['preference'] ?> <br>
-					<?=  'Location:' . ' ' . $args['location']?> <br>
-					<?= 'Gender:' . ' '  .  $args['gender'] ?> <br>
-					<?=  'Age:' . ' ' . $args['bday']?> <br>
+				<p> <?= 'Username : ' . $args['username'] . ' ' ?> <br>
+					<?= 'Preference:' . ' ' . $args['preference'] ?> <br>
+					<?= 'Location:' . ' ' . $args['location'] ?> <br>
+					<?= 'Gender:' . ' ' . $args['gender'] ?> <br>
+					<?= 'Age:' . ' ' . $args['bday'] ?> <br>
 				</p>
 			</div>
 
 			<div class="col-lg-4">
 				<img src="/images/plane.png">
 				<h4>Interests</h4>
-<!--					--><?php //todo вывести масив тегов (правильно вытащить с базы)
-				////foreach ($args['tags'] as $tag): ?>
-				<p>
-					ling for 5 years and is ‘killing it’. This girl has some amazing girl power! She works with
-						top brands and sponsors from all over the globe.
-<!--					--><?//= $tag . ' '?><!-- <br>-->
-				</p>
-<!--					--><?php //endforeach; ?>
+				<p><?= $args[0] ?? null ?? null ?> <br></p>
+				<p><?= $args[1] ?? null ?> <br></p>
+				<p><?= $args[2] ?? null ?> <br></p>
+				<p><?= $args[3] ?? null ?> <br></p>
+				<p><?= $args[4] ?? null ?> <br></p>
+				<p><?= $args[5] ?? null ?> <br></p>
 			</div>
 
 			<div class="col-lg-4">
@@ -286,44 +284,44 @@
 
 <script src="/js/hullabaloo.js"></script>
 
+<!--<script>-->
+<!--	var hulla = new hullabaloo();-->
+<!---->
+<!--	hulla.send("Success Message", "success");-->
+<!--	hulla.send("Info Message", "info");-->
+<!--	hulla.send("Warning Message", "warning");-->
+<!--	hulla.send('Danger Message', 'danger');-->
+<!--</script>-->
+
 <script>
-	var hulla = new hullabaloo();
-
-	hulla.send("Success Message", "success");
-	hulla.send("Info Message", "info");
-	hulla.send("Warning Message", "warning");
-	hulla.send('Danger Message', 'danger');
-</script>
-
-<script>
-	var hulla = new hullabaloo({
-		ele: "body",
-		offset: {
-			from: "top",
-			amount: 20
-		},
-		align: "right",
-		width: 250,
-		delay: 5000,
-		allow_dismiss: true,
-		stackup_spacing: 10,
-		// notification message here
-		text: "<a href="https:www.jqueryscript.net / tags.php ? /Notification/">Notification</a> Message Here",
-		icon: {
-			success: "fa fa-check-circle",
-			info: "fa fa-info-circle",
-			warning: "fa fa-life-ring",
-			danger: "fa fa-exclamation-circle",
-			light: "fa fa-sun",
-			dark: "fa fa-moon"
-		},
-
-		status: "danger",
-		alertClass: "",
-		fnStart: false,
-		fnEnd: false,
-		fnEndHide: false,
-	});
+	//var hulla = new hullabaloo({
+	//	ele: "body",
+	//	offset: {
+	//		from: "top",
+	//		amount: 20
+	//	},
+	//	align: "right",
+	//	width: 250,
+	//	delay: 5000,
+	//	allow_dismiss: true,
+	//	stackup_spacing: 10,
+	//	// notification message here
+	//	text: "<a href="https: www.jqueryscript.net / tags.php ? /Notification/">Notification</a> Message Here",
+	//	icon: {
+	//		success: "fa fa-check-circle",
+	//		info: "fa fa-info-circle",
+	//		warning: "fa fa-life-ring",
+	//		danger: "fa fa-exclamation-circle",
+	//		light: "fa fa-sun",
+	//		dark: "fa fa-moon"
+	//	},
+	//
+	//	status: "danger",
+	//	alertClass: "",
+	//	fnStart: false,
+	//	fnEnd: false,
+	//	fnEndHide: false,
+	//});
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

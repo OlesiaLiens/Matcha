@@ -67,7 +67,8 @@ class Setup extends \Core\Model
 		(
 			id  INTEGER PRIMARY KEY AUTO_INCREMENT,
 			user_id INTEGER,
-			tag_id  INTEGER
+			tag_id  INTEGER, 
+			date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 		);");
 
 		$db->exec("
