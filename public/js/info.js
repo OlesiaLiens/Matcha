@@ -39,8 +39,8 @@ function infoFunction() {
 
 	okBtn.onclick = () => {
 		const xhr = new XMLHttpRequest();
-		let url = '/info/tags/' + fixedEncodeURIComponent(JSON.stringify(tags));
-		xhr.open("POST", url);
+		let url = '/info/tags/' + fixedEncodeURIComponent2(JSON.stringify(tags));
+		xhr.open("GET", url);
 		xhr.onload = () => {console.log(xhr.responseText)};
 		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		// xhr.send('tags=' + encodeURIComponent(JSON.stringify(tags)));
@@ -51,7 +51,11 @@ function infoFunction() {
 }
 
 function fixedEncodeURIComponent(str) {
-	return encodeURIComponent(str).replace(/[!'()*\/]/g, function(c) {
+	return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
 		return '%' + c.charCodeAt(0).toString(16);
 	});
+}
+
+function fixedEncodeURIComponent2(str) {
+	return encodeURIComponent(str).replace('.', '%2E').replace('/', '\/');
 }
