@@ -39,13 +39,19 @@ function infoFunction() {
 
 	okBtn.onclick = () => {
 		const xhr = new XMLHttpRequest();
-		let url = '/info/tags/' + encodeURIComponent(JSON.stringify(tags));
+		let url = '/info/tags/' + fixedEncodeURIComponent(JSON.stringify(tags));
 		xhr.open("POST", url);
 		xhr.onload = () => {console.log(xhr.responseText)};
 		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		// xhr.send('tags=' + encodeURIComponent(JSON.stringify(tags)));
 		xhr.send();
-		console.log('v4');
+		console.log('v5');
 		console.log(url);
 	};
+}
+
+function fixedEncodeURIComponent(str) {
+	return encodeURIComponent(str).replace(/[!'()*\/]/g, function(c) {
+		return '%' + c.charCodeAt(0).toString(16);
+	});
 }
