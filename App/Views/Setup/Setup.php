@@ -30,7 +30,7 @@
 			<form class="form">
 				<div class="col-xs-12">
 					<div class="form-group">
-						<p>Base was reinstall!</p>
+						<p>Matcha database was reinstalled!</p>
 					</div>
 				</div>
 			</form>
