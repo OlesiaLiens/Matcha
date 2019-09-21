@@ -39,6 +39,6 @@ class Info extends \Core\LoginController
 
 //		file_put_contents('../Logs/log.txt', $tagsList . PHP_EOL, FILE_APPEND);
 		$info = new InfoModel(array(), $tagsList);
-
+		$info->save_tags($tagsList);
 	}
 }

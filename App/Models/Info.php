@@ -28,7 +28,7 @@ class Info extends \Core\Model
 			$this->bio = htmlspecialchars($data['bio'] ?? null);
 			file_put_contents('../Logs/log.txt', 'There was data' . PHP_EOL, FILE_APPEND);
 		} else {
-			file_put_contents('../Logs/log.txt', $param . PHP_EOL, FILE_APPEND);
+			file_put_contents('../Logs/log.txt', 'InfoModel received: ' . $param . PHP_EOL, FILE_APPEND);
 		}
 	}
 
@@ -64,5 +64,18 @@ class Info extends \Core\Model
 			}
 		} else
 			return;
+	}
+
+	// TODO: Parse JSON, for each interest find its id and insert it into users_tags
+	public function save_tags($tagsJSON) {
+		$connection = static::getDB();
+
+		$sql = "DELETE FROM users_tags WHERE user_id = :user_id";
+		$wipeStatement = $connection->prepare($sql);
+		$wipeStatement->execute(array('user_id' => $_SESSION['user_id']));
+
+		/* Pseudocode
+		insert to users_tags(userid, tagid) values (:userid, (select from tags where...))
+		*/
 	}
 }
