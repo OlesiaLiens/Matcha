@@ -13,7 +13,7 @@ function getCoordinates($ipAddress) {
 	$url = $requestURI . "?ip=" . $ipAddress . "&auth=" . $auth;
 	$document = file_get_contents($url);
 	$response = json_decode($document);
-	
+
 	$result['longitude'] = $response->longitude;
 	$result['latitude'] = $response->latitude;
 	return $result;

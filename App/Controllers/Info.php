@@ -43,7 +43,7 @@ class Info extends \Core\LoginController
 		$info->save_tags($tagsList);
 	}
 
-	public function locationAction($locationJSON)
+	public function locationAction($locationJSON = "[]")
 	{
 		session_start();
 

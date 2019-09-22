@@ -40,6 +40,7 @@ class Router
 				return true;
 			}
 		}
+		file_put_contents('../Logs/log.txt', 'Failed to match ' . $url . PHP_EOL, FILE_APPEND);
 		return false;
 	}
 

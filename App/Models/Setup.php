@@ -30,7 +30,7 @@ class Setup extends \Core\Model
 			gender      VARCHAR(50)   DEFAULT '-' NOT NULL,
 			preference  VARCHAR(50)   DEFAULT '-' NOT NULL,
 			bio         TEXT,
-			longtitude   FLOAT,
+			longitude   FLOAT,
 			latitude     FLOAT,
 			location     VARCHAR(50)  NOT NULL DEFAULT '-',
 			avatars      varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
