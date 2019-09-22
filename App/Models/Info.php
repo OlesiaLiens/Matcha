@@ -11,7 +11,6 @@ class Info extends \Core\Model
 	private $gender;
 	private $preferences;
 	private $city;
-	private $tags;
 	private $bio;
 
 
@@ -24,7 +23,6 @@ class Info extends \Core\Model
 			$this->city = htmlspecialchars($data['city'] ?? null);
 			$this->gender = htmlspecialchars($data['gender'] ?? null);
 			$this->preferences = htmlspecialchars($data['preferences'] ?? null);
-			$this->tags = htmlspecialchars($data['interest'] ?? null);
 			$this->bio = htmlspecialchars($data['bio'] ?? null);
 			file_put_contents('../Logs/log.txt', 'There was data' . PHP_EOL, FILE_APPEND);
 		} else {
@@ -51,31 +49,36 @@ class Info extends \Core\Model
 	{
 		$db = static::getDB();
 
-		if ($this->date && $this->gender && $this->preferences  && ctype_alpha(str_replace(' ', '', $this->city)) && $this->bio) {
+		if ($this->date && $this->gender && $this->preferences && ctype_alpha(str_replace(' ', '', $this->city)) && $this->bio) {
 			$save = $db->prepare("UPDATE USERS SET bday = ?, gender = ?, preference = ?, bio = ?, location = ? WHERE  id = ?");
 			$save->execute([$this->date, $this->gender, $this->preferences, $this->bio, $this->city, $user]);
-			$tag_id = $db->prepare("SELECT id FROM tags WHERE tag = ?");
-			$tag_id->execute([$this->tags]);
-			$tag_id = $tag_id->fetchColumn();
-
-			if ($tag_id) {
-				$save_tag = $db->prepare("INSERT USERS_TAGS(user_id, tag_id) VALUES(?, ?)");
-				$save_tag->execute([$user, $tag_id]);
-			}
 		} else
 			return;
 	}
 
 	// TODO: Parse JSON, for each interest find its id and insert it into users_tags
-	public function save_tags($tagsJSON) {
-		$connection = static::getDB();
 
-		$sql = "DELETE FROM users_tags WHERE user_id = :user_id";
-		$wipeStatement = $connection->prepare($sql);
-		$wipeStatement->execute(array('user_id' => $_SESSION['user_id']));
+	public function save_tags($tagsJSON)
+	{
+		if ($tagsJSON) {
+			$parse_tags = json_decode($tagsJSON);
 
-		/* Pseudocode
-		insert to users_tags(userid, tagid) values (:userid, (select from tags where...))
-		*/
+			$db = static::getDB();
+
+			$sql = $db->prepare("DELETE FROM users_tags WHERE user_id = ?");
+			$del = $sql->execute([$_SESSION['user_id']]);
+			if ($del) {
+				foreach ($parse_tags as $tag) {
+					$tag_id = $db->prepare("SELECT id FROM tags WHERE tag = ?");
+					$tag_id->execute([$tag]);
+					$tag_id = $tag_id->fetchColumn();
+
+					if ($tag_id) {
+						$save_tag = $db->prepare("INSERT USERS_TAGS(user_id, tag_id) VALUES(?, ?)");
+						$save_tag->execute([$_SESSION['user_id'], $tag_id]);
+					}
+				}
+			}
+		}
 	}
 }
