@@ -24,6 +24,7 @@
 
 	<script type="text/javascript" src="/js/onload.js"></script>
 	<script type="text/javascript" src="/js/info.js"></script>
+	<script type="text/javascript" src="/js/position.js"></script>
 
 	<style>
 
