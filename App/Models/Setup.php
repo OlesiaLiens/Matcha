@@ -164,6 +164,8 @@ class Setup extends \Core\Model
 				('MongoDB'),
 				('Oracle'),
 				('Redis'),
+				('Equal=Test'),
+				('Ampersand&Test'),
 				('Cassandra');
 			");
 

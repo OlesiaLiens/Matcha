@@ -12,7 +12,7 @@ class Router
 
 		$route = preg_replace('/\//', '\\/', $route);
 
-		$route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.]+)', $route);
+		$route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.\=\&]+)', $route);
 
 		$route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
 
@@ -50,7 +50,7 @@ class Router
 
 	public function dispatch($url)
 	{
-		$url = $this->removeQueryStringVariables($url);
+//		$url = $this->removeQueryStringVariables($url);
 
 		$url = trim($url, '/');
 
