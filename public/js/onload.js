@@ -14,4 +14,5 @@
 
 window.onload = function () {
 	infoFunction();
+	console.log('Im here');
 }

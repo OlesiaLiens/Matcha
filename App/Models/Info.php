@@ -81,4 +81,32 @@ class Info extends \Core\Model
 			}
 		}
 	}
+
+	public function save_location($locationJSON)
+	{
+		file_put_contents('../Logs/log.txt', 'Enters' . PHP_EOL, FILE_APPEND);
+		require('../../Core/Utils.php');
+
+		$locationObj = json_decode($locationJSON);
+		$connection = static::getDB();
+		$longitude = 0;
+		$latitude = 0;
+
+		if ($locationObj['gps'] == 'ok') {
+			$longitude = $locationObj['longitude'];
+			$latitude = $locationObj['latitude'];
+		} elseif ($locationObj['gps'] == 'fail') {
+			$coords = getCoordinates($locationObj['ip']);
+			$longitude = $coords['longitude'];
+			$latitude = $coords['latitude'];
+		}
+
+		$sql = "UPDATE users SET longitude = :lon, latitude = :lat WHERE id = :id";
+		$locationStatement = $connection->prepare($sql);
+		$locationStatement->execute(array(
+			"lon" => $longitude,
+			"lat" => $latitude,
+			"id" => $_SESSION['user_id']
+		));
+	}
 }
