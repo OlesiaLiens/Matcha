@@ -42,4 +42,12 @@ class Info extends \Core\LoginController
 		$info = new InfoModel(array(), $tagsList);
 		$info->save_tags($tagsList);
 	}
+
+	public function locationAction($locationJSON)
+	{
+		session_start();
+
+		$info = new InfoModel(array(), $locationJSON);
+		$info->save_location($locationJSON);
+	}
 }

