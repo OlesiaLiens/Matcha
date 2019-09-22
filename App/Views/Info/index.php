@@ -34,6 +34,11 @@
 		}
 
 
+		.navbar-inverse .navbar-nav > .active > a {
+			background-color : #ff7878;
+		}
+
+
 		input[type="button"]:not(.default), input[type="submit"]:not(.default) {
 			-webkit-border-radius   : 3px;
 			-webkit-background-clip : padding-box;
@@ -139,8 +144,10 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class=""><a href="/account/index">Account</a></li>
 				<li class="active"><a href="/info/index">Information</a></li>
-				<li><a href="/logout/index">Logout</a></li>
 				<li><a href="/settings/index">Settings</a></li>
+					<li class=""><a href="/search/index">Search</a></li>
+				<li class=""><a href="/chat/index">Chat</a></li>
+				<li><a href="/logout/index">Logout</a></li>
 			</ul>
 		</div>
 	</div>

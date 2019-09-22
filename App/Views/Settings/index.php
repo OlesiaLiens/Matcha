@@ -13,16 +13,15 @@
 	<style>
 
 		footer {
-			position       : absolute;
-			bottom         : 0;
-			width          : 100%;
-			height         : 90px;
-			margin-right   : 0px;
-			background     : #2d2d2d;
-			padding-top    : 30px;
-			padding-bottom : 20px;
-			text-align     : center;
+			position : fixed;
+			bottom   : 0;
+			width    : 100%;
 		}
+
+		.navbar-inverse .navbar-nav > .active > a {
+			background-color : #ff7878;
+		}
+
 
 		.flex {
 			display      : flex;
@@ -155,8 +154,10 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class=""><a href="/account/index">Account</a></li>
 				<li class=""><a href="/info/index">Information</a></li>
-				<li><a href="/login/login">Logout</a></li>
 				<li class="active"><a href="/settings/index">Settings</a></li>
+				<li class=""><a href="/search/index">Search</a></li>
+				<li class=""><a href="/chat/index">Chat</a></li>
+				<li><a href="/login/login">Logout</a></li>
 			</ul>
 		</div>
 	</div>

@@ -30,6 +30,11 @@
 			flex-direction : row;
 		}
 
+		.navbar-inverse .navbar-nav > .active > a {
+			background-color : #ff7878;
+		}
+
+
 		img {
 			margin-left   : 10px;
 			margin-top    : 10px;
@@ -92,8 +97,10 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="#">Account</a></li>
 				<li class=""><a href="/info/index">Information</a></li>
-				<li><a href="/logout/index">Logout</a></li>
 				<li><a href="/settings/index">Settings</a></li>
+				<li><a href="/search/index">Search</a></li>
+				<li><a href="/chat/index">Chat</a></li>
+				<li><a href="/logout/index">Logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -234,10 +241,10 @@
 </main>
 
 <!--<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">-->
-<!--	<!-- Position it -->-->
+<!--	<!-- Position it -->
 <!--	<div style="position: absolute; top: 0; right: 0;">-->
 <!---->
-<!--		<!-- Then put toasts within -->-->
+<!--		<!-- Then put toasts within -->
 <!--		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">-->
 <!--			<div class="toast-header">-->
 <!--				<img src="..." class="rounded mr-2" alt="...">-->
@@ -283,8 +290,8 @@
 		integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
 		crossorigin="anonymous"></script>
 
-<script src="/js/hullabaloo.js"></script>
 
+<!--<script src="/js/hullabaloo.js"></script>
 <!--<script>-->
 <!--	var hulla = new hullabaloo();-->
 <!---->
@@ -324,6 +331,7 @@
 	//	fnEndHide: false,
 	//});
 </script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
