@@ -79,7 +79,6 @@
 		}
 
 	</style>
-	<script type="text/javascript" src="/js/position.js"></script>
 </head>
 
 <body>
@@ -159,7 +158,7 @@
 				<br/>
 				<div class="col-lg-4">
 					<div class="tilt">
-						<label for="computer" class="btn btn-default">
+						<label for="computer" class="btn btn-default" style="display: inline-table">
 							<div id="image"></div>
 							Upload avatar<input type="file" id="computer" hidden style="display:none">
 						</label>
@@ -341,5 +340,6 @@
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/position.js"></script>
 </body>
 </html>
