@@ -1,119 +1,30 @@
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: info/tags/["Node.js","MySQL"]
-Tryna match info/tags/["Node.js","MySQL"]
-
-Received URI: info/tags/["Node.js","MySQL"]
-Tryna match info/tags/["Node.js","MySQL"]
-["Node.js","MySQL"]
+Received URI: info/tags/["Visual Basic 6","SQLite"]
+Tryna match info/tags/["Visual Basic 6","SQLite"]
+InfoModel received: ["Visual Basic 6","SQLite"]
 Received URI: info/index
 Tryna match info/index
 There was data
 Received URI: favicon.ico
 Tryna match favicon.ico
-Received URI: info/tags/["Science fiction","Pop (Popular music)"]
-Tryna match info/tags/["Science fiction","Pop (Popular music)"]
-["Science fiction","Pop (Popular music)"]
-Received URI:
-Tryna match
-Received URI:
-Tryna match
-Received URI:
-Tryna match
-Received URI: /setup/base
-Tryna match setup/base
-Received URI: /
-Tryna match
-Received URI: /setup/base
-Tryna match setup/base
-Received URI:
-Tryna match
-Received URI: ase
-Tryna match ase
-Received URI: /setup/base
-Tryna match setup/base
-Received URI: info/info
-Tryna match info/info
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI:
-Tryna match
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: setup/base
-Tryna match setup/base
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: login/login
-Tryna match login/login
-Received URI: account/index
-Tryna match account/index
-Received URI: styles/font-awesome.css
-Tryna match styles/font-awesome.css
-Received URI: favicon.ico
-Tryna match favicon.ico
+Received URI: info/tags/["VBA","SQLite"]
+Tryna match info/tags/["VBA","SQLite"]
+InfoModel received: ["VBA","SQLite"]
 Received URI: info/index
 Tryna match info/index
 There was data
 Received URI: favicon.ico
 Tryna match favicon.ico
-Received URI: info/tags/["Ampersand&Test"]
-Tryna match info/tags/["Ampersand
-InfoModel received: ["Ampersand
-Received URI: info/tags/["Ampersand&Test"]
-Tryna match info/tags/["Ampersand&Test"]
-InfoModel received: ["Ampersand&Test"]
-Received URI: info/tags/["Ampersand&Test","Equal=Test"]
-Tryna match info/tags/["Ampersand&Test","Equal=Test"]
-InfoModel received: ["Ampersand&Test","Equal=Test"]
+Received URI: info/tags/["Urban","Spark"]
+Tryna match info/tags/["Urban","Spark"]
+InfoModel received: ["Urban","Spark"]
 Received URI: info/index
 Tryna match info/index
 There was data
 Received URI: favicon.ico
 Tryna match favicon.ico
-Received URI:
-Tryna match
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: login/login
-Tryna match login/login
-Received URI: account/index
-Tryna match account/index
-Received URI: styles/font-awesome.css
-Tryna match styles/font-awesome.css
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: info/index
-Tryna match info/index
-There was data
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: info/index
-Tryna match info/index
-There was data
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: info/tags/["Visual Basic 6","Science fiction"]
-Tryna match info/tags/["Visual Basic 6","Science fiction"]
-InfoModel received: ["Visual Basic 6","Science fiction"]
-Received URI: info/info
-Tryna match info/info
-There was data
-Received URI: info/index
-Tryna match info/index
-There was data
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: account/index
-Tryna match account/index
-Received URI: styles/font-awesome.css
-Tryna match styles/font-awesome.css
-Received URI: favicon.ico
-Tryna match favicon.ico
-Received URI: info/location/{"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
-Tryna match info/location/{"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+Received URI: info/tags/["Spark","Political"]
+Tryna match info/tags/["Spark","Political"]
+InfoModel received: ["Spark","Political"]
 Received URI: account/index
 Tryna match account/index
 Received URI: styles/font-awesome.css
@@ -122,3 +33,238 @@ Received URI: favicon.ico
 Tryna match favicon.ico
 Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
 Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+Tryna match info/location/{"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+Failed to match info/location/{"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+Received URI: account/index
+Tryna match account/index
+Failed to match account/index
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: info/index
+Tryna match info/index
+Failed to match info/index
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: account/index
+Tryna match account/index
+Failed to match account/index
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: info/index
+Tryna match info/index
+Failed to match info/index
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: info/index
+Tryna match info/index
+Failed to match info/index
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: info/index
+Tryna match info/index
+Failed to match info/index
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: account/index
+Tryna match account/index
+Failed to match account/index
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Failed to match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: 
+Tryna match 
+Received URI: favicon.ico
+Tryna match favicon.ico
+
+Received URI: login/login
+Tryna match login/login
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Failed to match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Failed to match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Failed to match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Failed to match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: ["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Enters
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: ["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: ["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: ["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: {"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: {"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: {"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+longlat should be solved
+Received URI: setup/base
+Tryna match setup/base
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+Tryna match info/location/["gps":"ok","latitude":50.4705531,"longitude":30.464246900000003]
+InfoModel received: {"gps":"ok","latitude":50.4705531,"longitude":30.464246900000003}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Failed to match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/{"gps":"fail","ip":"178.214.196.34"}
+Tryna match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Failed to match info/location/{"gps":"fail","ip":"178.214.196.34"}
+Received URI: account/index
+Tryna match account/index
+Received URI: styles/font-awesome.css
+Tryna match styles/font-awesome.css
+Received URI: favicon.ico
+Tryna match favicon.ico
+Received URI: info/location/["gps":"fail","ip":"178.214.196.34"]
+Tryna match info/location/["gps":"fail","ip":"178.214.196.34"]
+InfoModel received: {"gps":"fail","ip":"178.214.196.34"}
+longlat should be solved

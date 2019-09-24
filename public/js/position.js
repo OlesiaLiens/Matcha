@@ -43,14 +43,14 @@ const getGPS = () => {
 			let lat = position.coords.latitude;
 			let lon = position.coords.longitude;
 			let gps = {"gps" : "ok", "latitude" : lat, "longitude" : lon};
-			url += JSON.stringify(gps);
+			url += JSON.stringify(gps).replace('{', '[').replace('}', ']');
 			xhr.open("POST", url);
 			xhr.send();
 		}, () => {
 			const ipReq = new XMLHttpRequest();
 			ipReq.onload = () => {
 				let gps = {"gps" : "fail", "ip" : ipReq.responseText};
-				url += JSON.stringify(gps);
+				url += JSON.stringify(gps).replace('{', '[').replace('}', ']');
 				xhr.open("POST", url);
 				xhr.send();
 			}
