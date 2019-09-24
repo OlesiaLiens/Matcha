@@ -30,36 +30,40 @@
 |*| either GPS or IP, and an error that caused the latter fail.
 |*| (Can be used for logging or something)
 |*|
-|*| NOTE: serverSideReceiver may be hardcoded later, no reason to
-|*| keep it a variable.
+|*| NOTE: if "contentType: 'application/json'" is uncommented
+|*| $_POST will arrive empty.
 \*/
 
 const getGPS = () => {
-	let url = '/info/location/';
-	const xhr = new XMLHttpRequest();
-
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(position => {
 			let lat = position.coords.latitude;
 			let lon = position.coords.longitude;
 			let gps = {"gps" : "ok", "latitude" : lat, "longitude" : lon};
-			url += JSON.stringify(gps).replace('{', '[').replace('}', ']');
-			xhr.open("POST", url);
-			xhr.send();
-		}, () => {
-			const ipReq = new XMLHttpRequest();
-			ipReq.onload = () => {
-				let gps = {"gps" : "fail", "ip" : ipReq.responseText};
-				url += JSON.stringify(gps).replace('{', '[').replace('}', ']');
-				xhr.open("POST", url);
-				xhr.send();
-			}
-			//ipReq.onerror = e => {xhr.send('gps=fail&err=' + e.message)};
-			//ipReq.ontimeout = () => {xhr.send('gps=fail&err=timeout')};
-			ipReq.open("GET", 'https://api.ipify.org', true);
-			ipReq.send(null);
-		});
-	}
+			$.ajax({
+				url: '/info/location/',
+				type: 'post',
+				dataType: 'json',
+				//contentType: 'application/json',
+				data: {"data" : JSON.stringify(gps)}
+			})}, () => {
+				$.ajax({
+					url: 'https://api.ipify.org',
+					type: 'get',
+					success: ip => {
+						let gps = {"gps" : "fail", "ip" : ip};
+						console.log(ip);
+						$.ajax({
+							url: '/info/location/',
+							type: "POST",
+							dataType: 'json',
+							//contentType: 'application/json',
+							data: {"data" : JSON.stringify(gps)}
+						});
+					}
+				})
+			});
+		}
 };
 
 window.onload = () => {getGPS()};

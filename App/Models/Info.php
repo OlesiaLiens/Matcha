@@ -16,18 +16,26 @@ class Info extends \Core\Model
 
 	public function __construct(array $data, string $param = '')
 	{
-		if (isset($data) && count($data) > 0) {
-			if (is_numeric($data['bday'])) {
+//		if (isset($data) && count($data) > 0) {
+//			if (is_numeric($data['bday'])) {
+//				$this->date = htmlspecialchars($data['bday'] ?? null);
+//			}
+//			$this->city = htmlspecialchars($data['city'] ?? null);
+//			$this->gender = htmlspecialchars($data['gender'] ?? null);
+//			$this->preferences = htmlspecialchars($data['preferences'] ?? null);
+//			$this->bio = htmlspecialchars($data['bio'] ?? null);
+//		} else {
+//			file_put_contents('../Logs/log.txt', 'InfoModel received: ' . $param . PHP_EOL, FILE_APPEND);
+//		}
+		if (!isset($data) || count($data) == 0) {return;}
+
+		if (isset($data['bday']))
+			if (is_numeric($data['bday']))
 				$this->date = htmlspecialchars($data['bday'] ?? null);
-			}
-			$this->city = htmlspecialchars($data['city'] ?? null);
-			$this->gender = htmlspecialchars($data['gender'] ?? null);
-			$this->preferences = htmlspecialchars($data['preferences'] ?? null);
-			$this->bio = htmlspecialchars($data['bio'] ?? null);
-			file_put_contents('../Logs/log.txt', 'There was data' . PHP_EOL, FILE_APPEND);
-		} else {
-			file_put_contents('../Logs/log.txt', 'InfoModel received: ' . $param . PHP_EOL, FILE_APPEND);
-		}
+		$this->city = htmlspecialchars($data['city'] ?? null);
+		$this->gender = htmlspecialchars($data['gender'] ?? null);
+		$this->preferences = htmlspecialchars($data['preferences'] ?? null);
+		$this->bio = htmlspecialchars($data['bio'] ?? null);
 	}
 
 	public function get_tags_from_base()

@@ -47,9 +47,10 @@ class Info extends \Core\LoginController
 	{
 		session_start();
 
-		$locationJSON = str_replace('[', '{', $locationJSON);
-		$locationJSON = str_replace(']', '}', $locationJSON);
-		$info = new InfoModel(array(), $locationJSON);
-		$info->save_location($locationJSON);
+//		$locationJSON = str_replace('[', '{', $locationJSON);
+//		$locationJSON = str_replace(']', '}', $locationJSON);
+//		$info = new InfoModel(array(), $locationJSON);
+		$info = new InfoModel(array());
+		$info->save_location($_POST['data']);
 	}
 }
