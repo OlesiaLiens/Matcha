@@ -64,7 +64,6 @@ class Info extends \Core\Model
 			return;
 	}
 
-	// TODO: Parse JSON, for each interest find its id and insert it into users_tags
 
 	public function save_tags($tagsJSON)
 	{
