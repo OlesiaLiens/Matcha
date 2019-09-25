@@ -21,7 +21,6 @@ class User extends \Core\LoginController
 			View::getTemplate('Errors/404error.php');
 			return;
 		}
-
 		View::getTemplate('Account/index.php', $params);
 	}
 }
