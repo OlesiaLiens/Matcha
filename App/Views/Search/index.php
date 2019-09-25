@@ -33,7 +33,10 @@
 		}
 
 		.pagination {
-			display : inline-block;
+			display         : flex;
+			align-items     : center;
+			justify-content : center
+			/*display : inline-block;*/
 		}
 
 		.pagination a {
@@ -30345,11 +30348,13 @@
 
 
 				<div class="container-right">
-					<?php foreach ($params['users'] as $user): ?>
-					<div class="container-results"><a href="/user/<?= $user['id'] ?>">
+					<div class="container-results">
+						<?php foreach ($params['users'] as $user): ?>
+						<a href="/user/<?= $user['id'] ?>">
 							<figure class="user-snippet"><img src="<?= $user['avatars'] ?>" alt="profile-sample"
 															  class="background">
 								<img src="<?= $user['avatars'] ?>" alt="profile-sample" class="profile">
+
 								<figcaption><span class="circle offline">●</span>
 									<h3><?= $user['first_name'] ?></h3>
 									<span>Rating: <?= $user['rating'] ?></span>
@@ -30357,54 +30362,55 @@
 									<span class="distance">Location: <?= $user['location'] ?></span>
 									<div class="icons"></div>
 								</figcaption>
+
 							</figure>
 							<?php endforeach; ?>
 					</div>
 				</div>
-
-				<?php if ($params['users_count'] > 5) : ?>
-					<?php
-
-					$pages = ceil($params['users_count'] / 5);
-					$nbr_start = 2;
-					if ($params['page_number'] < 3) {
-						$nbr_start = $params['page_number'] - 1;
-					} else if ($params['page_number'] + 2 > $pages) {
-						$nbr_start = 4 - ($pages - $params['page_number']);
-					}
-					$nbr_end = 2;
-					if ($params['page_number'] + 2 > $pages) {
-						$nbr_end = $pages - $params['page_number'];
-					} else if ($params['page_number'] < 3) {
-						$nbr_end = 5 - $params['page_number'];
-					}
-
-					$start = $params['page_number'] - $nbr_start;
-					$end = $params['page_number'] + $nbr_end;
-
-					if ($start < 1)
-						$start = 1;
-					if ($end > $pages)
-						$end = $pages;
-					?>
-					<div class="pagination">
-						<?php if ($params['page_number'] > 3 && $pages > 5) : ?>
-							<a href="/search/page/<?= $params['page_number'] - 3 ?>">&laquo;</a>
-						<?php endif; ?>
-						<?php foreach (range($start, $end) as $page_nbr): ?>
-							<a class="<?= $params['page_number'] == $page_nbr ? "active" : "" ?>"
-							   href="/search/page/<?= $page_nbr ?>"><?= $page_nbr ?></a>
-						<?php endforeach; ?>
-						<?php if ($params['page_number'] < $pages - 2 && $pages > 5) : ?>
-							<a href="/search/page/<?= $params['page_number'] + 3 ?>">&raquo;</a>
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
-
-
-				<div class="hiden"></div>
 		</section>
+	</div>
+
+	<?php if ($params['users_count'] > 5) : ?>
+		<?php
+
+		$pages = ceil($params['users_count'] / 5);
+		$nbr_start = 2;
+		if ($params['page_number'] < 3) {
+			$nbr_start = $params['page_number'] - 1;
+		} else if ($params['page_number'] + 2 > $pages) {
+			$nbr_start = 4 - ($pages - $params['page_number']);
+		}
+		$nbr_end = 2;
+		if ($params['page_number'] + 2 > $pages) {
+			$nbr_end = $pages - $params['page_number'];
+		} else if ($params['page_number'] < 3) {
+			$nbr_end = 5 - $params['page_number'];
+		}
+
+		$start = $params['page_number'] - $nbr_start;
+		$end = $params['page_number'] + $nbr_end;
+
+		if ($start < 1)
+			$start = 1;
+		if ($end > $pages)
+			$end = $pages;
+		?>
+		<div class="pagination">
+			<?php if ($params['page_number'] > 3 && $pages > 5) : ?>
+				<a href="/search/page/<?= $params['page_number'] - 3 ?>">&laquo;</a>
+			<?php endif; ?>
+			<?php foreach (range($start, $end) as $page_nbr): ?>
+				<a class="<?= $params['page_number'] == $page_nbr ? "active" : "" ?>"
+				   href="/search/page/<?= $page_nbr ?>"><?= $page_nbr ?></a>
+			<?php endforeach; ?>
+			<?php if ($params['page_number'] < $pages - 2 && $pages > 5) : ?>
+				<a href="/search/page/<?= $params['page_number'] + 3 ?>">&raquo;</a>
+			<?php endif; ?>
+		</div>
+	<?php endif; ?>
+
 </main>
+<div class="hiden"></div>
 
 <footer>
 	<div class="container">
