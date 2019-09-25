@@ -11,3 +11,6 @@ class Search extends \Core\LoginController
 		View::render('Search/index.php');
 	}
 }
+
+//todo вывести юзеров в тимплейт с базы через params
+//todo при клике на юзера переходить на его аккаунт (пример как в камагру)
