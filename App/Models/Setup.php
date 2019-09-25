@@ -239,7 +239,7 @@ VALUES
 ('stone@mail.com', 'user', 'Stone', 'Mccall', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '30', 'Kiev', '50.4547', '30.5238', '/men/man65.jpg'),
 ('noah@mail.com', 'user', 'Noah', 'Dale', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '41', 'Kiev', '50.4547', '30.5238', '/men/man66.jpg'),
 ('alden@mail.com', 'user', 'Alden', 'Woods', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '35', 'Kiev', '50.4547', '30.5238', '/men/man67.jpg'),
-('neville@mail.com', 'user', 'Neville', 'Hale', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '45', 'Kiev', '50.4547', '30.5238', '/men/man68.jpg')
+('neville@mail.com', 'user', 'Neville', 'Hale', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '45', 'Kiev', '50.4547', '30.5238', '/men/man68.jpg'),
 ('dalton@mail.com', 'user', 'Dalton', 'Norton', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '39', 'Kiev', '50.4547', '30.5238', '/men/man69.jpg'),
 ('charles@mail.com', 'user', 'Charles', 'Holder', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '40', 'Kiev', '50.4547', '30.5238', '/men/man70.jpg'),
 ('eagan@mail.com', 'user', 'Eagan', 'Dale', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '46', 'Kiev', '50.4547', '30.5238', '/men/man71.jpg'),
@@ -252,7 +252,7 @@ VALUES
 ('arsenio@mail.com', 'user', 'Arsenio', 'Hughes', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '29', 'Kiev', '50.4547', '30.5238', '/men/man79.jpg'),
 ('hall@mail.com', 'user', 'Hall', 'Sexton', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '33', 'Kiev', '50.4547', '30.5238', '/men/man80.jpg'),
 ('callum@mail.com', 'user', 'Callum', 'Singleton', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '36', 'Kiev', '50.4547', '30.5238', '/men/man81.jpg'),
-('jesse@mail.com', 'user', 'Jesse', 'Taylor', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '32', 'Kiev', '50.4547', '30.5238', '/men/man82.jpg')
+('jesse@mail.com', 'user', 'Jesse', 'Taylor', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '32', 'Kiev', '50.4547', '30.5238', '/men/man82.jpg'),
 ('colin@mail.com', 'user', 'Colin', 'Stephenson', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '26', 'Kiev', '50.4547', '30.5238', '/men/man83.jpg'),
 ('akeem@mail.com', 'user', 'Akeem', 'Bishop', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '42', 'Kiev', '50.4547', '30.5238', '/men/man84.jpg'),
 ('garrison@mail.com', 'user', 'Garrison', 'Hinton', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '35', 'Kiev', '50.4547', '30.5238', '/men/man85.jpg'),
