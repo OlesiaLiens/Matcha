@@ -4,6 +4,8 @@
 namespace App\Models;
 
 
+use PDO;
+
 class UserProfile extends \Core\Model
 {
 	private $user_id;
@@ -19,12 +21,11 @@ class UserProfile extends \Core\Model
 
 		$isset = $db->prepare("SELECT * FROM `users` WHERE id = ?");
 		$isset->execute([$this->user_id]);
-		$res = $isset->fetchColumn();
+		$res = $isset->fetchAll(PDO::FETCH_ASSOC);
 		if ($res) {
-			return $res;
+			return $res[0];
 		} else {
 			return false;
 		}
 	}
-
 }

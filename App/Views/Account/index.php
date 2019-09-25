@@ -174,10 +174,8 @@
 		<div class="container w ">
 			<div class="row centered mycolor">
 				<div class="col-lg-12">
-					<h4>Kristian </h4>
-					<p> Kristan is a California native who quit a finance career to travel the world. She’s been
-						traveling for 5 years and is ‘killing it’. This girl has some amazing girl power! She works with
-						top brands and sponsors from all over the globe. </p>
+					<h4><?= $args['username'] . ' ' ?></h4>
+					<p> <?= $args['bio'] ?> </p>
 				</div>
 			</div>
 	</section>
