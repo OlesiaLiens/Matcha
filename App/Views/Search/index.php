@@ -9,7 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--		<link rel="stylesheet" href="/styles/bootstrap.css">-->
+	<!--		<link rel="stylesheet" href="/styles/bootstrap.css">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/styles/login.css"/>
 	<style type="text/css">/*!
@@ -31,6 +31,27 @@
 			width  : 100%;
 			height : 100%;
 		}
+
+		.pagination {
+			display : inline-block;
+		}
+
+		.pagination a {
+			color           : black;
+			float           : left;
+			padding         : 8px 16px;
+			text-decoration : none;
+		}
+
+		.pagination a.active {
+			background-color : #ff7878;
+			color            : white;
+		}
+
+		.pagination a:hover:not(.active) {
+			background-color : #ddd;
+		}
+
 
 		footer {
 			position : fixed;
@@ -30321,156 +30342,67 @@
 						</div>
 					</div>
 				</div>
+
+
 				<div class="container-right">
-					<div class="container-results"><a href="http://localhost:5000/user/1">
-							<figure class="user-snippet"><img src="./Document_files/smile.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/smile.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
+					<?php foreach ($params['users'] as $user): ?>
+					<div class="container-results"><a href="/user/<?= $user['id'] ?>">
+							<figure class="user-snippet"><img src="<?= $user['avatars'] ?>" alt="profile-sample"
+															  class="background">
+								<img src="<?= $user['avatars'] ?>" alt="profile-sample" class="profile">
 								<figcaption><span class="circle offline">●</span>
-									<h3>Test User</h3><span>rating: 0</span><span>23 years old</span><span
-											class="distance">≈ 0.00 km away</span>
+									<h3><?= $user['first_name'] ?></h3>
+									<span>Rating: <?= $user['rating'] ?></span>
+									<span>Age: <?= $user['bday'] ?></span>
+									<span class="distance">Location: <?= $user['location'] ?></span>
 									<div class="icons"></div>
 								</figcaption>
 							</figure>
-						</a><a href="http://localhost:5000/user/2">
-							<figure class="user-snippet"><img src="./Document_files/zaria.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/zaria.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Zaria Maxwell</h3><span>rating: 0</span><span>27 years old</span><span
-											class="distance">≈ 8.55 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a><a href="http://localhost:5000/user/3">
-							<figure class="user-snippet"><img src="./Document_files/claire.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/claire.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Claire Flores</h3><span>rating: 0</span><span>47 years old</span><span
-											class="distance">≈ 13.41 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a><a href="http://localhost:5000/user/4">
-							<figure class="user-snippet"><img src="./Document_files/gina.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/gina.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Gina Matthews</h3><span>rating: 0</span><span>26 years old</span><span
-											class="distance">≈ 20.87 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a><a href="http://localhost:5000/user/5">
-							<figure class="user-snippet"><img src="./Document_files/henry.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/henry.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Henry Medina</h3><span>rating: 0</span><span>25 years old</span><span
-											class="distance">≈ 133.09 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a><a href="http://localhost:5000/user/6">
-							<figure class="user-snippet"><img src="./Document_files/niko.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/niko.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Niko Hester</h3><span>rating: 0</span><span>23 years old</span><span
-											class="distance">≈ 9.88 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a><a href="http://localhost:5000/user/7">
-							<figure class="user-snippet"><img src="./Document_files/van.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/van.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Van Mcneil</h3><span>rating: 0</span><span>22 years old</span><span
-											class="distance">≈ 0.00 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a><a href="http://localhost:5000/user/8">
-							<figure class="user-snippet"><img src="./Document_files/jean.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/jean.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Jean Brooks</h3><span>rating: 0</span><span>50 years old</span><span
-											class="distance">≈ 128.20 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a><a href="http://localhost:5000/user/9">
-							<figure class="user-snippet"><img src="./Document_files/helen.jpg" alt="profile-sample"
-															  class="background"><img src="./Document_files/helen.jpg"
-																					  alt="profile-sample"
-																					  class="profile">
-								<figcaption><span class="circle offline">●</span>
-									<h3>Helen Odom</h3><span>rating: 0</span><span>20 years old</span><span
-											class="distance">≈ 8.46 km away</span>
-									<div class="icons"></div>
-								</figcaption>
-							</figure>
-						</a></div>
-					<div class="pagination">
-						<ul class="ant-pagination" unselectable="unselectable">
-							<li title="Previous Page" class="ant-pagination-disabled ant-pagination-prev"
-								aria-disabled="true"><a class="ant-pagination-item-link"><i aria-label="icon: left"
-																							class="anticon anticon-left">
-										<svg viewBox="64 64 896 896" focusable="false" class="" data-icon="left"
-											 width="1em"
-											 height="1em" fill="currentColor" aria-hidden="true">
-											<path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path>
-										</svg>
-									</i></a></li>
-							<li title="1" class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
-								tabindex="0"><a>1</a></li>
-							<li title="2" class="ant-pagination-item ant-pagination-item-2" tabindex="0"><a>2</a></li>
-							<li title="3" class="ant-pagination-item ant-pagination-item-3" tabindex="0"><a>3</a></li>
-							<li title="4" class="ant-pagination-item ant-pagination-item-4" tabindex="0"><a>4</a></li>
-							<li title="5"
-								class="ant-pagination-item ant-pagination-item-5 ant-pagination-item-before-jump-next"
-								tabindex="0"><a>5</a></li>
-							<li title="Next 5 Pages" tabindex="0"
-								class="ant-pagination-jump-next ant-pagination-jump-next-custom-icon"><a
-										class="ant-pagination-item-link">
-									<div class="ant-pagination-item-container"><i aria-label="icon: double-right"
-																				  class="anticon anticon-double-right ant-pagination-item-link-icon">
-											<svg viewBox="64 64 896 896" focusable="false" class=""
-												 data-icon="double-right"
-												 width="1em" height="1em" fill="currentColor" aria-hidden="true">
-												<path d="M533.2 492.3L277.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H188c-6.7 0-10.4 7.7-6.3 12.9L447.1 512 181.7 851.1A7.98 7.98 0 0 0 188 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5zm304 0L581.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H492c-6.7 0-10.4 7.7-6.3 12.9L751.1 512 485.7 851.1A7.98 7.98 0 0 0 492 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5z"></path>
-											</svg>
-										</i><span class="ant-pagination-item-ellipsis">•••</span></div>
-								</a></li>
-							<li title="22" class="ant-pagination-item ant-pagination-item-22" tabindex="0"><a>22</a>
-							</li>
-							<li title="Next Page" tabindex="0" class=" ant-pagination-next" aria-disabled="false"><a
-										class="ant-pagination-item-link"><i aria-label="icon: right"
-																			class="anticon anticon-right">
-										<svg viewBox="64 64 896 896" focusable="false" class="" data-icon="right"
-											 width="1em" height="1em" fill="currentColor" aria-hidden="true">
-											<path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"></path>
-										</svg>
-									</i></a></li>
-						</ul>
+							<?php endforeach; ?>
 					</div>
 				</div>
-			</div>
 
-			<div class="hiden">
+				<?php if ($params['users_count'] > 5) : ?>
+					<?php
 
-			</div>
+					$pages = ceil($params['users_count'] / 5);
+					$nbr_start = 2;
+					if ($params['page_number'] < 3) {
+						$nbr_start = $params['page_number'] - 1;
+					} else if ($params['page_number'] + 2 > $pages) {
+						$nbr_start = 4 - ($pages - $params['page_number']);
+					}
+					$nbr_end = 2;
+					if ($params['page_number'] + 2 > $pages) {
+						$nbr_end = $pages - $params['page_number'];
+					} else if ($params['page_number'] < 3) {
+						$nbr_end = 5 - $params['page_number'];
+					}
+
+					$start = $params['page_number'] - $nbr_start;
+					$end = $params['page_number'] + $nbr_end;
+
+					if ($start < 1)
+						$start = 1;
+					if ($end > $pages)
+						$end = $pages;
+					?>
+					<div class="pagination">
+						<?php if ($params['page_number'] > 3 && $pages > 5) : ?>
+							<a href="/search/page/<?= $params['page_number'] - 3 ?>">&laquo;</a>
+						<?php endif; ?>
+						<?php foreach (range($start, $end) as $page_nbr): ?>
+							<a class="<?= $params['page_number'] == $page_nbr ? "active" : "" ?>"
+							   href="/search/page/<?= $page_nbr ?>"><?= $page_nbr ?></a>
+						<?php endforeach; ?>
+						<?php if ($params['page_number'] < $pages - 2 && $pages > 5) : ?>
+							<a href="/search/page/<?= $params['page_number'] + 3 ?>">&raquo;</a>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
+
+
+				<div class="hiden"></div>
 		</section>
 </main>
 
