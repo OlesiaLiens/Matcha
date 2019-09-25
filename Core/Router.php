@@ -12,9 +12,13 @@ class Router
 
 		$route = preg_replace('/\//', '\\/', $route);
 
-		$route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.\=\&\:]+)', $route);
+		$route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-z0-9]+)', $route);
 
 		$route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
+
+		$route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.\=\&\:]+)', $route);
+
+//		$route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
 
 		$route = '/^' . $route . '$/i';
 
@@ -75,13 +79,13 @@ class Router
 					call_user_func_array([$controller_object, $action],
 						empty($params) ? ['param' => ''] : $params);
 				} else {
-						View::getTemplate('Errors/403error.php');
+					View::getTemplate('Errors/403error.php');
 				}
 			} else {
-					View::getTemplate('Errors/403error.php');
+				View::getTemplate('Errors/403error.php');
 			}
 		} else {
-				View::getTemplate('Errors/403error.php');
+			View::getTemplate('Errors/403error.php');
 		}
 	}
 

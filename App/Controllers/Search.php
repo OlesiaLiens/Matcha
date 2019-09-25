@@ -41,5 +41,4 @@ class Search extends \Core\LoginController
 	}
 }
 
-//todo вывести юзеров в тимплейт с базы через params
 //todo при клике на юзера переходить на его аккаунт (пример как в камагру)

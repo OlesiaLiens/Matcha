@@ -86,7 +86,7 @@ class User extends \Core\Model
 	{
 		$db = static::getDB();
 
-		$tags= $db->prepare("SELECT tag FROM `tags` WHERE  id = ?");
+		$tags = $db->prepare("SELECT tag FROM `tags` WHERE  id = ?");
 		$tags->execute([$tags_id]);
 		$tags = $tags->fetchColumn();
 
