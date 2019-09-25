@@ -14,7 +14,7 @@ spl_autoload_register(function ($class) {
 $router = new Core\Router();
 
 $router->add('', ['controller' => 'Login', 'action' => 'login']);
-$router->add('{controller}/{id:\d+}', ['action' => 'index']);
+$router->add('{controller}/{id:\d+}[/]*', ['action' => 'index']);
 $router->add('{controller}', ['action' => 'index']);
 $router->add('{controller}/{action}');
 $router->add('{controller}/{action}/{param}');
