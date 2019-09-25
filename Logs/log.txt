@@ -1,0 +1,8 @@
+Received URI: user/6
+Tryna match user/6
+Matched to /^(?P<controller>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.\=\&\:]+)\/(?P<id>\d+)$/i
+Params: {"action":"index","controller":"user","id":"6"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Matched to /^(?P<controller>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.\=\&\:]+)$/i
+Params: {"action":"index","controller":"favicon.ico"}

@@ -37,6 +37,8 @@ class Router
 					}
 				}
 				$this->params = $params;
+				file_put_contents('../Logs/log.txt', 'Matched to ' . $route . PHP_EOL, FILE_APPEND);
+				file_put_contents('../Logs/log.txt', 'Params: ' . json_encode($params) . PHP_EOL, FILE_APPEND);
 				return true;
 			}
 		}
