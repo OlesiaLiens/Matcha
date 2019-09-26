@@ -40,5 +40,3 @@ class Search extends \Core\LoginController
 		View::getTemplate('Search/index.php', $params, $res);
 	}
 }
-
-//todo при клике на юзера переходить на его аккаунт (пример как в камагру)

@@ -28,4 +28,19 @@ class UserProfile extends \Core\Model
 			return false;
 		}
 	}
+
+	public function rating_increment(){
+		$db = static::getDB();
+
+		$rating = $db->prepare("SELECT rating FROM `users` WHERE id = ?");
+		$rating->execute([$this->user_id]);
+		$rating = $rating->fetchColumn();
+		if ($rating !== null)
+		{
+			$rating = $rating + 1;
+
+			$update_rating = $db->prepare("UPDATE users SET rating = $rating WHERE id = ?");
+			$update_rating->execute([$this->user_id]);
+		}
+	}
 }

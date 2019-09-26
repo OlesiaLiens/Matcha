@@ -16,19 +16,22 @@ class User extends \Core\LoginController
 			return;
 		}
 
-		$params = [];
-
-
-		$user_param = new \App\Models\UserProfile($this->route_params);
-		$user = $user_param->user_param();
-
 		if ($user === false) {
 			View::getTemplate('Errors/404error.php');
 			return;
 		}
 
+		$params = [];
+
+		$user_param = new \App\Models\UserProfile($this->route_params);
+		$user = $user_param->user_param();
+
+		$user_param->rating_increment();
+
 		$params['id'] = $user['id'];
 		$params['username'] = $user['username'];
+		$params['first_name'] = $user['first_name'];
+		$params['last_name'] = $user['last_name'];
 		$params['avatars'] = $user['avatars'];
 		$params['rating'] = $user['rating'];
 		$params['gender'] = $user['gender'];

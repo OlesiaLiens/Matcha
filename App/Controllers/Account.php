@@ -18,6 +18,8 @@ class Account extends \Core\LoginController
 		$params = [];
 
 		$params['username'] = $user['username'];
+		$params['first_name'] = $user['first_name'];
+		$params['last_name'] = $user['last_name'];
 		$params['avatars'] = $user['avatars'];
 		$params['rating'] = $user['rating'];
 		$params['gender'] = $user['gender'];

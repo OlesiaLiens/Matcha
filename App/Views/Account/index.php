@@ -96,6 +96,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="#">Account</a></li>
 				<li class=""><a href="/info/index">Information</a></li>
+				<li class=""><a href="/notification/index">Notification</a></li>
 				<li><a href="/settings/index">Settings</a></li>
 				<li><a href="/search/index">Search</a></li>
 				<li><a href="/chat/index">Chat</a></li>
@@ -122,7 +123,7 @@
 			<div class="col-lg-4">
 				<img src="/images/idea.png">
 				<h4>Information</h4>
-				<p> <?= 'Username : ' . $args['username'] . ' ' ?> <br>
+				<p> <?= 'Full Name : ' . $args['first_name'] . ' ' .  $args['last_name']?> <br>
 					<?= 'Preference:' . ' ' . $args['preference'] ?> <br>
 					<?= 'Location:' . ' ' . $args['location'] ?> <br>
 					<?= 'Gender:' . ' ' . $args['gender'] ?> <br>
