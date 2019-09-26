@@ -16,7 +16,7 @@ class Setup extends \Core\Model
 		$db = static::getDB();
 
 
-		$db->exec("DROP TABLE IF EXISTS `users`, `tokens`, `photos`, `likes`, `comments`, `tags`, `users_tags`");
+		$db->exec("DROP TABLE IF EXISTS `users`, `tokens`, `photos`, `likes`, `comments`, `tags`, `users_tags`, `user_action`");
 
 		$db->exec("CREATE TABLE IF NOT EXISTS users(
 			id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -53,10 +53,10 @@ class Setup extends \Core\Model
 			date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 		);");
 
-		$db->exec("CREATE TABLE `likes`(
-			`photo_id` INT NOT NULL,
-			`user_id`  INT NOT NULL
-		);");
+//		$db->exec("CREATE TABLE `likes`(
+//			`photo_id` INT NOT NULL,
+//			`user_id`  INT NOT NULL
+//		);");
 
 		$db->exec("CREATE TABLE tags(
 			id  INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -69,6 +69,19 @@ class Setup extends \Core\Model
 			user_id INTEGER,
 			tag_id  INTEGER, 
 			date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+		);");
+
+		$db->exec("CREATE TABLE IF NOT EXISTS user_action
+		(
+			id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+			first_user     varchar(50)  NOT NULL,
+			second_user     varchar(50)  NOT NULL,
+			see    varchar(50)  DEFAULT '-'  NOT NULL,
+			like_user        varchar(50)   DEFAULT '-' NOT NULL,
+			matched        varchar(255)  DEFAULT '-' NOT NULL,
+			ban     varchar(255)  DEFAULT '-' NOT NULL,
+			break       varchar(50)  DEFAULT '-'  NOT NULL,
+			fake       varchar(50)   DEFAULT '-' NOT NULL
 		);");
 
 		$db->exec("

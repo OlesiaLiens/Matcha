@@ -27,6 +27,7 @@ class User extends \Core\LoginController
 		$user = $user_param->user_param();
 
 		$user_param->rating_increment();
+		$user_param->who_looked();
 
 		$params['id'] = $user['id'];
 		$params['username'] = $user['username'];

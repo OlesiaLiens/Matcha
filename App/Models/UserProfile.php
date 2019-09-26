@@ -43,4 +43,12 @@ class UserProfile extends \Core\Model
 			$update_rating->execute([$this->user_id]);
 		}
 	}
+
+	public function who_looked(){
+		$db = static::getDB();
+
+		$who_check = $db->prepare("INSERT user_action(first_user, second_user, see)
+						VALUES(?, ?, ?)");
+		$who_check->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+	}
 }
