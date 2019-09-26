@@ -30161,9 +30161,9 @@
 			height : 100px
 		}
 	</style>
-	<script type="text/javascript" charset="UTF-8" src="./Document_files/common.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="./Document_files/util.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="./Document_files/geocoder.js"></script>
+<!--	<script type="text/javascript" charset="UTF-8" src="./Document_files/common.js"></script>-->
+<!--	<script type="text/javascript" charset="UTF-8" src="./Document_files/util.js"></script>-->
+<!--	<script type="text/javascript" charset="UTF-8" src="./Document_files/geocoder.js"></script>-->
 </head>
 <body>
 
