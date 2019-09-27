@@ -27,8 +27,8 @@
 						</div>
 					</div>
 					<div class="card-body contacts_body">
-						<ui class="contacts">
-						<li class="active">
+						<ui id="contacts" class="contacts">
+						<!-- <li class="active">
 							<div class="d-flex bd-highlight">
 								<div class="img_cont">
 									<img src="https://www.khaama.com/wp-content/uploads/2019/02/Afghan-Singer-Ghawgha-Taban-880x672-880x672.jpg" class="rounded-circle user_img">
@@ -87,7 +87,7 @@
 									<p>Khadija left 50 mins ago</p>
 								</div>
 							</div>
-						</li>
+						</li> -->
 						</ui>
 					</div>
 					<div class="card-footer"></div>
