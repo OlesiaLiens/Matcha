@@ -14,11 +14,18 @@
 
 const loadMessages = () => {
 	$.ajax({
-		url: 'later',
+		url: '/chat/getdialogues/',
 		type: 'get',
 		success: dialoguesJSON => {
 			let dialogues = JSON.parse(dialoguesJSON);
-			
+			Object.keys(dialogues).forEach(dialogue => {
+				console.log(dialogues[dialogue]);
+				let dialogueLi = document.createElement('li');
+				let dialogueDiv = document.createElement('div');
+				let avatarDiv = document.createElement('div');
+				let infoDiv = document.createElement('div');
+				
+			});
 		}
 	});
 };

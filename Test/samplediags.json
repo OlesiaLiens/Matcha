@@ -1,0 +1,80 @@
+{
+	"chat1" :
+		{
+			"counterpartID" : 13,
+			"counterpartFirstName" : "Maryam",
+			"counterpartLastName" : "Naz",
+			"counterpartAvatar" : "women/woman7.jpg",
+			"lastOnline" : "now",
+			"messages" :
+				[
+					{
+						"sender" : "they",
+						"text" : "Hi, how are you samim?",
+						"time" : "8:40 AM, Today"
+					},
+					{
+						"sender" : "you",
+						"text" : "Hi Maryam i am good tnx how about you?",
+						"time" : "8:55 AM, Today"
+					},
+					{
+						"sender" : "they",
+						"text" : "I am good too, thank you for your chat template",
+						"time" : "9:00 AM, Today"
+					},
+					{
+						"sender" : "you",
+						"text" : "You're welcome Maryam",
+						"time" : "9:05 AM, Today"
+					},
+					{
+						"sender" : "they",
+						"text" : "I am looking for your next templates",
+						"time" : "9:07 AM, Today"
+					},
+					{
+						"sender" : "you",
+						"text" : "Ok, thank you have a good day",
+						"time" : "9:10 AM, Today"
+					},
+					{
+						"sender" : "they",
+						"text" : "Bye, see you",
+						"time" : "9:12 AM, Today"
+					}
+				]
+		},
+	"chat2" :
+		{
+			"counterpartID" : 22,
+			"counterpartFirstName" : "Sahar",
+			"counterpartLastName" : "Darya",
+			"counterpartAvatar" : "women/woman9.jpg",
+			"lastOnline" : "7 mins ago"
+		},
+	"chat3" :
+		{
+			"counterpartID" : 11,
+			"counterpartFirstName" : "Yolduz",
+			"counterpartLastName" : "Rafi",
+			"counterpartAvatar" : "women/woman5.jpg",
+			"lastOnline" : "now"
+		},
+	"chat4" :
+		{
+			"counterpartID" : 746,
+			"counterpartFirstName" : "Nagris",
+			"counterpartLastName" : "Hawa",
+			"counterpartAvatar" : "women/woman218.jpg",
+			"lastOnline" : "30 mins ago"
+		},
+	"chat5" :
+		{
+			"counterpartID" : 27,
+			"counterpartFirstName" : "Khadija",
+			"counterpartLastName" : "Mehr",
+			"counterpartAvatar" : "women/woman11.jpg",
+			"lastOnline" : "50 mins ago"
+		}
+}
