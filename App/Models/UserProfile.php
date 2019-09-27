@@ -50,5 +50,9 @@ class UserProfile extends \Core\Model
 		$who_check = $db->prepare("INSERT user_action(first_user, second_user, see)
 						VALUES(?, ?, ?)");
 		$who_check->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+
+		//todo нужно как-то отправить в notification другого юзера,  $_SESSION['user_id'] этого  юзера и сообщение что он посмотрел его аккаунт
+		//todo добавить кнопку для  like(c функционалом) / ban
+		//todo выводить в account только нужную информацию в зависимости от того, кто смотрит страницу
 	}
 }

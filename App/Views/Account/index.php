@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="../styles/bootstrap.css">
 	<link rel="stylesheet" href="../styles/font-awesome.css">
 	<link rel="stylesheet" href="/styles/main.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
 	<!--		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
 	<!--	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.m,in.css">-->
@@ -44,6 +46,140 @@
 		input {
 			padding-top : 0;
 			width       : 400px;
+		}
+
+
+		ul {
+			margin     : 10px auto;
+			padding-left: 0;
+			text-align : center;
+		}
+
+		@-moz-keyframes rotate {
+			0% {
+				transform : rotate(0deg);
+			}
+			100% {
+				transform : rotate(-360deg);
+			}
+		}
+
+		@-webkit-keyframes rotate {
+			0% {
+				transform : rotate(0deg);
+			}
+			100% {
+				transform : rotate(-360deg);
+			}
+		}
+
+		@-o-keyframes rotate {
+			0% {
+				transform : rotate(0deg);
+			}
+			100% {
+				transform : rotate(-360deg);
+			}
+		}
+
+		@keyframes rotate {
+			0% {
+				transform : rotate(0deg);
+			}
+			100% {
+				transform : rotate(-360deg);
+			}
+		}
+
+		.round {
+			display            : block;
+			position           : absolute;
+			left               : 0;
+			top                : 0;
+			width              : 100%;
+			height             : 100%;
+			padding-top        : 30px;
+			text-decoration    : none;
+			text-align         : center;
+			font-size          : 25px;
+			text-shadow        : 0 1px 0 rgba(255, 255, 255, .7);
+			letter-spacing     : -.065em;
+			font-family        : "Hammersmith One", sans-serif;
+			-webkit-transition : all .25s ease-in-out;
+			-o-transition      : all .25s ease-in-out;
+			-moz-transition    : all .25s ease-in-out;
+			transition         : all .25s ease-in-out;
+			box-shadow         : 2px 2px 7px rgba(0, 0, 0, .2);
+			border-radius      : 300px;
+			z-index            : 1;
+			border-width       : 4px;
+			border-style       : solid;
+		}
+
+		.round:hover {
+			width              : 130%;
+			height             : 130%;
+			left               : -15%;
+			top                : -15%;
+			font-size          : 33px;
+			padding-top        : 38px;
+			-webkit-box-shadow : 5px 5px 10px rgba(0, 0, 0, .3);
+			-o-box-shadow      : 5px 5px 10px rgba(0, 0, 0, .3);
+			-moz-box-shadow    : 5px 5px 10px rgba(0, 0, 0, .3);
+			box-shadow         : 5px 5px 10px rgba(0, 0, 0, .3);
+			z-index            : 2;
+			border-size        : 10px;
+			-webkit-transform  : rotate(-360deg);
+			-moz-transform     : rotate(-360deg);
+			-o-transform       : rotate(-360deg);
+			transform          : rotate(-360deg);
+		}
+
+		li.like {
+			list-style : none;
+			position   : relative;
+			display    : inline-block;
+			width      : 100px;
+			height     : 100px;
+		}
+
+
+		div.red {
+			background-color : whitesmoke;
+			color            : black;
+			font-size: 26px;
+			border-color     :rgba(1, 151, 171, 0.5);
+			text-decoration: none;
+		}
+
+		div.red:hover {
+			background-color: whitesmoke;
+			color : black;
+			border-color     :rgba(1, 151, 171, 0.5);
+		}
+
+		.button-like:focus {
+			background-color : transparent;
+		}
+
+		.button-like:hover {
+			border-color     : #cc4b37;
+			background-color : transparent;
+		}
+
+		.liked {
+			background-color : #ff7878;
+			color: whitesmoke;
+			border-color     : #cc4b37;
+		}
+
+		.liked:focus {
+			background-color : #ff7878;
+		}
+
+		.liked:hover {
+			background-color : #ff7878;
+			border-color     : #cc4b37;
 		}
 
 		[hidden] {
@@ -94,7 +230,7 @@
 
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="#">Account</a></li>
+				<li class="active"><a href="/account/index">Account</a></li>
 				<li class=""><a href="/info/index">Information</a></li>
 				<li class=""><a href="/notification/index">Notification</a></li>
 				<li><a href="/settings/index">Settings</a></li>
@@ -120,10 +256,10 @@
 	<section class="container w">
 		<div class="row centered">
 
-			<div class="col-lg-4">
+			<div class="col-lg-3">
 				<img src="/images/idea.png">
 				<h4>Information</h4>
-				<p> <?= 'Full Name : ' . $args['first_name'] . ' ' .  $args['last_name']?> <br>
+				<p> <?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
 					<?= 'Preference:' . ' ' . $args['preference'] ?> <br>
 					<?= 'Location:' . ' ' . $args['location'] ?> <br>
 					<?= 'Gender:' . ' ' . $args['gender'] ?> <br>
@@ -131,7 +267,7 @@
 				</p>
 			</div>
 
-			<div class="col-lg-4">
+			<div class="col-lg-3">
 				<img src="/images/plane.png">
 				<h4>Interests</h4>
 				<p><?= $args[0] ?? null ?? null ?> <br></p>
@@ -142,10 +278,17 @@
 				<p><?= $args[5] ?? null ?> <br></p>
 			</div>
 
-			<div class="col-lg-4">
+			<div class="col-lg-3">
 				<img src="/images/planet.png">
 				<h4>Fame Rating</h4>
 				<p> <?= $args['rating'] ?> </p>
+			</div>
+
+			<div class="col-lg-3">
+				<ul >
+					<li class="like"><div id="like_user" href="#" class="round red">&#10084;</div>
+					</li>
+				</ul>
 			</div>
 
 		</div>
@@ -238,48 +381,10 @@
 
 </main>
 
-<!--<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">-->
-<!--	<!-- Position it -->
-<!--	<div style="position: absolute; top: 0; right: 0;">-->
-<!---->
-<!--		<!-- Then put toasts within -->
-<!--		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">-->
-<!--			<div class="toast-header">-->
-<!--				<img src="..." class="rounded mr-2" alt="...">-->
-<!--				<strong class="mr-auto">Bootstrap</strong>-->
-<!--				<small class="text-muted">just now</small>-->
-<!--				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">-->
-<!--					<span aria-hidden="true">&times;</span>-->
-<!--				</button>-->
-<!--			</div>-->
-<!--			<div class="toast-body">-->
-<!--				See? Just like this.-->
-<!--			</div>-->
-<!--		</div>-->
-<!---->
-<!--		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">-->
-<!--			<div class="toast-header">-->
-<!--				<img src="..." class="rounded mr-2" alt="...">-->
-<!--				<strong class="mr-auto">Bootstrap</strong>-->
-<!--				<small class="text-muted">2 seconds ago</small>-->
-<!--				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">-->
-<!--					<span aria-hidden="true">&times;</span>-->
-<!--				</button>-->
-<!--			</div>-->
-<!--			<div class="toast-body">-->
-<!--				Heads up, toasts will stack automatically-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-<!--</div>-->
-
 <div class="hiden"></div>
 
 <footer>
 </footer>
-
-
-<script src="/js/photo.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/styles/bootstrap.min.js"></script>
@@ -289,47 +394,7 @@
 		crossorigin="anonymous"></script>
 
 
-<!--<script src="/js/hullabaloo.js"></script>
-<!--<script>-->
-<!--	var hulla = new hullabaloo();-->
-<!---->
-<!--	hulla.send("Success Message", "success");-->
-<!--	hulla.send("Info Message", "info");-->
-<!--	hulla.send("Warning Message", "warning");-->
-<!--	hulla.send('Danger Message', 'danger');-->
-<!--</script>-->
-
-<script>
-	//var hulla = new hullabaloo({
-	//	ele: "body",
-	//	offset: {
-	//		from: "top",
-	//		amount: 20
-	//	},
-	//	align: "right",
-	//	width: 250,
-	//	delay: 5000,
-	//	allow_dismiss: true,
-	//	stackup_spacing: 10,
-	//	// notification message here
-	//	text: "<a href="https: www.jqueryscript.net / tags.php ? /Notification/">Notification</a> Message Here",
-	//	icon: {
-	//		success: "fa fa-check-circle",
-	//		info: "fa fa-info-circle",
-	//		warning: "fa fa-life-ring",
-	//		danger: "fa fa-exclamation-circle",
-	//		light: "fa fa-sun",
-	//		dark: "fa fa-moon"
-	//	},
-	//
-	//	status: "danger",
-	//	alertClass: "",
-	//	fnStart: false,
-	//	fnEnd: false,
-	//	fnEndHide: false,
-	//});
-</script>
-
+<script type="text/javascript" src="/js/actions.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
