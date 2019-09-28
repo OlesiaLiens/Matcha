@@ -17,6 +17,24 @@ class Actions extends \Core\Model
 	public function setUserLike()
 	{
 		$db = static::getDB();
+
+		$get_id = $db->prepare("SELECT id FROM users WHERE email = ?");
+		$this->user_id = $get_id->execute([$this->user_email]);
+		$this->user_id = $get_id->fetchColumn();
+
+		if ($this->user_id) {
+//
+			$sql = "INSERT INTO
+					user_action(first_user, second_user, liked)
+				VALUES
+					(:first_user, :second_user, 'liked')
+				ON DUPLICATE KEY UPDATE
+					liked = 'liked'";
+			$likedStatement = $db->prepare($sql);
+			$likedStatement->execute(array(
+				':first_user'  => $this->user_id,
+				':second_user' => $_SESSION['user_id']));
+		}
 //
 //		$get_id = $db->prepare("SELECT id FROM users WHERE email = ?");
 //		$this->user_id = $get_id->execute([$this->user_email]);

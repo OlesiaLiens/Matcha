@@ -342,6 +342,6 @@ VALUES
 		)");
 
 		$db->exec("INSERT USERS(username, first_name, last_name, email, password, active, token)
-						VALUES('olesia', 'olesia', 'liens', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
+						VALUES('admin', 'admin', 'admin', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
 	}
 }
