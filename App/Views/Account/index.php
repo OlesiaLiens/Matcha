@@ -50,9 +50,9 @@
 
 
 		ul {
-			margin     : 10px auto;
-			padding-left: 0;
-			text-align : center;
+			margin       : 10px auto;
+			padding-left : 0;
+			text-align   : center;
 		}
 
 		@-moz-keyframes rotate {
@@ -147,15 +147,15 @@
 		div.red {
 			background-color : whitesmoke;
 			color            : black;
-			font-size: 26px;
-			border-color     :rgba(1, 151, 171, 0.5);
-			text-decoration: none;
+			font-size        : 26px;
+			border-color     : rgba(1, 151, 171, 0.5);
+			text-decoration  : none;
 		}
 
 		div.red:hover {
-			background-color: whitesmoke;
-			color : black;
-			border-color     :rgba(1, 151, 171, 0.5);
+			background-color : whitesmoke;
+			color            : black;
+			border-color     : rgba(1, 151, 171, 0.5);
 		}
 
 		.button-like:focus {
@@ -169,7 +169,7 @@
 
 		.liked {
 			background-color : #ff7878;
-			color: whitesmoke;
+			color            : whitesmoke;
 			border-color     : #cc4b37;
 		}
 
@@ -285,10 +285,12 @@
 			</div>
 
 			<div class="col-lg-3">
-				<ul >
-					<li class="like"><div id="like_user" href="#" class="round red">&#10084;</div>
+				<ul>
+					<li class="like">
+						<div id="like_user" class="round red">&#10084;</div>
 					</li>
 				</ul>
+				<p class="user_email" id="<?= $args['email']  ?>" style="display: none"></p>
 			</div>
 
 		</div>

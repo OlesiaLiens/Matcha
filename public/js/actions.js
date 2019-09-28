@@ -1,4 +1,6 @@
 var like = document.getElementById('like_user');
+var user_email = document.getElementsByClassName('user_email')[0].id;
+
 console.log('It works');
 console.log('Like button', like);
 if (like)
@@ -9,24 +11,26 @@ function likeUser() {
 		like.classList.remove('red');
 		like.classList.add('liked');
 
-		const xhr = new XMLHttpRequest();
-		let url = '/actions/like/' + fixedEncodeURIComponent2(JSON.stringify('liked'));
-		xhr.open("GET", url);
-		xhr.onload = () => {console.log(xhr.responseText)};
-		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-		// xhr.send('tags=' + encodeURIComponent(JSON.stringify(tags)));
-		xhr.send();
+		$.ajax({
+			url: '/actions/like/',
+			type: 'post',
+			dataType: 'json',
+			//contentType: 'application/json',
+			data: {"data": JSON.stringify(user_email)}
+		})
+
 
 	} else {
 		like.classList.remove('liked');
 		like.classList.add('red');
-		const xhr = new XMLHttpRequest();
-		let url = '/actions/unliked/' + fixedEncodeURIComponent2(JSON.stringify('unliked'));
-		xhr.open("GET", url);
-		xhr.onload = () => {console.log(xhr.responseText)};
-		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-		// xhr.send('tags=' + encodeURIComponent(JSON.stringify(tags)));
-		xhr.send();
+
+		$.ajax({
+			url: '/actions/unlike/',
+			type: 'post',
+			dataType: 'json',
+			//contentType: 'application/json',
+			data: {"data": JSON.stringify(user_email)}
+		})
 	}
 }
 

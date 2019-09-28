@@ -74,10 +74,10 @@ class Setup extends \Core\Model
 		$db->exec("CREATE TABLE IF NOT EXISTS user_action
 		(
 			id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			first_user     varchar(50)  NOT NULL,
-			second_user     varchar(50)  NOT NULL,
+			first_user     varchar(50)   DEFAULT '-' NOT NULL,
+			second_user     varchar(50)  DEFAULT '-'  NOT NULL,
 			see    varchar(50)  DEFAULT '-'  NOT NULL,
-			like_user        varchar(50)   DEFAULT '-' NOT NULL,
+			liked        varchar(50)   DEFAULT '-' NOT NULL,
 			matched        varchar(255)  DEFAULT '-' NOT NULL,
 			ban     varchar(255)  DEFAULT '-' NOT NULL,
 			break       varchar(50)  DEFAULT '-'  NOT NULL,

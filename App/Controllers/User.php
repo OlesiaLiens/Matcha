@@ -30,6 +30,7 @@ class User extends \Core\LoginController
 		$user_param->who_looked();
 
 		$params['id'] = $user['id'];
+		$params['email'] = $user['email'];
 		$params['username'] = $user['username'];
 		$params['first_name'] = $user['first_name'];
 		$params['last_name'] = $user['last_name'];

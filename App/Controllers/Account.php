@@ -17,6 +17,7 @@ class Account extends \Core\LoginController
 		}
 		$params = [];
 
+//		$params['email'] = $user['email'];
 		$params['username'] = $user['username'];
 		$params['first_name'] = $user['first_name'];
 		$params['last_name'] = $user['last_name'];
