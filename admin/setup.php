@@ -8,7 +8,7 @@ $connection = new PDO($DB_DSN, $DB_USER, $DB_PASS, $options);
 
 // Create an empty database
 $connection->exec("DROP DATABASE IF EXISTS " . $DB_NAME);
-$connection->exec("CREATE DATABASE" . $DB_NAME);
+$connection->exec("CREATE DATABASE " . $DB_NAME);
 print('DB created' . PHP_EOL);
 $connection->exec("use " . $DB_NAME);
 print('Connected to DB' . PHP_EOL);

@@ -4,7 +4,7 @@
 include 'database.php';
 
 print('U/N: ' . $DB_USER . PHP_EOL . 'P/W: ' . $DB_PASS . PHP_EOL);
-$connection = new PDO($DB_DSN, $DB_USER, $DB_PASS, $options);
+$connection = new PDO($DB_SHORTCUT, $DB_USER, $DB_PASS, $options);
 
 $connection->exec("INSERT 
 				INTO
