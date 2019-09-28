@@ -34,8 +34,14 @@ $connection->exec("INSERT
 
 print('Tags created' . PHP_EOL);
 
-$connection->exec("INSERT
-					INTO
+$connection->exec("INSERT INTO
+						users(username, first_name, last_name, email, password, active, token)
+					VALUES
+						('admin', 'Admin Ricardo Jose Francisco de Paula', 'De La Santa-Maria Adminez', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
+
+print('Added admin user' . PHP_EOL);
+
+$connection->exec("INSERT INTO
 						users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatars)
 					VALUES
 						('test@mail.com', 'user', 'Klava', 'Klava', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'both', '44', 'Kiev',  '50.4547', '30.5238', '/default/jean.jpg'),
