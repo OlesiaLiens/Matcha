@@ -24,7 +24,7 @@ const loadMessages = () => {
 				let contacts = document.getElementById('contacts');
 				let dialogueLi = document.createElement('li');
 				dialogueLi.setAttribute('class', 'dialogue');
-				// dialogueLi.onclick = openDialogue;
+				dialogueLi.onclick = openDialogue;
 				let dialogueDiv = document.createElement('div');
 				dialogueDiv.setAttribute('class', 'd-flex bd-highlight');
 				let avatarDiv = document.createElement('div');
@@ -54,21 +54,31 @@ const loadMessages = () => {
 	});
 };
 
-function getOnlineClass() {return 'online-icon'}
-function getOnlineText() {return 'kek'}
+const openDialogue = event => {
+	let target;
+	if (event.target.classList.contains('dialogue'))
+		target = event.target;
+	else
+		target = event.target.closest('.dialogue');
 
-// elem.append(
-//     $.el('div', {'class': 'wrapper'}).append(
-//         $.el('div', {'class': 'inner'}).append(
-//             $.el('span').text('Some text')
-//         )
-//     )
-//     .append(
-//         $.el('div', {'class': 'inner'}).append(
-//             $.el('span').text('Other text')
-//         )
-//     )
-// );
+	Array.from(document.getElementsByClassName('dialogue')).forEach(
+		dialogue => {dialogue.classList.remove('active')});
+	target.classList.add('active');
+}
+
+const getOnlineClass = dialogue => {
+	if (dialogue.lastOnline == 'now')
+		return 'online_icon'
+	else
+		return 'online_icon offline'
+}
+
+const getOnlineText = dialogue => {
+	if (dialogue.lastOnline == 'now')
+		return `${dialogue.firstName} is online`
+	else
+		return `${dialogue.firstName} was online ${dialogue.lastOnline}`
+}
 
 $(document).ready(() => {
 	$('#action_menu_btn').click(() =>{
