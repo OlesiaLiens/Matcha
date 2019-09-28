@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
+
+#headerwrap {
+	background: url(../images/a.jpg) no-repeat center top;
+	opacity: 0.8;
+	margin-top: -10px;
+	padding-top: 20px;
+	text-align: center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 500px;
+	width: 100%;
+
+	background-size: 100%;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#headerwrap h1 {
+	margin-top: 200px;
+	font-weight: 300;
+	color: white;
+	font-size: 60px;
+	letter-spacing: 3px;
+}
+
+#headerwrap h2 {
+color: white;
+font-size: 25px;
+font-weight: 300;
+letter-spacing: 2px;
+}
+
+#mycolor {
+	background: #e0e0e0;
+}
+
+.w {
+	padding-top: 50px;
+	padding-bottom: 40px;
+
+}
+
+.w p {
+
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 15px;
+	margin-bottom: 7px;
+}
+
+.w h4 {
+	font-size: 25px;
+}
+
+.w img {
+	 width: 30px;
+	 height: 30px;
+}
+
+#dg {
+	background: #e0e0e0;
+	padding-top: 25px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+#dg h4 {
+	font-size: 50px;
+}
+
+#dg img {
+	width: 290px;
+	height: 290px;
+	border-radius: 140px;
+}
+
+.tilt {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.tilt:hover {
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+.wb {
+	padding-top: 35px;
+	margin-bottom: 20px;
+}
+
+.wb h4 {
+	padding-bottom: 20px;
+	font-size: 35px;
+}
+
+.wb img {
+	padding-top: 20px;
+}
+
+#lg {
+	background: #ebebeb;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+#lg h4 {
+	font-size: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#lg  img {
+    width: 170px;
+    height: 200px;
+}
+
+#red {
+	background: #ff7878;
+	padding-top: 50px;
+	padding-bottom: 135px;
+}
+#red h4 {
+	color: white;
+	font-size: 35px;
+}
+#red p {
+	color: white;
+}
+
+
+
+

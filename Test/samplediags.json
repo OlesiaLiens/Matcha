@@ -2,9 +2,9 @@
 	"chat1" :
 		{
 			"counterpartID" : 13,
-			"counterpartFirstName" : "Maryam",
-			"counterpartLastName" : "Naz",
-			"counterpartAvatar" : "women/woman7.jpg",
+			"firstName" : "Maryam",
+			"lastName" : "Naz",
+			"avatar" : "women/woman7.jpg",
 			"lastOnline" : "now",
 			"messages" :
 				[
