@@ -48,24 +48,36 @@ class UserProfile extends \Core\Model
 	{
 		$db = static::getDB();
 
-		$see = $db->prepare("SELECT see FROM user_action WHERE first_user = ?");
-		$see = $see->execute(['$this->user_id']);
-		if ($see) {
-			$who_check = $db->prepare("INSERT user_action(first_user, second_user, see)
-						VALUES(?, ?, ?)");
-			$who_check->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+		$check = $db->prepare("SELECT COUNT(*) FROM user_action WHERE  first_user = ? AND second_user = ?");
+		$res = $check->execute([$this->user_id, $_SESSION['user_id']]);
+
+		if ($res) {
+			$update = $db->prepare("UPDATE user_action SET see  = ? WHERE first_user = ? AND second_user = ?");
+			$update->execute(['see', $this->user_id, $_SESSION['user_id']]);
 		}
-
-		$see = $db->prepare("SELECT see FROM user_action WHERE first_user = ?");
-		$see = $see->execute(['$this->user_id']);
-		if ($see) {
-			$who_check = $db->prepare("UPDATE user_action SET first_user = ?, second_user = ?, see = 'see'");
-			$who_check->execute([$this->user_id, $_SESSION['user_id']]);
+		if ($res === false) {
+			$update = $db->prepare("INSERT INTO user_action(first_user, second_user, see) VALUES (?, ?, ?)");
+			$update->execute([$this->user_id, $_SESSION['user_id'], 'see']);
 		}
-
-
-		//todo нужно как-то отправить в notification другого юзера,  $_SESSION['user_id'] этого  юзера и сообщение что он посмотрел его аккаунт
-		//todo добавить кнопку / ban
-		//todo выводить в account только нужную информацию в зависимости от того, кто смотрит страницу
 	}
+
+//		$see = $db->prepare("SELECT see FROM user_action WHERE first_user = ?");
+//		$see = $see->execute(['$this->user_id']);
+//		if ($see) {
+//			$who_check = $db->prepare("INSERT user_action(first_user, second_user, see)
+//						VALUES(?, ?, ?)");
+//			$who_check->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+//		}
+//		$see = $db->prepare("SELECT see FROM user_action WHERE first_user = ?");
+//		$see = $see->execute(['$this->user_id']);
+//		if ($see) {
+//			$who_check = $db->prepare("UPDATE user_action SET first_user = ?, second_user = ?, see = 'see'");
+//			$who_check->execute([$this->user_id, $_SESSION['user_id']]);
+//		}
+
+
+	//todo нужно как-то отправить в notification другого юзера,  $_SESSION['user_id'] этого  юзера и сообщение что он посмотрел его аккаунт
+	//todo добавить кнопку / ban
+	//todo выводить в account только нужную информацию в зависимости от того, кто смотрит страницу
+
 }
