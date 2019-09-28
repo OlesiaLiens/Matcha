@@ -314,23 +314,25 @@
 				<p> <?= $args['rating'] ?> </p>
 			</div>
 
-			<div class="col-lg-3">
-				<ul>
-					<li class="like">
-						<div id="like_user" class="round red">&#10084;</div>
-					</li>
-				</ul>
-				<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
-			</div>
+			<?php if ($args['id'] != $_SESSION['user_id']) : ?>
+				<div class="col-lg-3">
+					<ul>
+						<li class="like">
+							<div id="like_user" class="round red">&#10084;</div>
+						</li>
+					</ul>
+					<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+				</div>
 
-			<div class="col-lg-3">
-				<ul>
-					<li class="like">
-						<div id="ban_user" class="round ban">&#10060;</div>
-					</li>
-				</ul>
-				<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
-			</div>
+				<div class="col-lg-3">
+					<ul>
+						<li class="like">
+							<div id="ban_user" class="round ban">&#10060;</div>
+						</li>
+					</ul>
+					<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+				</div>
+			<?php endif; ?>
 
 		</div>
 	</section>
@@ -343,10 +345,12 @@
 				<br/>
 				<div class="col-lg-4">
 					<div class="tilt">
-						<label for="computer" class="btn btn-default" style="display: inline-table">
-							<div id="image"></div>
-							Upload avatar<input type="file" id="computer" hidden style="display:none">
-						</label>
+						<?php if ($args['id'] === $_SESSION['user_id']) : ?>
+							<label for="computer" class="btn btn-default" style="display: inline-table">
+								<div id="image"></div>
+								Upload avatar<input type="file" id="computer" hidden style="display:none">
+							</label>
+						<?php endif; ?>
 						<p class="error" id="show_errors"></p>
 						<img id="avatar" src="<?= $args['avatars'] ?>" alt="img1">
 					</div>
@@ -371,20 +375,18 @@
 
 			<div class="col-lg-10 col-lg-offset-1">
 				<h4>More photos</h4>
-				<p>We travel, initially, to lose ourselves; and we travel, next, to find ourselves. We travel to open
-					our hearts and eyes and learn more about the world than our newspapers will accommodate. We travel
-					to bring what little we can, in our ignorance and knowledge, to those parts of the globe whose
-					riches are differently dispersed. And we travel, in essence, to become young fools again -- to slow
-					time down and get taken in, and fall in love once more.</p>
+				<p></p>
 			</div>
 
 			<div class="col-lg-2"></div>
 			<div class="col-lg-10 col-lg-offset-1">
 				<?php if (count($args['photos']) < 4): ?>
-					<label for="photos" class="btn btn-default">
-						<div id="image_2"></div>
-						Upload photos<input type="file" id="photos" hidden style="display:none">
-					</label>
+					<?php if ($args['id'] === $_SESSION['user_id']) : ?>
+						<label for="photos" class="btn btn-default">
+							<div id="image_2"></div>
+							Upload photos<input type="file" id="photos" hidden style="display:none">
+						</label>
+					<?php endif; ?>
 					<p class="error" id="show_photos_errors"></p>
 					<img id="empty_photo" src="" alt="img" class="img-responsive" style="display: none">
 				<?php endif; ?>
@@ -446,5 +448,6 @@
 		crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="/js/position.js"></script>
+<script type="text/javascript" src="/js/photo.js"></script>
 </body>
 </html>

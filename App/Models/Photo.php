@@ -32,6 +32,19 @@ class Photo extends \Core\Model
 		return [];
 	}
 
+		public function getAllUserPhotos($user_id)
+	{
+		$db = static::getDB();
+
+		$all_photos = $db->prepare("SELECT * FROM photos WHERE user_id = ? ORDER BY date DESC");
+		$all_photos->execute([$user_id]);
+		$row = $all_photos->fetchAll(PDO::FETCH_ASSOC);
+		if ($row) {
+			return $row;
+		}
+		return [];
+	}
+
 	public function saveToDB($img)
 	{
 		session_start();

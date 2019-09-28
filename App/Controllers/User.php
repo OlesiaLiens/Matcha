@@ -42,7 +42,7 @@ class User extends \Core\LoginController
 		$params['bday'] = $user['bday'];
 		$params['bio'] = $user['bio'];
 		$all_photos = new PhotoModel();
-		$params['photos'] = $all_photos->getAllPhotos();
+		$params['photos'] = $all_photos->getAllUserPhotos($user['id']);
 
 		View::render('Account/index.php', $params);
 	}
