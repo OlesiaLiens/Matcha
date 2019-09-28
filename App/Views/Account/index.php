@@ -290,7 +290,7 @@
 						<div id="like_user" class="round red">&#10084;</div>
 					</li>
 				</ul>
-				<p class="user_email" id="<?= $args['email']  ?>" style="display: none"></p>
+				<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
 			</div>
 
 		</div>
