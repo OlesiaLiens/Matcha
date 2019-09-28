@@ -13,8 +13,18 @@ class Actions extends \Core\LoginController
 		$res = $like->setUserLike();
 	}
 
-	public function unlikeAction($params){
+	public function unLikeAction($params)
+	{
 
 	}
 
+	public function banAction($params)
+	{
+
+	}
+
+	public function unBanAction($params)
+	{
+
+	}
 }

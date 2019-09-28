@@ -158,6 +158,36 @@
 			border-color     : rgba(1, 151, 171, 0.5);
 		}
 
+		div.ban {
+			background-color : whitesmoke;
+			color            : black;
+			font-size        : 26px;
+			border-color     : red;
+			text-decoration  : none;
+		}
+
+		div.ban:hover {
+			background-color : whitesmoke;
+			color            : black;
+			border-color     : red;
+		}
+
+		.baned {
+			background-color : #2d2d2d;;
+			color            : #2d2d2d;;
+			border-color     : #cc4b37;
+		}
+
+		.baned:focus {
+			background-color : #2d2d2d;
+		}
+
+		.baned:hover {
+			background-color : #2d2d2d;
+			border-color     : #cc4b37;
+		}
+
+
 		.button-like:focus {
 			background-color : transparent;
 		}
@@ -288,6 +318,15 @@
 				<ul>
 					<li class="like">
 						<div id="like_user" class="round red">&#10084;</div>
+					</li>
+				</ul>
+				<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+			</div>
+
+			<div class="col-lg-3">
+				<ul>
+					<li class="like">
+						<div id="ban_user" class="round ban">&#10060;</div>
 					</li>
 				</ul>
 				<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
