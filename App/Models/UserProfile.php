@@ -48,17 +48,28 @@ class UserProfile extends \Core\Model
 	{
 		$db = static::getDB();
 
-		$check = $db->prepare("SELECT COUNT(*) FROM user_action WHERE  first_user = ? AND second_user = ?");
-		$res = $check->execute([$this->user_id, $_SESSION['user_id']]);
+		$sql = "INSERT INTO
+					user_actions (first_user, second_user, see)
+				VALUES
+					(:first_user, :second_user, 'see')
+				ON DUPLICATE KEY UPDATE
+					see = 'see'";
+		$seeStatement = $db->prepare($sql);
+		$seeStatement->execute(array(
+			':first_user' => $this->user_id,
+			':second_user' => $_SESSION['user_id']));
 
-		if ($res) {
-			$update = $db->prepare("UPDATE user_action SET see  = ? WHERE first_user = ? AND second_user = ?");
-			$update->execute(['see', $this->user_id, $_SESSION['user_id']]);
-		}
-		if ($res === false) {
-			$update = $db->prepare("INSERT INTO user_action(first_user, second_user, see) VALUES (?, ?, ?)");
-			$update->execute([$this->user_id, $_SESSION['user_id'], 'see']);
-		}
+		// $check = $db->prepare("SELECT COUNT(*) FROM user_action WHERE  first_user = ? AND second_user = ?");
+		// $res = $check->execute([$this->user_id, $_SESSION['user_id']]);
+
+		// if ($res) {
+		// 	$update = $db->prepare("UPDATE user_action SET see  = ? WHERE first_user = ? AND second_user = ?");
+		// 	$update->execute(['see', $this->user_id, $_SESSION['user_id']]);
+		// }
+		// if ($res === false) {
+		// 	$update = $db->prepare("INSERT INTO user_action(first_user, second_user, see) VALUES (?, ?, ?)");
+		// 	$update->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+		// }
 	}
 
 //		$see = $db->prepare("SELECT see FROM user_action WHERE first_user = ?");
