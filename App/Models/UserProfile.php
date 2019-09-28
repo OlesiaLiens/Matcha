@@ -49,7 +49,7 @@ class UserProfile extends \Core\Model
 		$db = static::getDB();
 
 		$sql = "INSERT INTO
-					user_actions (first_user, second_user, see)
+					user_action (first_user, second_user, see)
 				VALUES
 					(:first_user, :second_user, 'see')
 				ON DUPLICATE KEY UPDATE
