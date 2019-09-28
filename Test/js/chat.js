@@ -12,16 +12,6 @@
 //      "*%%%%%%**~  ""    "**"`    //
 //——————————————————————————————————//
 
-/* Declare a jQuery function that creates an element
-   with given properties */ 
-$.extend({
-	elem: function(elem, props) {
-		var $elem = $(document.createElement(elem));
-		$elem.attr(props);
-		return $elem;
-	}
-});
-
 const loadMessages = () => {
 	$.ajax({
 		url: './getJSON.php',
@@ -30,31 +20,35 @@ const loadMessages = () => {
 			let dialogues = JSON.parse(dialoguesJSON);
 			Object.values(dialogues).forEach(dialogue => {
 				console.log(dialogue);
+
+				let contacts = document.getElementById('contacts');
 				let dialogueLi = document.createElement('li');
-				let dialogueDiv = document.createElement('div');
-				let avatarDiv = document.createElement('div');
-				let infoDiv = document.createElement('div');
-				
 				dialogueLi.setAttribute('class', 'dialogue');
 				// dialogueLi.onclick = openDialogue;
-				$('#contacts').append(dialogueLi.append(
-					$.elem('div', {'class' : 'd-flex bd-highlight'}).append(
-						$.elem('div', {'class' : 'img_cont'}).append(
-							$.elem('img', {
-								'src' : '',
-								'class' : 'rounded-circle user_img'
-							}).append(
-							$.elem('span', {'class' : getOnlineClass(dialogue)})
-						)
-					).append(
-						$.elem('div', {'class' : 'user_info'}).append(
-							$.elem('span')
-							.text('${dialogue[firstName]} ${dialogue[lastName]}')	
-						).append(
-							$.elem('p').text(getOnlineText(dialogue))
-						)
-					)
-				)));
+				let dialogueDiv = document.createElement('div');
+				dialogueDiv.setAttribute('class', 'd-flex bd-highlight');
+				let avatarDiv = document.createElement('div');
+				avatarDiv.setAttribute('class', 'img_cont');
+				let avatar = document.createElement('img');
+				avatar.setAttribute('class', 'rounded-circle user_img');
+				avatar.src = dialogue.avatar;
+				let onlineIcon = document.createElement('span');
+				onlineIcon.setAttribute('class', getOnlineClass(dialogue));
+				let infoDiv = document.createElement('div');
+				infoDiv.setAttribute('class', 'user_info');
+				let nameDiv = document.createElement('span');
+				nameDiv.innerText = `${dialogue.firstName} ${dialogue.lastName}`;
+				let onlineText = document.createElement('p');
+				onlineText.innerText = getOnlineText(dialogue);
+
+				avatarDiv.appendChild(avatar);
+				avatarDiv.appendChild(onlineIcon);
+				infoDiv.appendChild(nameDiv);
+				infoDiv.appendChild(onlineText);
+				dialogueDiv.appendChild(avatarDiv);
+				dialogueDiv.appendChild(infoDiv);
+				dialogueLi.appendChild(dialogueDiv);
+				contacts.appendChild(dialogueLi);
 			});
 		}
 	});

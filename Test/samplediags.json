@@ -48,33 +48,33 @@
 	"chat2" :
 		{
 			"counterpartID" : 22,
-			"counterpartFirstName" : "Sahar",
-			"counterpartLastName" : "Darya",
-			"counterpartAvatar" : "women/woman9.jpg",
+			"firstName" : "Sahar",
+			"lastName" : "Darya",
+			"avatar" : "women/woman10.jpg",
 			"lastOnline" : "7 mins ago"
 		},
 	"chat3" :
 		{
 			"counterpartID" : 11,
-			"counterpartFirstName" : "Yolduz",
-			"counterpartLastName" : "Rafi",
-			"counterpartAvatar" : "women/woman5.jpg",
+			"firstName" : "Yolduz",
+			"lastName" : "Rafi",
+			"avatar" : "women/woman5.jpg",
 			"lastOnline" : "now"
 		},
 	"chat4" :
 		{
 			"counterpartID" : 746,
-			"counterpartFirstName" : "Nagris",
-			"counterpartLastName" : "Hawa",
-			"counterpartAvatar" : "women/woman218.jpg",
+			"firstName" : "Nagris",
+			"lastName" : "Hawa",
+			"avatar" : "women/woman97.jpg",
 			"lastOnline" : "30 mins ago"
 		},
 	"chat5" :
 		{
 			"counterpartID" : 27,
-			"counterpartFirstName" : "Khadija",
-			"counterpartLastName" : "Mehr",
-			"counterpartAvatar" : "women/woman11.jpg",
+			"firstName" : "Khadija",
+			"lastName" : "Mehr",
+			"avatar" : "women/woman11.jpg",
 			"lastOnline" : "50 mins ago"
 		}
 }
