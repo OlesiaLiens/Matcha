@@ -14,6 +14,7 @@ class Login extends \Core\Model
 	private $username;
 	private $password;
 	private $user_id;
+	private $user;
 
 	public function __construct(array $data)
 	{
