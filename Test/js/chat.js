@@ -12,7 +12,18 @@
 //      "*%%%%%%**~  ""    "**"`    //
 //——————————————————————————————————//
 
+let useravatar = '';
 let dialogues;
+let counterpart;
+let msgCounter;
+
+const getAvatar = () => {
+	$.ajax({
+		url: './getAvatar.php',
+		type: 'get',
+		success: response => {useravatar = response}
+	});
+}
 
 const loadMessages = () => {
 	$.ajax({
@@ -22,7 +33,6 @@ const loadMessages = () => {
 			dialogues = JSON.parse(dialoguesJSON);
 			Object.keys(dialogues).forEach(key => {
 				let dialogue = dialogues[key];
-				console.log(dialogue);
 
 				let contacts = document.getElementById('contacts');
 				let dialogueLi = document.createElement('li');
@@ -65,7 +75,7 @@ const openDialogue = event => {
 	else
 		target = event.target.closest('.dialogue');
 	let selectedDialogue = target.getAttribute('name');
-	let counterpart = dialogues[selectedDialogue];
+	counterpart = dialogues[selectedDialogue];
 
 	Array.from(document.getElementsByClassName('dialogue')).forEach(
 		dialogue => {dialogue.classList.remove('active')});
@@ -74,29 +84,47 @@ const openDialogue = event => {
 	$('#selectedAvatar').attr('src', counterpart.avatar);
 	$('#title').text(`Chat with ${counterpart.firstName} ${counterpart.lastName}`);
 	$('#selectedOnline').attr('class', getOnlineClass(counterpart));
-	$('#counter').text(`${Object.keys(counterpart.messages).length} messages`);
+	msgCounter = Object.keys(counterpart.messages).length;
+	$('#counter').text(`${msgCounter} messages`);
 
-	Array.from(counterpart.messages).forEach(message =>{
-		let messageBox = document.createElement('div');
-		let just = (message.sender == 'they') ? 'start' : 'end';
-		messageBox.setAttribute('class', `d-flex justify-content-${just} mb-4`);
+	$('#messagesBlock').empty();
+	Array.from(counterpart.messages).forEach(drawMessage);
+}
 
-		let avatarDiv = document.createElement('div');
-		avatarDiv.setAttribute('class', 'img_cont_msg');
-		let avatar = document.createElement('img');
-		avatar.setAttribute('class', 'rounded-circle user_img_msg');
-		let userpic = (message.sender == 'they') ? message.avatar : dialogues.userpic;
-		avatar.setAttribute('src', userpic);
+const drawMessage = message => {
+	console.log(message);
+	let messageBox = document.createElement('div');
+	let just = (message.sender == 'they') ? 'start' : 'end';
+	messageBox.setAttribute('class', `d-flex justify-content-${just} mb-4`);
 
-		let messageDiv = document.createElement('div');
-		messageDiv.setAttribute('class', 'msg_cotainer');
-		messageDiv.innerText = message.text;
-		let messageTime = document.createElement('span');
-		messageTime.setAttribute('class', 'msg_time');
-		messageTime.innerText = message.time;
+	let avatarDiv = document.createElement('div');
+	avatarDiv.setAttribute('class', 'img_cont_msg');
+	let avatar = document.createElement('img');
+	avatar.setAttribute('class', 'rounded-circle user_img_msg');
+	let userpic = message.sender == 'they' ? counterpart.avatar : useravatar;
+	avatar.setAttribute('src', userpic);
 
-		$('#messagesBlock').append(messageBox.append(avatarDiv.append(avatar)).append(messageDiv.append(messageTime)));
-	});
+	let messageDiv = document.createElement('div');
+	let msgClassExt = (message.sender == 'they') ? '' : '_send';
+	messageDiv.setAttribute('class', `msg_cotainer${msgClassExt}`);
+	messageDiv.innerText = message.text;
+	let messageTime = document.createElement('span');
+	messageTime.setAttribute('class', `msg_time${msgClassExt}`);
+	messageTime.innerText = message.time;
+
+	if (message.sender == 'they') {
+		$('#messagesBlock').append(
+			$(messageBox)
+			.append($(avatarDiv).append(avatar))
+			.append($(messageDiv).append(messageTime))
+		);	
+	} else {
+		$('#messagesBlock').append(
+			$(messageBox)
+			.append($(messageDiv).append(messageTime))
+			.append($(avatarDiv).append(avatar))
+		);
+	}
 }
 
 const getOnlineClass = dialogue => {
@@ -113,10 +141,32 @@ const getOnlineText = dialogue => {
 		return `${dialogue.firstName} was online ${dialogue.lastOnline}`
 }
 
+/* This finction is needed because without it, the hours or minutes 
+   below 10 would be single-digit, e.g. 16:2, not 16:02 */
+const getTimeString = () => {
+	var date = new Date();
+	currentHours = date.getHours();
+	currentHours = ("0" + currentHours).slice(-2);
+	currentMinutes = date.getMinutes();
+	currentMinutes = ("0" + currentMinutes).slice(-2);
+	return `${currentHours}:${currentMinutes}, Today`;
+}
+
 $(document).ready(() => {
-	$('#action_menu_btn').click(() =>{
+	$('#action_menu_btn').click(() => {
 		$('.action_menu').toggle();
 	});
+	$('.send_btn').click(() => {
+		let message = {
+			'sender' : 'you',
+			'text' : $('#msgInput').val(),
+			'time' : getTimeString()
+		};
+		drawMessage(message);
+		$('#counter').text(`${msgCounter += 1} messages`);
+		$('#msgInput').val('');
+	});
+	getAvatar();
 	loadMessages();
 	console.log('ok');
 });
