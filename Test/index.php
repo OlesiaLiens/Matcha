@@ -37,12 +37,12 @@
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight">
 								<div class="img_cont">
-									<img src="https://www.khaama.com/wp-content/uploads/2019/02/Afghan-Singer-Ghawgha-Taban-880x672-880x672.jpg" class="rounded-circle user_img">
-									<span class="online_icon"></span>
+									<img id="selectedAvatar" src="/res/alien.jpeg" class="rounded-circle user_img">
+									<span id="selectedOnline" class="online_icon offline"></span>
 								</div>
 								<div class="user_info">
-									<span>Chat with Maryam Naz</span>
-									<p>1767 Messages</p>
+									<span id="title">Chat with Nobody</span>
+									<p id="counter"></p>
 								</div>
 							</div>
 							<span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
@@ -55,7 +55,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="card-body msg_card_body">
+						<div id="messagesBlock" class="card-body msg_card_body">
 							<div class="d-flex justify-content-start mb-4">
 								<div class="img_cont_msg">
 									<img src="https://www.khaama.com/wp-content/uploads/2019/02/Afghan-Singer-Ghawgha-Taban-880x672-880x672.jpg" class="rounded-circle user_img_msg">

@@ -1,4 +1,5 @@
 {
+	"userpic" : "men/man42.jpg",
 	"chat1" :
 		{
 			"counterpartID" : 13,
@@ -51,7 +52,8 @@
 			"firstName" : "Sahar",
 			"lastName" : "Darya",
 			"avatar" : "women/woman10.jpg",
-			"lastOnline" : "7 mins ago"
+			"lastOnline" : "7 mins ago",
+			"messages" : []
 		},
 	"chat3" :
 		{
@@ -59,7 +61,8 @@
 			"firstName" : "Yolduz",
 			"lastName" : "Rafi",
 			"avatar" : "women/woman5.jpg",
-			"lastOnline" : "now"
+			"lastOnline" : "now",
+			"messages" : []
 		},
 	"chat4" :
 		{
@@ -67,7 +70,8 @@
 			"firstName" : "Nagris",
 			"lastName" : "Hawa",
 			"avatar" : "women/woman97.jpg",
-			"lastOnline" : "30 mins ago"
+			"lastOnline" : "30 mins ago",
+			"messages" : []
 		},
 	"chat5" :
 		{
@@ -75,6 +79,7 @@
 			"firstName" : "Khadija",
 			"lastName" : "Mehr",
 			"avatar" : "women/woman11.jpg",
-			"lastOnline" : "50 mins ago"
+			"lastOnline" : "50 mins ago",
+			"messages" : []
 		}
 }
