@@ -14,27 +14,21 @@ class Actions extends \Core\Model
 		$this->user_email = json_decode($params['data']);
 	}
 
-	public function setUserLike()
+	public function setUserLike($user)
 	{
 		$db = static::getDB();
 
-//		$get_id = $db->prepare("SELECT id FROM users WHERE email = ?");
-//		$this->user_id = $get_id->execute([$this->user_email]);
-//		$this->user_id = $get_id->fetchColumn();
+		$get_id = $db->prepare("SELECT id FROM users WHERE email = ? ORDER BY id DESC LIMIT 1");
+		$this->user_id = $get_id->execute([$this->user_email]);
+		$this->user_id = $get_id->fetchColumn();
 //
-//		if ($this->user_id) {
-////
-//			$sql = "INSERT INTO
-//					user_action(first_user, second_user, liked)
-//				VALUES
-//					(:first_user, :second_user, 'liked')
-//				ON DUPLICATE KEY UPDATE
-//					liked = 'liked'";
-//			$likedStatement = $db->prepare($sql);
-//			$likedStatement->execute(array(
-//				':first_user'  => $this->user_id,
-//				':second_user' => $_SESSION['user_id']));
+		if ($this->user_id) {
+			$like = $db->prepare("UPDATE user_action SET liked = 'liked' WHERE first_user = ? AND second_user = ? ORDER BY id DESC LIMIT 1");
+			$like->execute([$this->user_id, $user['id']]);
 		}
+		return true;
+	}
+}
 //
 //		$get_id = $db->prepare("SELECT id FROM users WHERE email = ?");
 //		$this->user_id = $get_id->execute([$this->user_email]);
@@ -58,4 +52,4 @@ class Actions extends \Core\Model
 //		$unlike = $db->prepare("UPDATE user_action SET like_user = 'false' WHERE first_user = ? AND WHERE like_user = ? ");
 //		$unlike->execute([$this->user_id, $_SESSION['user_id']]);
 //	}
-}
+//}

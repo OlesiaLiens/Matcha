@@ -9,8 +9,16 @@ class Actions extends \Core\LoginController
 {
 	public function likeAction()
 	{
+		$user = $this->before();
+
+		if (!$user) {
+			return;
+		}
+
 		$like = new ActionsModel($_POST);
-		$res = $like->setUserLike();
+		$res = $like->setUserLike($user);
+		if ($res)
+			return;
 	}
 
 	public function unLikeAction($params)
