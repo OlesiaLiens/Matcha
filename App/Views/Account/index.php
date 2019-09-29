@@ -289,18 +289,28 @@
 			<div class="col-lg-3">
 				<img src="/images/idea.png">
 				<h4>Information</h4>
-				<p> <?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
+				<p>
+					<?php if ($args['online'] === '1') : ?>
+<!--						--><?= 'Status : Online' ?>
+					<?php endif; ?>
+
+					<?php if ($args['online'] === '0') : ?>
+<!--						--><?= 'Last seen: ' . $args['last_see'] ?>
+					<?php endif; ?> <br>
+
+					<?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
 					<?= 'Preference:' . ' ' . $args['preference'] ?> <br>
 					<?= 'Location:' . ' ' . $args['location'] ?> <br>
 					<?= 'Gender:' . ' ' . $args['gender'] ?> <br>
 					<?= 'Age:' . ' ' . $args['bday'] ?> <br>
+
 				</p>
 			</div>
 
 			<div class="col-lg-3">
 				<img src="/images/plane.png">
 				<h4>Interests</h4>
-				<p><?= $args[0] ?? null ?? null ?> <br></p>
+				<p><?= $args[0] ?? null ?> <br></p>
 				<p><?= $args[1] ?? null ?> <br></p>
 				<p><?= $args[2] ?? null ?> <br></p>
 				<p><?= $args[3] ?? null ?> <br></p>

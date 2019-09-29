@@ -34,6 +34,13 @@ class Login extends \Core\Model
 			}
 	}
 
+	public function online(){
+			$db = static::getDB();
+
+			$online = $db->prepare("UPDATE users SET online = 1, last_see = CURRENT_TIMESTAMP WHERE id = ?");
+			$online->execute([$this->user_id]);
+	}
+
 	private function checkUsernameAndPass()
 	{
 		$db = static::getDB();

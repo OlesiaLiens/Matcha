@@ -37,6 +37,7 @@ class Setup extends \Core\Model
 			notification INT          NOT NULL DEFAULT 1,
 			rating       INTEGER      DEFAULT 0 NOT NULL,
 			online      TINYINT(1)          DEFAULT 0 NOT NULL,
+			last_see      TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
 			token        varchar(255)  DEFAULT '' NOT NULL
 		);");
 
@@ -70,6 +71,14 @@ class Setup extends \Core\Model
 			tag_id  INTEGER, 
 			date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 		);");
+
+//		$db->exec("CREATE TABLE messages
+//(
+//  	sender INT NOT NULL,
+//	receiver INT NOT NULL,
+//	text VARCHAR(200),
+//	time DATE
+//);");
 
 		$db->exec("CREATE TABLE IF NOT EXISTS user_action
 		(
@@ -182,13 +191,13 @@ class Setup extends \Core\Model
 				('Cassandra');
 			");
 
-//$db->exec("CREATE TABLE history
+//$db->exec("CREATE TABLE user_action
 //(
 //  id        INTEGER PRIMARY KEY AUTO_INCREMENT,
 //  first_id  INTEGER,
 //  second_id INTEGER,
-//  `action`  VARCHAR(8) NOT NULL
-//    CHECK (`action` IN ('see', 'like', 'match', 'ban', 'break up', 'fake')),
+//  `action`  VARCHAR(8) NOT NULL,
+//   CHECK (`action` IN ('see', 'like', 'match', 'ban', 'break up', 'fake')),
 //  read      INT(1)          DEFAULT 0 NOT NULL,
 //  added     DATE            DEFAULT (Date('now', 'localtime'))
 //);

@@ -5,7 +5,7 @@ var user_email = document.getElementsByClassName('user_email')[0].id;
 console.log('It works');
 console.log('Like button', like);
 if (like) {
-		like.addEventListener('click', likeUser, true);
+	like.addEventListener('click', likeUser, true);
 }
 
 function likeUser() {
@@ -68,3 +68,4 @@ function banUser() {
 }
 
 //todo сделать вывод юзеров, которые посмотрели твой аккаунт
+//todo нужно как-то отправить в notification другого юзера,  $_SESSION['user_id'] этого  юзера и сообщение что он посмотрел его аккаунт

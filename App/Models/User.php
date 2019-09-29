@@ -95,4 +95,13 @@ class User extends \Core\Model
 		else
 			return false;
 	}
+
+	public function online_status()
+	{
+		$db = static::getDB();
+
+		$online = $db->prepare("UPDATE users SET online = 0, last_see = CURRENT_TIMESTAMP  WHERE id = ?");
+		$online->execute([$this->user_id]);
+
+	}
 }
