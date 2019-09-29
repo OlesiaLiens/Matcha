@@ -35,7 +35,7 @@
 				<div class="col-md-8 col-xl-6 chat">
 					<div class="card">
 						<div class="card-header msg_head">
-							<div class="d-flex bd-highlight">
+							<div id="chatHeader" class="d-flex bd-highlight" style="display: none !important">
 								<div class="img_cont">
 									<img id="selectedAvatar" src="/res/alien.jpg" class="rounded-circle user_img">
 									<span id="selectedOnline" class="online_icon offline"></span>
@@ -45,7 +45,7 @@
 									<p id="counter"></p>
 								</div>
 							</div>
-							<span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
+							<!-- <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
 							<div class="action_menu">
 								<ul>
 									<li><i class="fas fa-user-circle"></i> View profile</li>
@@ -53,7 +53,7 @@
 									<li><i class="fas fa-plus"></i> Add to group</li>
 									<li><i class="fas fa-ban"></i> Block</li>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 						<div id="messagesBlock" class="card-body msg_card_body">
 						</div>

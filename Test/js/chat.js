@@ -86,6 +86,7 @@ const openDialogue = event => {
 	$('#selectedOnline').attr('class', getOnlineClass(counterpart));
 	msgCounter = Object.keys(counterpart.messages).length;
 	$('#counter').text(`${msgCounter} messages`);
+	$('#chatHeader').show();
 
 	$('#messagesBlock').empty();
 	Array.from(counterpart.messages).forEach(drawMessage);
