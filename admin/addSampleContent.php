@@ -37,7 +37,7 @@ print('Tags created' . PHP_EOL);
 $connection->exec("INSERT INTO
 						users(username, first_name, last_name, email, password, active, token)
 					VALUES
-						('admin', 'Admin Ricardo Jose Francisco de Paula', 'De La Santa-Maria Adminez', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
+						('admin', 'Admin', 'De', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
 
 print('Added admin user' . PHP_EOL);
 
