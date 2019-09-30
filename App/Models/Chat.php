@@ -13,5 +13,9 @@ class Chat extends \Core\Model
 		$output = file_get_contents('../Test/samplediags.json');
 		echo $output;
 	}
+
+	public function getAvatar() {
+		echo '/men/man42.jpg';
+	}
 }
 ?>

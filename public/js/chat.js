@@ -19,7 +19,7 @@ let msgCounter;
 
 const getAvatar = () => {
 	$.ajax({
-		url: './getAvatar.php',
+		url: '/chat/getavatar',
 		type: 'get',
 		success: response => {useravatar = response}
 	});
@@ -27,7 +27,7 @@ const getAvatar = () => {
 
 const loadMessages = () => {
 	$.ajax({
-		url: './getJSON.php',
+		url: '/chat/getdialogues/',
 		type: 'get',
 		success: dialoguesJSON => {
 			dialogues = JSON.parse(dialoguesJSON);

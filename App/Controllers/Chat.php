@@ -16,4 +16,9 @@ class Chat extends \Core\LoginController
 		$chat = new ChatModel();
 		$chat->getDialogues();
 	}
+
+	public function getavatarAction() {
+		$chat = new ChatModel();
+		$chat->getAvatar();
+	}
 }

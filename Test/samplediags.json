@@ -4,7 +4,7 @@
 			"counterpartID" : 13,
 			"firstName" : "Maryam",
 			"lastName" : "Naz",
-			"avatar" : "women/woman7.jpg",
+			"avatar" : "/women/woman7.jpg",
 			"lastOnline" : "now",
 			"messages" :
 				[
@@ -50,7 +50,7 @@
 			"counterpartID" : 22,
 			"firstName" : "Sahar",
 			"lastName" : "Darya",
-			"avatar" : "women/woman10.jpg",
+			"avatar" : "/women/woman10.jpg",
 			"lastOnline" : "7 mins ago",
 			"messages" : []
 		},
@@ -59,7 +59,7 @@
 			"counterpartID" : 11,
 			"firstName" : "Yolduz",
 			"lastName" : "Rafi",
-			"avatar" : "women/woman5.jpg",
+			"avatar" : "/women/woman5.jpg",
 			"lastOnline" : "now",
 			"messages" : []
 		},
@@ -68,7 +68,7 @@
 			"counterpartID" : 746,
 			"firstName" : "Nagris",
 			"lastName" : "Hawa",
-			"avatar" : "women/woman97.jpg",
+			"avatar" : "/women/woman97.jpg",
 			"lastOnline" : "30 mins ago",
 			"messages" : []
 		},
@@ -77,7 +77,7 @@
 			"counterpartID" : 27,
 			"firstName" : "Khadija",
 			"lastName" : "Mehr",
-			"avatar" : "women/woman11.jpg",
+			"avatar" : "/women/woman11.jpg",
 			"lastOnline" : "50 mins ago",
 			"messages" : []
 		}
