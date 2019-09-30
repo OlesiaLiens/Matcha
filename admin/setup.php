@@ -3,15 +3,15 @@
 
 include 'database.php';
 
-//print('U/N: ' . $DB_USER . PHP_EOL . 'P/W: ' . $DB_PASS . PHP_EOL);
+print('U/N: ' . $DB_USER . PHP_EOL . 'P/W: ' . $DB_PASS . PHP_EOL);
 $connection = new PDO($DB_DSN, $DB_USER, $DB_PASS, $options);
 
 // Create an empty database
 $connection->exec("DROP DATABASE IF EXISTS " . $DB_NAME);
 $connection->exec("CREATE DATABASE " . $DB_NAME);
-//print('DB created' . PHP_EOL);
+print('DB created' . PHP_EOL);
 $connection->exec("use " . $DB_NAME);
-//print('Connected to DB' . PHP_EOL);
+print('Connected to DB' . PHP_EOL);
 
 $sqlUsers = "CREATE TABLE users(
 				id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -74,16 +74,16 @@ $sqlUserAction = "CREATE TABLE user_action(
 			)";
 
 $connection->exec($sqlUsers);
-//print('Table Users created' . PHP_EOL);
+print('Table Users created' . PHP_EOL);
 $connection->exec($sqlTokens);
-//print('Table Tokens created' . PHP_EOL);
+print('Table Tokens created' . PHP_EOL);
 $connection->exec($sqlPhotos);
-//print('Table Photos created' . PHP_EOL);
+print('Table Photos created' . PHP_EOL);
 $connection->exec($sqlTags);
-//print('Table Tags created' . PHP_EOL);
+print('Table Tags created' . PHP_EOL);
 $connection->exec($sqlUserTags);
-//print('Table UserTags created' . PHP_EOL);
+print('Table UserTags created' . PHP_EOL);
 $connection->exec($sqlUserAction);
-//print('Table UserAction created' . PHP_EOL);
+print('Table UserAction created' . PHP_EOL);
 
 ?>

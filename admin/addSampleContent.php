@@ -3,7 +3,7 @@
 
 include 'database.php';
 
-//print('U/N: ' . $DB_USER . PHP_EOL . 'P/W: ' . $DB_PASS . PHP_EOL);
+print('U/N: ' . $DB_USER . PHP_EOL . 'P/W: ' . $DB_PASS . PHP_EOL);
 $connection = new PDO($DB_SHORTCUT, $DB_USER, $DB_PASS, $options);
 
 $connection->exec("INSERT 
@@ -32,14 +32,14 @@ $connection->exec("INSERT
 					('Oracle'), ('Redis'), ('Equal=Test'), ('Ampersand&Test'), ('Cassandra')
 ");
 
-//print('Tags created' . PHP_EOL);
+print('Tags created' . PHP_EOL);
 
 $connection->exec("INSERT INTO
 						users(username, first_name, last_name, email, password, active, token)
 					VALUES
 						('admin', 'Admin Ricardo Jose Francisco de Paula', 'De La Santa-Maria Adminez', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
 
-//print('Added admin user' . PHP_EOL);
+print('Added admin user' . PHP_EOL);
 
 $connection->exec("INSERT INTO
 						users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatars)
@@ -180,6 +180,6 @@ $connection->exec("INSERT INTO
 ('oprah@mail.com', 'user', 'Oprah', 'William', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'female', 'male', '34', 'Kiev', '50.4547', '30.5238', '/women/woman52.jpg'),
 ('mila@mail.com', 'user', 'Mila', 'Bonilla', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'both', '23', 'Brovary',  '50.4547', '30.5238', '/women/woman50.jpg')");
 
-//print('Sample users created' . PHP_EOL);
+print('Sample users created' . PHP_EOL);
 
 ?>
