@@ -93,7 +93,6 @@ const openDialogue = event => {
 }
 
 const drawMessage = message => {
-	console.log(message);
 	let messageBox = document.createElement('div');
 	let just = (message.sender == 'they') ? 'start' : 'end';
 	messageBox.setAttribute('class', `d-flex justify-content-${just} mb-4`);
@@ -166,6 +165,8 @@ $(document).ready(() => {
 		drawMessage(message);
 		$('#counter').text(`${msgCounter += 1} messages`);
 		$('#msgInput').val('');
+		counterpart.messages.push(message);
+		console.log(counterpart);
 	});
 	getAvatar();
 	loadMessages();
