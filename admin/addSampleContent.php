@@ -41,10 +41,20 @@ $connection->exec("INSERT INTO
 
 print('Added admin user' . PHP_EOL);
 
-$connection->exec("INSERT INTO
-						users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatars)
+$connection->exec("INSERT INTO 
+						user_action(first_user, second_user, matched)
 					VALUES
-						('test@mail.com', 'user', 'Klava', 'Klava', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'both', '44', 'Kiev',  '50.4547', '30.5238', '/default/jean.jpg'),
+						(1, 3, 'match'),
+						(1, 5, 'match'),
+						(1, 13, 'match')
+");
+
+print('Sample matches added' . PHP_EOL);
+
+$connection->exec("INSERT INTO
+users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatars)
+VALUES
+('test@mail.com', 'user', 'Klava', 'Klava', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'both', '44', 'Kiev',  '50.4547', '30.5238', '/default/jean.jpg'),
 ('zaria@mail.com', 'user', 'Zaria', 'Maxwell', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male', '54', 'Cherkassy',  '50.4547', '30.5238', '/default/zaria.jpg'),
 ('claire@mail.com', 'user', 'Claire', 'Flores', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '20', 'Vyshneve',  '50.4547', '30.5238', '/default/claire.jpg'),
 ('gina@mail.com', 'user', 'Gina', 'Matthews', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '18', 'Brovary',  '50.4547', '30.5238', '/default/gina.jpg'),
