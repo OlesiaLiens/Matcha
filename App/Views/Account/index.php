@@ -50,9 +50,9 @@
 
 
 		ul {
-			margin     : 10px auto;
-			padding-left: 0;
-			text-align : center;
+			margin       : 10px auto;
+			padding-left : 0;
+			text-align   : center;
 		}
 
 		@-moz-keyframes rotate {
@@ -147,16 +147,46 @@
 		div.red {
 			background-color : whitesmoke;
 			color            : black;
-			font-size: 26px;
-			border-color     :rgba(1, 151, 171, 0.5);
-			text-decoration: none;
+			font-size        : 26px;
+			border-color     : rgba(1, 151, 171, 0.5);
+			text-decoration  : none;
 		}
 
 		div.red:hover {
-			background-color: whitesmoke;
-			color : black;
-			border-color     :rgba(1, 151, 171, 0.5);
+			background-color : whitesmoke;
+			color            : black;
+			border-color     : rgba(1, 151, 171, 0.5);
 		}
+
+		div.ban {
+			background-color : whitesmoke;
+			color            : black;
+			font-size        : 26px;
+			border-color     : red;
+			text-decoration  : none;
+		}
+
+		div.ban:hover {
+			background-color : whitesmoke;
+			color            : black;
+			border-color     : red;
+		}
+
+		.baned {
+			background-color : #2d2d2d;;
+			color            : #2d2d2d;;
+			border-color     : #cc4b37;
+		}
+
+		.baned:focus {
+			background-color : #2d2d2d;
+		}
+
+		.baned:hover {
+			background-color : #2d2d2d;
+			border-color     : #cc4b37;
+		}
+
 
 		.button-like:focus {
 			background-color : transparent;
@@ -169,7 +199,7 @@
 
 		.liked {
 			background-color : #ff7878;
-			color: whitesmoke;
+			color            : whitesmoke;
 			border-color     : #cc4b37;
 		}
 
@@ -259,18 +289,28 @@
 			<div class="col-lg-3">
 				<img src="/images/idea.png">
 				<h4>Information</h4>
-				<p> <?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
+				<p>
+					<?php if ($args['online'] === '1') : ?>
+<!--						--><?= 'Status : Online' ?>
+					<?php endif; ?>
+
+					<?php if ($args['online'] === '0') : ?>
+<!--						--><?= 'Last seen: ' . $args['last_see'] ?>
+					<?php endif; ?> <br>
+
+					<?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
 					<?= 'Preference:' . ' ' . $args['preference'] ?> <br>
 					<?= 'Location:' . ' ' . $args['location'] ?> <br>
 					<?= 'Gender:' . ' ' . $args['gender'] ?> <br>
 					<?= 'Age:' . ' ' . $args['bday'] ?> <br>
+
 				</p>
 			</div>
 
 			<div class="col-lg-3">
 				<img src="/images/plane.png">
 				<h4>Interests</h4>
-				<p><?= $args[0] ?? null ?? null ?> <br></p>
+				<p><?= $args[0] ?? null ?> <br></p>
 				<p><?= $args[1] ?? null ?> <br></p>
 				<p><?= $args[2] ?? null ?> <br></p>
 				<p><?= $args[3] ?? null ?> <br></p>
@@ -284,12 +324,25 @@
 				<p> <?= $args['rating'] ?> </p>
 			</div>
 
-			<div class="col-lg-3">
-				<ul >
-					<li class="like"><div id="like_user" href="#" class="round red">&#10084;</div>
-					</li>
-				</ul>
-			</div>
+			<?php if ($args['id'] != $_SESSION['user_id']) : ?>
+				<div class="col-lg-3">
+					<ul>
+						<li class="like">
+							<div id="like_user" class="round red">&#10084;</div>
+						</li>
+					</ul>
+					<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+				</div>
+
+				<div class="col-lg-3">
+					<ul>
+						<li class="like">
+							<div id="ban_user" class="round ban">&#10060;</div>
+						</li>
+					</ul>
+					<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+				</div>
+			<?php endif; ?>
 
 		</div>
 	</section>
@@ -302,10 +355,12 @@
 				<br/>
 				<div class="col-lg-4">
 					<div class="tilt">
-						<label for="computer" class="btn btn-default" style="display: inline-table">
-							<div id="image"></div>
-							Upload avatar<input type="file" id="computer" hidden style="display:none">
-						</label>
+						<?php if ($args['id'] === $_SESSION['user_id']) : ?>
+							<label for="computer" class="btn btn-default" style="display: inline-table">
+								<div id="image"></div>
+								Upload avatar<input type="file" id="computer" hidden style="display:none">
+							</label>
+						<?php endif; ?>
 						<p class="error" id="show_errors"></p>
 						<img id="avatar" src="<?= $args['avatars'] ?>" alt="img1">
 					</div>
@@ -330,20 +385,18 @@
 
 			<div class="col-lg-10 col-lg-offset-1">
 				<h4>More photos</h4>
-				<p>We travel, initially, to lose ourselves; and we travel, next, to find ourselves. We travel to open
-					our hearts and eyes and learn more about the world than our newspapers will accommodate. We travel
-					to bring what little we can, in our ignorance and knowledge, to those parts of the globe whose
-					riches are differently dispersed. And we travel, in essence, to become young fools again -- to slow
-					time down and get taken in, and fall in love once more.</p>
+				<p></p>
 			</div>
 
 			<div class="col-lg-2"></div>
 			<div class="col-lg-10 col-lg-offset-1">
 				<?php if (count($args['photos']) < 4): ?>
-					<label for="photos" class="btn btn-default">
-						<div id="image_2"></div>
-						Upload photos<input type="file" id="photos" hidden style="display:none">
-					</label>
+					<?php if ($args['id'] === $_SESSION['user_id']) : ?>
+						<label for="photos" class="btn btn-default">
+							<div id="image_2"></div>
+							Upload photos<input type="file" id="photos" hidden style="display:none">
+						</label>
+					<?php endif; ?>
 					<p class="error" id="show_photos_errors"></p>
 					<img id="empty_photo" src="" alt="img" class="img-responsive" style="display: none">
 				<?php endif; ?>
@@ -405,5 +458,6 @@
 		crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="/js/position.js"></script>
+<script type="text/javascript" src="/js/photo.js"></script>
 </body>
 </html>

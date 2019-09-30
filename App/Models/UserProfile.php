@@ -29,14 +29,14 @@ class UserProfile extends \Core\Model
 		}
 	}
 
-	public function rating_increment(){
+	public function rating_increment()
+	{
 		$db = static::getDB();
 
 		$rating = $db->prepare("SELECT rating FROM `users` WHERE id = ?");
 		$rating->execute([$this->user_id]);
 		$rating = $rating->fetchColumn();
-		if ($rating !== null)
-		{
+		if ($rating !== null) {
 			$rating = $rating + 1;
 
 			$update_rating = $db->prepare("UPDATE users SET rating = $rating WHERE id = ?");
@@ -44,15 +44,61 @@ class UserProfile extends \Core\Model
 		}
 	}
 
-	public function who_looked(){
+	public function who_looked()
+	{
 		$db = static::getDB();
 
-		$who_check = $db->prepare("INSERT user_action(first_user, second_user, see)
-						VALUES(?, ?, ?)");
-		$who_check->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+		$get_users = $db->prepare("SELECT * FROM user_action  WHERE  first_user = ? AND second_user = ?");
+		$get_users->execute([$this->user_id, $_SESSION['user_id']]);
+		$res = $get_users->fetchAll();
+		if ($res )
+		{
+			$like = $db->prepare("UPDATE user_action SET first_user = ?, second_user = ?, see = 'see' ORDER BY id DESC LIMIT 1");
+			$like->execute([$this->user_id, $_SESSION['user_id']]);
+		}
 
-		//todo нужно как-то отправить в notification другого юзера,  $_SESSION['user_id'] этого  юзера и сообщение что он посмотрел его аккаунт
-		//todo добавить кнопку для  like(c функционалом) / ban
-		//todo выводить в account только нужную информацию в зависимости от того, кто смотрит страницу
+		if ($res === []) {
+			$sql = "INSERT INTO
+					user_action (first_user, second_user, see)
+				VALUES
+					(:first_user, :second_user, 'see')
+				ON DUPLICATE KEY UPDATE
+					see = 'see'";
+			$seeStatement = $db->prepare($sql);
+			$seeStatement->execute(array(
+				':first_user'  => $this->user_id,
+				':second_user' => $_SESSION['user_id']));
+		}
+
+
+//		$like = $db->prepare("UPDATE user_action SET first_user = ?, second_user = ?, see = 'see' ORDER BY id DESC LIMIT 1");
+//		$like->execute([$this->user_id, $_SESSION['user_id']]);
+
+		// $check = $db->prepare("SELECT COUNT(*) FROM user_action WHERE  first_user = ? AND second_user = ?");
+		// $res = $check->execute([$this->user_id, $_SESSION['user_id']]);
+
+		// if ($res) {
+		// 	$update = $db->prepare("UPDATE user_action SET see  = ? WHERE first_user = ? AND second_user = ?");
+		// 	$update->execute(['see', $this->user_id, $_SESSION['user_id']]);
+		// }
+		// if ($res === false) {
+		// 	$update = $db->prepare("INSERT INTO user_action(first_user, second_user, see) VALUES (?, ?, ?)");
+		// 	$update->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+		// }
 	}
+
+//		$see = $db->prepare("SELECT see FROM user_action WHERE first_user = ?");
+//		$see = $see->execute(['$this->user_id']);
+//		if ($see) {
+//			$who_check = $db->prepare("INSERT user_action(first_user, second_user, see)
+//						VALUES(?, ?, ?)");
+//			$who_check->execute([$this->user_id, $_SESSION['user_id'], 'see']);
+//		}
+//		$see = $db->prepare("SELECT see FROM user_action WHERE first_user = ?");
+//		$see = $see->execute(['$this->user_id']);
+//		if ($see) {
+//			$who_check = $db->prepare("UPDATE user_action SET first_user = ?, second_user = ?, see = 'see'");
+//			$who_check->execute([$this->user_id, $_SESSION['user_id']]);
+//		}
+
 }

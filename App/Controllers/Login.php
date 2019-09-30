@@ -43,13 +43,15 @@ class Login extends \Core\Controller
 		}
 	}
 
-	public  function loginAction()
+	public function loginAction()
 	{
 		$form = [];
 
 		if (isset($_POST['submit']) && $_POST['submit'] === 'OK') {
 			$loginModel = new LoginModel($_POST);
 			$form = $loginModel->login();
+			if ($form)
+				$loginModel->online();
 		}
 		if ($form === true) {
 			header('Location: /account/index');

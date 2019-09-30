@@ -1,220 +1,59 @@
-<?php
+#!/usr/bin/php
+<?PHP
 
-namespace App\Models;
+include 'database.php';
 
-use App\Models\Setup as SetupModel;
+print('U/N: ' . $DB_USER . PHP_EOL . 'P/W: ' . $DB_PASS . PHP_EOL);
+$connection = new PDO($DB_SHORTCUT, $DB_USER, $DB_PASS, $options);
 
-class Setup extends \Core\Model
-{
-	public function reinstall()
-	{
-		$db = static::getConnection();
+$connection->exec("INSERT 
+				INTO
+					tags (tag)
+				VALUES
+					('Alternative Music'), ('Blues'), ('Classical Music'), ('Country Music'),
+					('Dance Music'), ('Easy Listening'), ('Electronic Music'),
+					('European Music (Folk / Pop)'), ('Hip Hop / Rap'), ('Indie Pop'),
+					('Inspirational (incl. Gospel)'), ('Asian Pop (J-Pop, K-pop)'), ('Jazz'),
+					('Latin Music'), ('New Age'), ('Opera'), ('Pop (Popular music)'),
+					('R&B / Soul'), ('Reggae'), ('Rock'), ('Singer / Songwriter (inc. Folk)'),
+					('World Music / Beats'), ('Absurdist/surreal/whimsical'), ('Action'),
+					('Adventure'), ('Comedy'), ('Crime'), ('Drama'), ('Fantasy'), ('Historical'),
+					('Historical fiction'), ('Horror'), ('Magical realism'), ('Mystery'),
+					('Paranoid Fiction'), ('Philosophical'), ('Political'), ('Romance'),
+					('Saga'), ('Satire'), ('Science fiction'), ('Social'), ('Speculative'),
+					('Thriller'), ('Urban'), ('Western'), ('JavaScript'), ('SQL'), ('Java'),
+					('C#'), ('Python'), ('PHP'), ('C++'), ('C'), ('TypeScript'), ('Ruby'),
+					('Swift'), ('Objective-C'), ('VB.NET'), ('Assembly'), ('R'), ('Perl'),
+					('VBA'), ('Matlab'), ('Go'), ('Scala'), ('Groovy'), ('CoffeScript'),
+					('Visual Basic 6'), ('Lua'), ('Haskell'), ('AngularJS'), ('HTML5'),
+					('CSS3'), ('Ruby On Rails'), ('Node.js'), ('.NET Core'), ('React'),
+					('Cordova'), ('Firebase'), ('Xamarin'), ('Hadoop'), ('Spark'),
+					('MySQL'), ('SQL Server'), ('SQLite'), ('PostgreSQL'), ('MongoDB'),
+					('Oracle'), ('Redis'), ('Equal=Test'), ('Ampersand&Test'), ('Cassandra')
+");
 
-		$create = "CREATE DATABASE IF NOT EXISTS matcha";
-		$db->exec($create);
+print('Tags created' . PHP_EOL);
 
-		$db = static::getDB();
+$connection->exec("INSERT INTO
+						users(username, first_name, last_name, email, password, active, token)
+					VALUES
+						('admin', 'Admin Ricardo Jose Francisco de Paula', 'De La Santa-Maria Adminez', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
 
+print('Added admin user' . PHP_EOL);
 
-		$db->exec("DROP TABLE IF EXISTS `users`, `tokens`, `photos`, `likes`, `comments`, `tags`, `users_tags`, `user_action`");
-
-		$db->exec("CREATE TABLE IF NOT EXISTS users(
-			id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			username     varchar(50)  NOT NULL,
-			first_name     varchar(50)  NOT NULL,
-			last_name    varchar(50)  NOT NULL,
-			bday        INTEGER DEFAULT 0     NOT NULL,
-			email        varchar(255) NOT NULL,
-			password     varchar(255) NOT NULL,
-			active       varchar(50)  NOT NULL,
-			gender      VARCHAR(50)   DEFAULT '-' NOT NULL,
-			preference  VARCHAR(50)   DEFAULT '-' NOT NULL,
-			bio         TEXT,
-			longitude   FLOAT,
-			latitude     FLOAT,
-			location     VARCHAR(50)  NOT NULL DEFAULT '-',
-			avatars      varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
-			notification INT          NOT NULL DEFAULT 1,
-			rating       INTEGER      DEFAULT 0 NOT NULL,
-			online      TINYINT(1)          DEFAULT 0 NOT NULL,
-			last_see      TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			token        varchar(255)  DEFAULT '' NOT NULL
-		);");
-
-		$db->exec("CREATE TABLE IF NOT EXISTS tokens(
-			id         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			user_id    INT UNSIGNED,
-			emailtoken varchar(255) NOT NULL
-		);");
-
-		$db->exec("CREATE TABLE IF NOT EXISTS photos(
-			id      INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			path    VARCHAR(255)                        NOT NULL,
-			user_id INT(11) UNSIGNED                    NOT NULL,
-			date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-		);");
-
-//		$db->exec("CREATE TABLE `likes`(
-//			`photo_id` INT NOT NULL,
-//			`user_id`  INT NOT NULL
-//		);");
-
-		$db->exec("CREATE TABLE tags(
-			id  INTEGER PRIMARY KEY AUTO_INCREMENT,
-			tag VARCHAR(255) NOT NULL UNIQUE
-		);");
-
-		$db->exec("CREATE TABLE users_tags
-		(
-			id  INTEGER PRIMARY KEY AUTO_INCREMENT,
-			user_id INTEGER,
-			tag_id  INTEGER, 
-			date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-		);");
-
-//		$db->exec("CREATE TABLE messages
-//(
-//  	sender INT NOT NULL,
-//	receiver INT NOT NULL,
-//	text VARCHAR(200),
-//	time DATE
-//);");
-
-		$db->exec("CREATE TABLE IF NOT EXISTS user_action
-		(
-			id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			first_user     varchar(50)   DEFAULT 'none' NOT NULL,
-			second_user     varchar(50)  DEFAULT 'none'  NOT NULL,
-			see    varchar(50)  DEFAULT 'none'  NOT NULL,
-			liked        varchar(50)   DEFAULT 'none' NOT NULL,
-			matched        varchar(255)  DEFAULT 'none' NOT NULL,
-			ban     varchar(255)  DEFAULT 'none' NOT NULL,
-			break       varchar(50)  DEFAULT 'none-'  NOT NULL,
-			fake       varchar(50)   DEFAULT 'none' NOT NULL
-		);");
-
-		$db->exec("
-			INSERT INTO tags (tag)
-			VALUES
-				('Alternative Music'),
-				('Blues'),
-				('Classical Music'),
-				('Country Music'),
-				('Dance Music'),
-				('Easy Listening'),
-				('Electronic Music'),
-				('European Music (Folk / Pop)'),
-				('Hip Hop / Rap'),
-				('Indie Pop'),
-				('Inspirational (incl. Gospel)'),
-				('Asian Pop (J-Pop, K-pop)'),
-				('Jazz'),
-				('Latin Music'),
-				('New Age'),
-				('Opera'),
-				('Pop (Popular music)'),
-				('R&B / Soul'),
-				('Reggae'),
-				('Rock'),
-				('Singer / Songwriter (inc. Folk)'),
-				('World Music / Beats'),
-				('Absurdist/surreal/whimsical'),
-				('Action'),
-				('Adventure'),
-				('Comedy'),
-				('Crime'),
-				('Drama'),
-				('Fantasy'),
-				('Historical'),
-				('Historical fiction'),
-				('Horror'),
-				('Magical realism'),
-				('Mystery'),
-				('Paranoid Fiction'),
-				('Philosophical'),
-				('Political'),
-				('Romance'),
-				('Saga'),
-				('Satire'),
-				('Science fiction'),
-				('Social'),
-				('Speculative'),
-				('Thriller'),
-				('Urban'),
-				('Western'),
-				('JavaScript'),
-				('SQL'),
-				('Java'),
-				('C#'),
-				('Python'),
-				('PHP'),
-				('C++'),
-				('C'),
-				('TypeScript'),
-				('Ruby'),
-				('Swift'),
-				('Objective-C'),
-				('VB.NET'),
-				('Assembly'),
-				('R'),
-				('Perl'),
-				('VBA'),
-				('Matlab'),
-				('Go'),
-				('Scala'),
-				('Groovy'),
-				('CoffeScript'),
-				('Visual Basic 6'),
-				('Lua'),
-				('Haskell'),
-				('AngularJS'),
-				('HTML5'),
-				('CSS3'),
-				('Ruby On Rails'),
-				('Node.js'),
-				('.NET Core'),
-				('React'),
-				('Cordova'),
-				('Firebase'),
-				('Xamarin'),
-				('Hadoop'),
-				('Spark'),
-				('MySQL'),
-				('SQL Server'),
-				('SQLite'),
-				('PostgreSQL'),
-				('MongoDB'),
-				('Oracle'),
-				('Redis'),
-				('Equal=Test'),
-				('Ampersand&Test'),
-				('Cassandra');
-			");
-
-//$db->exec("CREATE TABLE user_action
-//(
-//  id        INTEGER PRIMARY KEY AUTO_INCREMENT,
-//  first_id  INTEGER,
-//  second_id INTEGER,
-//  `action`  VARCHAR(8) NOT NULL,
-//   CHECK (`action` IN ('see', 'like', 'match', 'ban', 'break up', 'fake')),
-//  read      INT(1)          DEFAULT 0 NOT NULL,
-//  added     DATE            DEFAULT (Date('now', 'localtime'))
-//);
-//");
-
-		$db->exec("INSERT INTO users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatars)
-VALUES
-('test@mail.com', 'user', 'Klava', 'Klava', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'both', '44', 'Kiev',  '50.4547', '30.5238', '/default/jean.jpg'),
-       ('zaria@mail.com', 'user', 'Zaria', 'Maxwell', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male', '54', 'Cherkassy',  '50.4547', '30.5238', '/default/zaria.jpg'),
-       ('claire@mail.com', 'user', 'Claire', 'Flores', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '20', 'Vyshneve',  '50.4547', '30.5238', '/default/claire.jpg'),
-       ('gina@mail.com', 'user', 'Gina', 'Matthews', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '18', 'Brovary',  '50.4547', '30.5238', '/default/gina.jpg'),
-       ('henry@mail.com', 'user', 'Henry', 'Medina', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'female',  '22', 'Zhytomyr',  '50.4547', '30.5238', '/default/henry.jpg'),
-       ('niko@mail.com', 'user', 'Niko', 'Hester', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'male', '33', 'Kyiv',  '50.4547', '30.5238', '/default/niko.jpg'),
-       ('van@mail.com', 'user', 'Van', 'Mcneil', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'female', '42', 'Kiev',  '50.4547', '30.5238', '/default/van.jpg'),
-       ('jean@mail.com', 'user', 'Jean', 'Brooks', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'female', '19', 'Chernihiv',  '50.4547', '30.5238', '/default/jean.jpg'),
-       ('helen@mail.com', 'user', 'Helen', 'Odom', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'both',  '40', 'Kyiv',  '50.4547', '30.5238', '/default/helen.jpg'),
-       ('owen@mail.com', 'user', 'Owen', 'Chambers', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '34', 'Kyiv', '50.393074', '30.498484', '/men/man16.jpg'),
+$connection->exec("INSERT INTO
+						users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatars)
+					VALUES
+						('test@mail.com', 'user', 'Klava', 'Klava', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'both', '44', 'Kiev',  '50.4547', '30.5238', '/default/jean.jpg'),
+('zaria@mail.com', 'user', 'Zaria', 'Maxwell', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male', '54', 'Cherkassy',  '50.4547', '30.5238', '/default/zaria.jpg'),
+('claire@mail.com', 'user', 'Claire', 'Flores', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '20', 'Vyshneve',  '50.4547', '30.5238', '/default/claire.jpg'),
+('gina@mail.com', 'user', 'Gina', 'Matthews', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '18', 'Brovary',  '50.4547', '30.5238', '/default/gina.jpg'),
+('henry@mail.com', 'user', 'Henry', 'Medina', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'female',  '22', 'Zhytomyr',  '50.4547', '30.5238', '/default/henry.jpg'),
+('niko@mail.com', 'user', 'Niko', 'Hester', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'male', '33', 'Kyiv',  '50.4547', '30.5238', '/default/niko.jpg'),
+('van@mail.com', 'user', 'Van', 'Mcneil', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'female', '42', 'Kiev',  '50.4547', '30.5238', '/default/van.jpg'),
+('jean@mail.com', 'user', 'Jean', 'Brooks', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'female', '19', 'Chernihiv',  '50.4547', '30.5238', '/default/jean.jpg'),
+('helen@mail.com', 'user', 'Helen', 'Odom', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'both',  '40', 'Kyiv',  '50.4547', '30.5238', '/default/helen.jpg'),
+('owen@mail.com', 'user', 'Owen', 'Chambers', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '34', 'Kyiv', '50.393074', '30.498484', '/men/man16.jpg'),
 ('fritz@mail.com', 'user', 'Fritz', 'Dalton', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '31', 'Kiev', '50.4547', '30.5238', '/men/man17.jpg'),
 ('maxwell@mail.com', 'user', 'Maxwell', 'Sosa', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '27', 'Kiev', '50.4547', '30.5238', '/men/man18.jpg'),
 ('nigel@mail.com', 'user', 'Nigel', 'Joseph', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'male', 'female', '30', 'Kiev', '50.4547', '30.5238', '/men/man19.jpg'),
@@ -341,16 +180,6 @@ VALUES
 ('oprah@mail.com', 'user', 'Oprah', 'William', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', '1', 'female', 'male', '34', 'Kiev', '50.4547', '30.5238', '/women/woman52.jpg'),
 ('mila@mail.com', 'user', 'Mila', 'Bonilla', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'both', '23', 'Brovary',  '50.4547', '30.5238', '/women/woman50.jpg')");
 
+print('Sample users created' . PHP_EOL);
 
-		$db->exec("CREATE TABLE IF NOT EXISTS comments (
-			`comment_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-			`text`       VARCHAR(255)     NOT NULL,
-			`time`       TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			`user_id`    INT(10) UNSIGNED NOT NULL,
-			`photo_id`   INT(10) UNSIGNED NOT NULL
-		)");
-
-		$db->exec("INSERT USERS(username, first_name, last_name, email, password, active, token)
-						VALUES('admin', 'admin', 'admin', 'oles@gmail.com', '8513c69d070a008df008aef8624ed24afc81b170d242faf5fafe853d4fe9bf8aa7badfb0fd045d7b350b19fbf8ef6b2a51f17a07a1f6819abc9ba5ce43324244', 1, 'djfjfjfjfjfjfjfj')");
-	}
-}
+?>

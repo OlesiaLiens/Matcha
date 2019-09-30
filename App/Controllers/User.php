@@ -30,6 +30,9 @@ class User extends \Core\LoginController
 		$user_param->who_looked();
 
 		$params['id'] = $user['id'];
+		$params['last_see'] = $user['last_see'];
+		$params['online'] = $user['online'];
+		$params['email'] = $user['email'];
 		$params['username'] = $user['username'];
 		$params['first_name'] = $user['first_name'];
 		$params['last_name'] = $user['last_name'];
@@ -41,7 +44,7 @@ class User extends \Core\LoginController
 		$params['bday'] = $user['bday'];
 		$params['bio'] = $user['bio'];
 		$all_photos = new PhotoModel();
-		$params['photos'] = $all_photos->getAllPhotos();
+		$params['photos'] = $all_photos->getAllUserPhotos($user['id']);
 
 		View::render('Account/index.php', $params);
 	}

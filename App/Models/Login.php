@@ -14,6 +14,7 @@ class Login extends \Core\Model
 	private $username;
 	private $password;
 	private $user_id;
+	private $user;
 
 	public function __construct(array $data)
 	{
@@ -32,6 +33,13 @@ class Login extends \Core\Model
 				$_SESSION['user_id'] = $this->user_id;
 				return true;
 			}
+	}
+
+	public function online(){
+			$db = static::getDB();
+
+			$online = $db->prepare("UPDATE users SET online = 1, last_see = CURRENT_TIMESTAMP WHERE id = ?");
+			$online->execute([$this->user_id]);
 	}
 
 	private function checkUsernameAndPass()
