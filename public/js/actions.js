@@ -2,8 +2,6 @@ var like       = document.getElementById('like_user');
 var ban        = document.getElementById('ban_user');
 var user_email = document.getElementsByClassName('user_email')[0].id;
 
-console.log('It works');
-console.log('Like button', like);
 if (like) {
 	like.addEventListener('click', likeUser, true);
 }

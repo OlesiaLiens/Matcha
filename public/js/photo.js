@@ -1,4 +1,7 @@
-document.getElementById('computer').addEventListener('change', readURL, true);
+var res = document.getElementById('computer');
+if (res) {
+	addEventListener('change', readURL, true);
+}
 
 function readURL() {
 	var file                                         = document.getElementById('computer').files[0];
