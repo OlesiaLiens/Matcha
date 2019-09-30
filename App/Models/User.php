@@ -104,4 +104,18 @@ class User extends \Core\Model
 		$online->execute([$this->user_id]);
 
 	}
+
+	public function get_user_actions($id)
+	{
+		$db = static::getDB();
+
+		$action = $db->prepare("SELECT * FROM `user_action` WHERE first_user = ? AND second_user = ?");
+		$action->execute([$id['id'], $this->user_id]);
+		$action = $action->fetchAll(PDO::FETCH_ASSOC);
+
+		if ($action)
+			return $action;
+		else
+			return false;
+	}
 }

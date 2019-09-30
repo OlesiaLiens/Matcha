@@ -291,11 +291,11 @@
 				<h4>Information</h4>
 				<p>
 					<?php if ($args['online'] === '1') : ?>
-<!--						--><?= 'Status : Online' ?>
+						<!--						--><?= 'Status : Online' ?>
 					<?php endif; ?>
 
 					<?php if ($args['online'] === '0') : ?>
-<!--						--><?= 'Last seen: ' . $args['last_see'] ?>
+						<!--						--><?= 'Last seen: ' . $args['last_see'] ?>
 					<?php endif; ?> <br>
 
 					<?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
@@ -328,7 +328,11 @@
 				<div class="col-lg-3">
 					<ul>
 						<li class="like">
-							<div id="like_user" class="round red">&#10084;</div>
+							<div id="like_user"
+								<?php if ($args['liked'] === 'liked') : ?> class="round liked"   <?php endif; ?>
+								<?php if ($args['liked'] === 'none') : ?> class="round red"  <?php endif; ?>>
+								&#10084;
+							</div>
 						</li>
 					</ul>
 					<p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>

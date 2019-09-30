@@ -26,6 +26,17 @@ class User extends \Core\LoginController
 		$user_param = new \App\Models\UserProfile($this->route_params);
 		$user = $user_param->user_param();
 
+		$actions = $this->userActions($user);
+
+		$params['first_user'] = $actions[0]['first_user'];
+		$params['second_user'] = $actions[0]['second_user'];
+		$params['see'] = $actions[0]['see'];
+		$params['liked'] = $actions[0]['liked'];
+		$params['matched'] = $actions[0]['matched'];
+		$params['ban'] = $actions[0]['ban'];
+		$params['break'] = $actions[0]['break'];
+		$params['fake'] = $actions[0]['fake'];
+
 		$user_param->rating_increment();
 		$user_param->who_looked();
 
