@@ -28,7 +28,7 @@ $sqlUsers = "CREATE TABLE users(
 				longitude    FLOAT,
 				latitude     FLOAT,
 				location     VARCHAR(50)  NOT NULL DEFAULT '-',
-				avatars      varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
+				avatar       varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
 				notification INT          NOT NULL DEFAULT 1,
 				rating       INTEGER      NOT NULL DEFAULT 0,
 				online       TINYINT(1)   NOT NULL DEFAULT 0,

@@ -62,7 +62,7 @@ class Photo extends \Core\Model
 		$db = static::getDB();
 
 
-		$save = $db->prepare("UPDATE USERS SET avatars = ? WHERE id = ? ");
+		$save = $db->prepare("UPDATE USERS SET avatar = ? WHERE id = ? ");
 		$save->execute([$img, $user_id]);
 	}
 }

@@ -366,7 +366,7 @@
 							</label>
 						<?php endif; ?>
 						<p class="error" id="show_errors"></p>
-						<img id="avatar" src="<?= $args['avatars'] ?>" alt="img1">
+						<img id="avatar" src="<?= $args['avatar'] ?>" alt="img1">
 					</div>
 				</div>
 			</div>

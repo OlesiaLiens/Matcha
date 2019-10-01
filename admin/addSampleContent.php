@@ -52,7 +52,7 @@ $connection->exec("INSERT INTO
 print('Sample matches added' . PHP_EOL);
 
 $connection->exec("INSERT INTO
-users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatars)
+users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatar)
 VALUES
 ('test@mail.com', 'user', 'Klava', 'Klava', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'both', '44', 'Kiev',  '50.4547', '30.5238', '/default/jean.jpg'),
 ('zaria@mail.com', 'user', 'Zaria', 'Maxwell', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male', '54', 'Cherkassy',  '50.4547', '30.5238', '/default/zaria.jpg'),

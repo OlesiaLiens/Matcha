@@ -22,8 +22,10 @@ class Chat extends \Core\Model
 //		$output = file_get_contents('../Test/samplediags.json');
 		$output = array();
 		$allowedChats = $this->getCounterparts($_SESSION['user_id']);
+		foreach ($allowedChats as $id)
+			array_push($output, $this->getChatObjById($_SESSION['user_id'], $id));
 
-		echo json_encode($allowedChats);
+		echo json_encode($output);
 	}
 
 	protected function getCounterparts($id) {
@@ -38,6 +40,10 @@ class Chat extends \Core\Model
 			array_push($result, $row['second_user']);
 		}
 		return $result;
+	}
+
+	protected function getChatObjById($origin, $counterpart) {
+
 	}
 }
 ?>
