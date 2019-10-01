@@ -328,102 +328,106 @@
         </div>
     </div>
 
-    <section class="container w">
-        <div class="row centered">
 
-            <div class="col-lg-3">
-                <img src="/images/idea.png">
-                <h4>Information</h4>
-                <p>
-                    <?php if ($args['online'] === '1') : ?>
-                        <!--						--><?= 'Status : Online' ?>
-                    <?php endif; ?>
+    <?php if ($args['ban'] !== 'ban') : ?>
+        <section class="container w">
+            <div class="row centered">
 
-                    <?php if ($args['online'] === '0') : ?>
-                        <!--						--><?= 'Last seen: ' . $args['last_see'] ?>
-                    <?php endif; ?> <br>
+                <div class="col-lg-3">
+                    <img src="/images/idea.png">
+                    <h4>Information</h4>
+                    <p>
+                        <?php if ($args['online'] === '1') : ?>
+                            <!--						--><?= 'Status : Online' ?>
+                        <?php endif; ?>
 
-                    <?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
-                    <?= 'Preference:' . ' ' . $args['preference'] ?> <br>
-                    <?= 'Location:' . ' ' . $args['location'] ?> <br>
-                    <?= 'Gender:' . ' ' . $args['gender'] ?> <br>
-                    <?= 'Age:' . ' ' . $args['bday'] ?> <br>
+                        <?php if ($args['online'] === '0') : ?>
+                            <!--						--><?= 'Last seen: ' . $args['last_see'] ?>
+                        <?php endif; ?> <br>
 
-                </p>
-            </div>
+                        <?= 'Full Name : ' . $args['first_name'] . ' ' . $args['last_name'] ?> <br>
+                        <?= 'Preference:' . ' ' . $args['preference'] ?> <br>
+                        <?= 'Location:' . ' ' . $args['location'] ?> <br>
+                        <?= 'Gender:' . ' ' . $args['gender'] ?> <br>
+                        <?= 'Age:' . ' ' . $args['bday'] ?> <br>
 
-            <div class="col-lg-3">
-                <img src="/images/plane.png">
-                <h4>Interests</h4>
-                <p><?= $args[0] ?? null ?> <br></p>
-                <p><?= $args[1] ?? null ?> <br></p>
-                <p><?= $args[2] ?? null ?> <br></p>
-                <p><?= $args[3] ?? null ?> <br></p>
-                <p><?= $args[4] ?? null ?> <br></p>
-                <p><?= $args[5] ?? null ?> <br></p>
-            </div>
-
-            <div class="col-lg-3">
-                <img src="/images/planet.png">
-                <h4>Fame Rating</h4>
-                <p> <?= $args['rating'] ?> </p>
-            </div>
-
-            <?php if ($args['id'] != $_SESSION['user_id']) : ?>
-                <div class="col-lg-10">
-                    <ul>
-                        <li class="like">
-                            <div id="like_user"
-
-                                <?php if ($args['ban'] === 'none') : ?>
-
-                                <?php if ($args['liked'] === 'liked') : ?> class="round liked"   <?php endif; ?>
-                                <?php if ($args['liked'] === 'none') : ?> class="round red"  <?php endif; ?>
-                                <?php if ($args['matched'] === 'matched') : ?> class="round matched"  <?php endif; ?>
-                            >
-
-                                <?php endif; ?>
-
-                                Like
-                            </div>
-                        </li>
-                    </ul>
-                    <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
-                </div>
-
-                <div class="col-lg-10">
-                    <ul>
-                        <li class="like">
-                            <div id="ban_user"
-                                <?php if ($args['ban'] === 'ban') : ?> class="round baned" <?php endif; ?>
-                                <?php if ($args['ban'] === 'none') : ?> class="round ban" <?php endif; ?>>
-
-                                Block
-                            </div>
-                        </li>
-                    </ul>
-                    <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+                    </p>
                 </div>
 
 
-                <div class="col-lg-10">
-                    <ul>
-                        <li class="like">
-                            <div id="fake_user"
-                                <?php if ($args['fake'] === 'fake') : ?> class="round faked" <?php endif; ?>
-                                <?php if ($args['fake'] === 'none') : ?> class="round fake" <?php endif; ?>>
-
-                                Fake
-                            </div>
-                        </li>
-                    </ul>
-                    <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+                <div class="col-lg-3">
+                    <img src="/images/plane.png">
+                    <h4>Interests</h4>
+                    <p><?= $args[0] ?? null ?> <br></p>
+                    <p><?= $args[1] ?? null ?> <br></p>
+                    <p><?= $args[2] ?? null ?> <br></p>
+                    <p><?= $args[3] ?? null ?> <br></p>
+                    <p><?= $args[4] ?? null ?> <br></p>
+                    <p><?= $args[5] ?? null ?> <br></p>
                 </div>
 
-            <?php endif; ?>
+                <div class="col-lg-3">
+                    <img src="/images/planet.png">
+                    <h4>Fame Rating</h4>
+                    <p> <?= $args['rating'] ?> </p>
+                </div>
 
-        </div>
-    </section>
+                <?php if ($args['id'] != $_SESSION['user_id']) : ?>
+                    <div class="col-lg-10">
+                        <ul>
+                            <li class="like">
+                                <div id="like_user"
+
+                                    <?php if ($args['ban'] === 'none') : ?>
+
+                                    <?php if ($args['liked'] === 'liked') : ?> class="round liked"   <?php endif; ?>
+                                    <?php if ($args['liked'] === 'none') : ?> class="round red"  <?php endif; ?>>
+                                    <!--                                -->
+                                    <?php //if ($args['matched'] === 'matched') : ?><!-- class="round matched"  --><?php //endif; ?>
+
+                                    <?php endif; ?>
+
+                                    Like
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+                    </div>
+
+                    <div class="col-lg-10">
+                        <ul>
+                            <li class="like">
+                                <div id="ban_user"
+                                    <?php if ($args['ban'] === 'ban') : ?> class="round baned" <?php endif; ?>
+                                    <?php if ($args['ban'] === 'none') : ?> class="round ban" <?php endif; ?>>
+
+                                    Block
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+                    </div>
+
+
+                    <div class="col-lg-10">
+                        <ul>
+                            <li class="like">
+                                <div id="fake_user"
+                                    <?php if ($args['fake'] === 'fake') : ?> class="round faked" <?php endif; ?>
+                                    <?php if ($args['fake'] === 'none') : ?> class="round fake" <?php endif; ?>>
+
+                                    Fake
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
+        </section>
+    <?php endif; ?>
 
 
     <section id="dg">
@@ -440,12 +444,14 @@
                             </label>
                         <?php endif; ?>
                         <p class="error" id="show_errors"></p>
-                        <img id="avatar" src="<?= $args['avatars'] ?>" alt="img1">
+                        <img id="avatar" src="<?= $args['avatar'] ?>" alt="img1">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <?php if ($args['ban'] !== 'ban') : ?>
 
     <section id="mycolor">
         <div class="container w ">
@@ -484,6 +490,7 @@
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <section id="lg">
         <div class="row centered">

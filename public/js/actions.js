@@ -20,7 +20,6 @@ function likeUser() {
             data: {"data": JSON.stringify(user_email)}
         })
 
-
     } else {
         like.classList.remove('liked');
         like.classList.add('red');
@@ -106,4 +105,3 @@ function banUser() {
 
 
 //todo сделать вывод юзеров, которые посмотрели твой аккаунт
-//todo нужно как-то отправить в notification другого юзера,  $_SESSION['user_id'] этого  юзера и сообщение что он посмотрел его аккаунт
