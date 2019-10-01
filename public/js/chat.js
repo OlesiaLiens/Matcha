@@ -164,10 +164,19 @@ $(document).ready(() => {
 			'time' : getTimeString()
 		};
 		drawMessage(message);
+
+		$.ajax({
+			url: '/chat/sendmessage'+ '/' + counterpart.counterpartID ,
+			type: 'post',
+			dataType: 'json',
+			data: {"data" : JSON.stringify(message)}
+		});
+
+		console.log('/chat/sendmessage'+ '/' + counterpart.counterpartID);
+
 		$('#counter').text(`${msgCounter += 1} messages`);
 		$('#msgInput').val('');
 		counterpart.messages.push(message);
-		console.log(counterpart);
 	});
 	getAvatar();
 	loadMessages();

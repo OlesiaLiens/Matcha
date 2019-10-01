@@ -15,12 +15,12 @@ class Chat extends \Core\Model
 	}
 
 	public function sendMessage($receiver) {
-
+		$test = $_POST;
+		print('42');
 	}
 
 	public function getDialogues() {
 		if (!isset($_SESSION['user_id'])) $_SESSION['user_id'] = 1;
-//		$output = file_get_contents('../Test/samplediags.json');
 		$output = array();
 		$allowedChats = $this->getCounterparts($_SESSION['user_id']);
 		foreach ($allowedChats as $id)
