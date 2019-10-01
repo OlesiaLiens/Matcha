@@ -31,6 +31,7 @@ const loadMessages = () => {
 		type: 'get',
 		success: dialoguesJSON => {
 			dialogues = JSON.parse(dialoguesJSON);
+			console.log(dialogues);
 			Object.keys(dialogues).forEach(key => {
 				let dialogue = dialogues[key];
 

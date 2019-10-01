@@ -51,6 +51,31 @@ $connection->exec("INSERT INTO
 
 print('Sample matches added' . PHP_EOL);
 
+$day = '01';
+$day2 = '01';
+
+$connection->exec("INSERT INTO
+						messages (sender, receiver, `text`, `time`)
+					VALUES
+						(3, 1, 'Hi, how are you samim?', '2019-10-{$day} 09:45:03'),
+						(1, 3, 'Hi Maryam i am good tnx how about you?', '2019-10-{$day} 09:52:07'),
+						(3, 1, 'I am good too, thank you for your chat template', '2019-10-{$day} 09:54:07'),
+						(1, 3, 'You\'re welcome Maryam', '2019-10-{$day} 09:57:22'),
+						(3, 1, 'I am looking for your next templates', '2019-10-{$day} 10:01:14'),
+						(1, 3, 'Ok, thank you have a good day', '2019-10-{$day} 10:06:33'),
+						(3, 1, 'Bye, see you', '2019-10-{$day} 10:07:29'),
+						(5, 1, 'Samim, hi?', '2019-10-{$day2} 11:22:07'),
+						(1, 5, 'Hi Gina, how are you?', '2019-10-{$day2} 11:24:09'),
+						(5, 1, 'I am good good but who tf is Maryam???', '2019-10-{$day2} 11:24:28'),
+						(1, 5, 'That\'s strictly business between us, rest assured love', '2019-10-{$day2} 11:26:20'),
+						(5, 1, 'Yeah, sure. Knew I couldnt trust u', '2019-10-{$day2} 11:27:00'),
+						(1, 5, 'Hey I\'m just trading templates with her! Like this one.', '2019-10-{$day2} 11:29:47'),
+						(5, 1, 'Oh... Sorry for overreacting then baby. You know I love you and just am scared to lose you', '2019-10-{$day2} 11:42:42'),
+						(1, 5, 'That so sweet of yours! That will never happen, really', '2019-10-{$day2} 11:43:54')
+");
+
+print('Sample messages added' . PHP_EOL);
+
 $connection->exec("INSERT INTO
 users (email, username, first_name, last_name, password, active, gender, preference, bday, location, latitude, longitude,  avatar)
 VALUES
@@ -59,7 +84,7 @@ VALUES
 ('claire@mail.com', 'user', 'Claire', 'Flores', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '20', 'Vyshneve',  '50.4547', '30.5238', '/default/claire.jpg'),
 ('gina@mail.com', 'user', 'Gina', 'Matthews', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'male',  '18', 'Brovary',  '50.4547', '30.5238', '/default/gina.jpg'),
 ('henry@mail.com', 'user', 'Henry', 'Medina', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'female',  '22', 'Zhytomyr',  '50.4547', '30.5238', '/default/henry.jpg'),
-('niko@mail.com', 'user', 'Niko', 'Hester', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'male', '33', 'Kyiv',  '50.4547', '30.5238', '/default/niko.jpg'),
+('niko@mail.com', 'user', 'Niko', 'Belic', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'male', '33', 'Kyiv',  '50.4547', '30.5238', '/default/niko.jpg'),
 ('van@mail.com', 'user', 'Van', 'Mcneil', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'male', 'female', '42', 'Kiev',  '50.4547', '30.5238', '/default/van.jpg'),
 ('jean@mail.com', 'user', 'Jean', 'Brooks', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'female', '19', 'Chernihiv',  '50.4547', '30.5238', '/default/jean.jpg'),
 ('helen@mail.com', 'user', 'Helen', 'Odom', 'sha1$6ccf8120$1$6565287932415fe3adca37dbaada1c3d64409f94', 1, 'female', 'both',  '40', 'Kyiv',  '50.4547', '30.5238', '/default/helen.jpg'),
