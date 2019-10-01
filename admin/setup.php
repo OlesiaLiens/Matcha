@@ -69,7 +69,6 @@ $sqlUserAction = "CREATE TABLE user_action(
 				liked        VARCHAR(50)  NOT NULL DEFAULT 'none',
 				matched      VARCHAR(255) NOT NULL DEFAULT 'none',
 				ban          VARCHAR(255) NOT NULL DEFAULT 'none',
-				break        VARCHAR(50)  NOT NULL DEFAULT 'none',
 				fake         VARCHAR(50)  NOT NULL DEFAULT 'none'
 			)";
 

@@ -19,4 +19,18 @@ abstract class LoginController extends Controller
 		}
 		return $res;
 	}
+
+	protected function userActions($id)
+	{
+		$res = false;
+//		session_start();
+		if (isset($_SESSION['user_id'])) {
+			$user = new User(0, $_SESSION['user_id']);
+			$res = $user->get_user_actions($id);
+		}
+		if (!$res) {
+			View::getTemplate('Errors/403error.php');
+		}
+		return $res;
+	}
 }
