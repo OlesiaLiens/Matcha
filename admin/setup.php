@@ -28,7 +28,7 @@ $sqlUsers = "CREATE TABLE users(
 				longitude    FLOAT,
 				latitude     FLOAT,
 				location     VARCHAR(50)  NOT NULL DEFAULT '-',
-				avatars      varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
+				avatar       varchar(50)  NOT NULL DEFAULT '../images/1photo.png',
 				notification INT          NOT NULL DEFAULT 1,
 				rating       INTEGER      NOT NULL DEFAULT 0,
 				online       TINYINT(1)   NOT NULL DEFAULT 0,
@@ -72,6 +72,14 @@ $sqlUserAction = "CREATE TABLE user_action(
 				fake         VARCHAR(50)  NOT NULL DEFAULT 'none'
 			)";
 
+$sqlMessages = "CREATE TABLE messages(
+				id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				sender       VARCHAR(50)  NOT NULL DEFAULT 'none',
+				receiver     VARCHAR(50)  NOT NULL DEFAULT 'none',
+				text         TEXT,
+				time         TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP 
+			)";
+
 $connection->exec($sqlUsers);
 print('Table Users created' . PHP_EOL);
 $connection->exec($sqlTokens);
@@ -84,5 +92,7 @@ $connection->exec($sqlUserTags);
 print('Table UserTags created' . PHP_EOL);
 $connection->exec($sqlUserAction);
 print('Table UserAction created' . PHP_EOL);
+$connection->exec($sqlMessages);
+print('Table Messages created' . PHP_EOL);
 
 ?>

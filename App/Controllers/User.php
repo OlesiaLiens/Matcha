@@ -47,7 +47,7 @@ class User extends \Core\LoginController
 		$params['username'] = $user['username'];
 		$params['first_name'] = $user['first_name'];
 		$params['last_name'] = $user['last_name'];
-		$params['avatars'] = $user['avatars'];
+		$params['avatar'] = $user['avatar'];
 		$params['rating'] = $user['rating'];
 		$params['gender'] = $user['gender'];
 		$params['preference'] = $user['preference'];

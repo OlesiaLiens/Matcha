@@ -30352,9 +30352,9 @@
 					<div class="container-results">
 						<?php foreach ($params['users'] as $user): ?>
 						<a href="/user/<?= $user['id'] ?>">
-							<figure class="user-snippet"><img src="<?= $user['avatars'] ?>" alt="profile-sample"
+							<figure class="user-snippet"><img src="<?= $user['avatar'] ?>" alt="profile-sample"
 															  class="background">
-								<img src="<?= $user['avatars'] ?>" alt="profile-sample" class="profile">
+								<img src="<?= $user['avatar'] ?>" alt="profile-sample" class="profile">
 
 								<figcaption><span class="circle offline">●</span>
 									<h3><?= $user['first_name'] ?></h3>
