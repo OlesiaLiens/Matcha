@@ -77,7 +77,8 @@ $sqlMessages = "CREATE TABLE messages(
 				sender       VARCHAR(50)  NOT NULL DEFAULT 'none',
 				receiver     VARCHAR(50)  NOT NULL DEFAULT 'none',
 				text         TEXT,
-				time         TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP 
+				time         TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+				delivered    VARCHAR(2)   NOT NULL DEFAULT 'N'
 			)";
 
 $connection->exec($sqlUsers);
