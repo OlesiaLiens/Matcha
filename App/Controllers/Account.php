@@ -19,17 +19,10 @@ class Account extends \Core\LoginController
 
 //		$user_param = new \App\Models\UserProfile($this->route_params);
 //		$user_id = $user_param->user_param();
-//
-//		$actions = $this->userActions($user_id);
-//
-//		$params['first_user'] = $actions['first_user'];
-//		$params['second_user'] = $actions['second_user'];
-//		$params['see'] = $actions['see'];
-//		$params['liked'] = $actions['liked'];
-//		$params['matched'] = $actions['matched'];
-//		$params['ban'] = $actions['ban'];
-//		$params['break'] = $actions['break'];
-//		$params['fake'] = $actions['fake'];
+
+
+		$params['ban'] = 'none';
+
 
 		$params['id'] = $user['id'];
 		$params['last_see'] = $user['last_see'];

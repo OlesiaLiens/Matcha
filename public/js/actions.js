@@ -79,6 +79,8 @@ function banUser() {
         // if (ban.classList.contains('baned')) {
         //     like.setAttribute('display', 'none');
         // }
+        console.log('We here');
+        $('.delete').hide();
 
         $.ajax({
             url: '/actions/ban/',
@@ -88,10 +90,11 @@ function banUser() {
             data: {"data": JSON.stringify(user_email)}
         })
 
-
     } else {
         ban.classList.remove('baned');
         ban.classList.add('ban');
+
+        $('.delete').show();
 
         $.ajax({
             url: '/actions/unBan/',
