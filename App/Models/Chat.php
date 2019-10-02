@@ -7,6 +7,7 @@ use function PHPSTORM_META\map;
 class Chat extends \Core\Model
 {
 	public function __construct() {
+		session_start();
 		$this->connection = static::getDB();
 	}
 
@@ -15,12 +16,38 @@ class Chat extends \Core\Model
 	}
 
 	public function sendMessage($receiver) {
-		$test = $_POST;
-		print('42');
+		$message = json_decode($_POST['data']);
+		$sql = "INSERT INTO
+					messages (sender, receiver, `text`)
+				VALUES
+					(:sender, :receiver, :text)";
+		$sendMsgStatement = $this->connection->prepare($sql);
+		$sendMsgStatement->execute(array(
+			':sender' => $_SESSION['user_id'],
+			':receiver' => $receiver,
+			':text' => $message->text
+		));
+	}
+
+	public function getUpdates($counterpart) {
+		$sql = "SELECT
+					COUNT(*)
+				FROM
+					messages
+				WHERE
+					(sender = :u AND receiver = :cp) OR
+					(sender = :cp AND receiver = :u)";
+		$countStatement = $this->connection->prepare($sql);
+		$countStatement->execute(array(
+			':u' => $_SESSION['user_id'],
+			':cp' => $counterpart
+		));
+		$currentHistLen = $countStatement->fetchColumn(0);
+		print($currentHistLen);
 	}
 
 	public function getDialogues() {
-		if (!isset($_SESSION['user_id'])) $_SESSION['user_id'] = 1;
+//		if (!isset($_SESSION['user_id'])) $_SESSION['user_id'] = 1;
 		$output = array();
 		$allowedChats = $this->getCounterparts($_SESSION['user_id']);
 		foreach ($allowedChats as $id)
