@@ -329,11 +329,11 @@
     </div>
 
 
-    <?php if ($args['ban'] !== 'ban') : ?>
-        <section class="container w">
-            <div class="row centered">
+    <section class="container w">
+        <div class="row centered">
+            <?php if ($args['ban'] === 'none') : ?>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 delete">
                     <img src="/images/idea.png">
                     <h4>Information</h4>
                     <p>
@@ -355,7 +355,7 @@
                 </div>
 
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 delete">
                     <img src="/images/plane.png">
                     <h4>Interests</h4>
                     <p><?= $args[0] ?? null ?> <br></p>
@@ -366,25 +366,23 @@
                     <p><?= $args[5] ?? null ?> <br></p>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 delete">
                     <img src="/images/planet.png">
                     <h4>Fame Rating</h4>
                     <p> <?= $args['rating'] ?> </p>
                 </div>
 
+
                 <?php if ($args['id'] != $_SESSION['user_id']) : ?>
-                    <div class="col-lg-10">
+
+                    <div class="col-lg-10 delete">
                         <ul>
-                            <li class="like">
+                            <li class="like ">
                                 <div id="like_user"
 
                                     <?php if ($args['ban'] === 'none') : ?>
-
                                     <?php if ($args['liked'] === 'liked') : ?> class="round liked"   <?php endif; ?>
                                     <?php if ($args['liked'] === 'none') : ?> class="round red"  <?php endif; ?>>
-                                    <!--                                -->
-                                    <?php //if ($args['matched'] === 'matched') : ?><!-- class="round matched"  --><?php //endif; ?>
-
                                     <?php endif; ?>
 
                                     Like
@@ -394,24 +392,10 @@
                         <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
                     </div>
 
-                    <div class="col-lg-10">
+
+                    <div class="col-lg-10 delete">
                         <ul>
-                            <li class="like">
-                                <div id="ban_user"
-                                    <?php if ($args['ban'] === 'ban') : ?> class="round baned" <?php endif; ?>
-                                    <?php if ($args['ban'] === 'none') : ?> class="round ban" <?php endif; ?>>
-
-                                    Block
-                                </div>
-                            </li>
-                        </ul>
-                        <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
-                    </div>
-
-
-                    <div class="col-lg-10">
-                        <ul>
-                            <li class="like">
+                            <li class="like ">
                                 <div id="fake_user"
                                     <?php if ($args['fake'] === 'fake') : ?> class="round faked" <?php endif; ?>
                                     <?php if ($args['fake'] === 'none') : ?> class="round fake" <?php endif; ?>>
@@ -422,12 +406,32 @@
                         </ul>
                         <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
                     </div>
-
                 <?php endif; ?>
 
-            </div>
-        </section>
-    <?php endif; ?>
+            <?php endif; ?>
+
+
+
+
+            <?php if ($args['id'] != $_SESSION['user_id']) : ?>
+
+                <div class="col-lg-10 ">
+                    <ul>
+                        <li class="like ">
+                            <div id="ban_user"
+                                <?php if ($args['ban'] === 'ban') : ?> class="round baned" <?php endif; ?>
+                                <?php if ($args['ban'] === 'none') : ?> class="round ban" <?php endif; ?>>
+
+                                Block
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="user_email" id="<?= $args['email'] ?? null ?>" style="display: none"></p>
+                </div>
+
+            <?php endif; ?>
+        </div>
+    </section>
 
 
     <section id="dg">
@@ -451,46 +455,50 @@
         </div>
     </section>
 
-    <?php if ($args['ban'] !== 'ban') : ?>
 
-    <section id="mycolor">
-        <div class="container w ">
-            <div class="row centered mycolor">
-                <div class="col-lg-12">
-                    <h4><?= $args['username'] . ' ' ?></h4>
-                    <p> <?= $args['bio'] ?> </p>
+    <?php if ($args['ban'] === 'none') : ?>
+        <section id="mycolor ">
+            <div class="container w delete">
+                <div class="row centered mycolor">
+                    <div class="col-lg-12 ">
+                        <h4><?= $args['username'] . ' ' ?></h4>
+                        <p> <?= $args['bio'] ?> </p>
+                    </div>
+                </div>
+        </section>
+    <?php endif; ?>
+
+
+
+    <?php if ($args['ban'] === 'none') : ?>
+        <section class="container wb delete">
+            <div class="row centered">
+
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h4>More photos</h4>
+                    <p></p>
+                </div>
+
+                <div class="col-lg-2"></div>
+                <div class="col-lg-10 col-lg-offset-1">
+                    <?php if (count($args['photos']) < 4): ?>
+                        <?php if ($args['id'] === $_SESSION['user_id']) : ?>
+                            <label for="photos" class="btn btn-default">
+                                <div id="image_2"></div>
+                                Upload photos<input type="file" id="photos" hidden style="display:none">
+                            </label>
+                        <?php endif; ?>
+                        <p class="error" id="show_photos_errors"></p>
+                        <img id="empty_photo" src="" alt="img" class="img-responsive" style="display: none">
+                    <?php endif; ?>
+                    <?php foreach ($args['photos'] as $photo): ?>
+                        <img id="" src="<?= $photo['path'] ?>" alt="img" class="img-responsive">
+                    <?php endforeach; ?>
                 </div>
             </div>
-    </section>
-
-
-    <section class="container wb">
-        <div class="row centered">
-
-            <div class="col-lg-10 col-lg-offset-1">
-                <h4>More photos</h4>
-                <p></p>
-            </div>
-
-            <div class="col-lg-2"></div>
-            <div class="col-lg-10 col-lg-offset-1">
-                <?php if (count($args['photos']) < 4): ?>
-                    <?php if ($args['id'] === $_SESSION['user_id']) : ?>
-                        <label for="photos" class="btn btn-default">
-                            <div id="image_2"></div>
-                            Upload photos<input type="file" id="photos" hidden style="display:none">
-                        </label>
-                    <?php endif; ?>
-                    <p class="error" id="show_photos_errors"></p>
-                    <img id="empty_photo" src="" alt="img" class="img-responsive" style="display: none">
-                <?php endif; ?>
-                <?php foreach ($args['photos'] as $photo): ?>
-                    <img id="" src="<?= $photo['path'] ?>" alt="img" class="img-responsive">
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
+        </section>
     <?php endif; ?>
+
 
     <section id="lg">
         <div class="row centered">
@@ -516,6 +524,7 @@
             </div>
         </div>
     </section>
+
 
 </main>
 
