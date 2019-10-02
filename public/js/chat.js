@@ -91,6 +91,15 @@ const openDialogue = event => {
 
 	$('#messagesBlock').empty();
 	Array.from(counterpart.messages).forEach(drawMessage);
+	setInterval(getUpdates, 1000, counterpart.counterpartID);
+}
+
+const getUpdates = id => {
+	$.ajax({
+		url: '/chat/getupdates/' + id,
+		type: 'get',
+		success: response => {console.log(response)}
+	});
 }
 
 const drawMessage = message => {

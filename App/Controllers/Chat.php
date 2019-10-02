@@ -26,4 +26,9 @@ class Chat extends \Core\LoginController
 		$chat = new ChatModel();
 		$chat->sendMessage($id);
 	}
+
+	public function getupdatesAction($id) {
+	    $chat = new ChatModel();
+	    $chat->getUpdates($id);
+    }
 }
