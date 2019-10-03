@@ -102,9 +102,16 @@ const getUpdates = id => {
 		url: '/chat/getupdates/' + id,
 		type: 'get',
 		success: response => {
-			console.log(response)
-			// let decoded = JSON.parse(response);
-			// console.log(decoded);
+			let decoded = JSON.parse(response);
+			count = Object.keys(decoded).length;
+			if (count > 0) {
+				let message = {
+					'sender' : 'they',
+					'text' : decoded.text,
+					'time' : decoded.time
+				};
+				drawMessage(message);
+			}
 		}
 	});
 }
