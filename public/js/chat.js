@@ -16,6 +16,7 @@ let useravatar = '';
 let dialogues;
 let counterpart;
 let msgCounter;
+let interval;
 
 const getAvatar = () => {
 	$.ajax({
@@ -70,6 +71,8 @@ const loadMessages = () => {
 };
 
 const openDialogue = event => {
+	if (typeof interval !== 'undefined')
+		clearInterval(interval);
 	let target;
 	if (event.target.classList.contains('dialogue'))
 		target = event.target;
@@ -91,7 +94,7 @@ const openDialogue = event => {
 
 	$('#messagesBlock').empty();
 	Array.from(counterpart.messages).forEach(drawMessage);
-	setInterval(getUpdates, 1000, counterpart.counterpartID);
+	interval = setInterval(getUpdates, 1000, counterpart.counterpartID);
 }
 
 const getUpdates = id => {

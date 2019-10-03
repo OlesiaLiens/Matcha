@@ -46,7 +46,10 @@ $connection->exec("INSERT INTO
 					VALUES
 						(1, 3, 'match'),
 						(1, 5, 'match'),
-						(1, 13, 'match')
+						(1, 13, 'match'),
+						(3, 1, 'match'),
+						(5, 1, 'match'),
+						(13, 1, 'match')
 ");
 
 print('Sample matches added' . PHP_EOL);
@@ -55,23 +58,23 @@ $day = '01';
 $day2 = '01';
 
 $connection->exec("INSERT INTO
-						messages (sender, receiver, `text`, `time`)
+						messages (sender, receiver, `text`, `time`, `delivered`)
 					VALUES
-						(3, 1, 'Hi, how are you samim?', '2019-10-{$day} 09:45:03'),
-						(1, 3, 'Hi Maryam i am good tnx how about you?', '2019-10-{$day} 09:52:07'),
-						(3, 1, 'I am good too, thank you for your chat template', '2019-10-{$day} 09:54:07'),
-						(1, 3, 'You\'re welcome Maryam', '2019-10-{$day} 09:57:22'),
-						(3, 1, 'I am looking for your next templates', '2019-10-{$day} 10:01:14'),
-						(1, 3, 'Ok, thank you have a good day', '2019-10-{$day} 10:06:33'),
-						(3, 1, 'Bye, see you', '2019-10-{$day} 10:07:29'),
-						(5, 1, 'Samim, hi?', '2019-10-{$day2} 11:22:07'),
-						(1, 5, 'Hi Gina, how are you?', '2019-10-{$day2} 11:24:09'),
-						(5, 1, 'I am good good but who tf is Maryam???', '2019-10-{$day2} 11:24:28'),
-						(1, 5, 'That\'s strictly business between us, rest assured love', '2019-10-{$day2} 11:26:20'),
-						(5, 1, 'Yeah, sure. Knew I couldnt trust u', '2019-10-{$day2} 11:27:00'),
-						(1, 5, 'Hey I\'m just trading templates with her! Like this one.', '2019-10-{$day2} 11:29:47'),
-						(5, 1, 'Oh... Sorry for overreacting then baby. You know I love you and just am scared to lose you', '2019-10-{$day2} 11:42:42'),
-						(1, 5, 'That so sweet of yours! That will never happen, really', '2019-10-{$day2} 11:43:54')
+						(3, 1, 'Hi, how are you samim?', '2019-10-{$day} 09:45:03', 'Y'),
+						(1, 3, 'Hi Maryam i am good tnx how about you?', '2019-10-{$day} 09:52:07', 'Y'),
+						(3, 1, 'I am good too, thank you for your chat template', '2019-10-{$day} 09:54:07', 'Y'),
+						(1, 3, 'You\'re welcome Maryam', '2019-10-{$day} 09:57:22', 'Y'),
+						(3, 1, 'I am looking for your next templates', '2019-10-{$day} 10:01:14', 'Y'),
+						(1, 3, 'Ok, thank you have a good day', '2019-10-{$day} 10:06:33', 'Y'),
+						(3, 1, 'Bye, see you', '2019-10-{$day} 10:07:29', 'Y'),
+						(5, 1, 'Samim, hi?', '2019-10-{$day2} 11:22:07', 'Y'),
+						(1, 5, 'Hi Gina, how are you?', '2019-10-{$day2} 11:24:09', 'Y'),
+						(5, 1, 'I am good good but who tf is Maryam???', '2019-10-{$day2} 11:24:28', 'Y'),
+						(1, 5, 'That\'s strictly business between us, rest assured love', '2019-10-{$day2} 11:26:20', 'Y'),
+						(5, 1, 'Yeah, sure. Knew I couldnt trust u', '2019-10-{$day2} 11:27:00', 'Y'),
+						(1, 5, 'Hey I\'m just trading templates with her! Like this one.', '2019-10-{$day2} 11:29:47', 'Y'),
+						(5, 1, 'Oh... Sorry for overreacting then baby. You know I love you and just am scared to lose you', '2019-10-{$day2} 11:42:42', 'Y'),
+						(1, 5, 'That so sweet of yours! That will never happen, really', '2019-10-{$day2} 11:43:54', 'Y')
 ");
 
 print('Sample messages added' . PHP_EOL);

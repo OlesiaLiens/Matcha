@@ -1,8 +1,524 @@
-Received URI: user/6
-Tryna match user/6
-Matched to /^(?P<controller>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.\=\&\:]+)\/(?P<id>\d+)$/i
-Params: {"action":"index","controller":"user","id":"6"}
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
 Received URI: favicon.ico
 Tryna match favicon.ico
-Matched to /^(?P<controller>[a-zA-Z0-9\-\%\(\)\"\,\ \[\]\.\=\&\:]+)$/i
-Params: {"action":"index","controller":"favicon.ico"}
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: 
+Tryna match 
+Matched to /^$/i
+Params: {"controller":"Login","action":"login"}
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/chat/getupdates/3
+Tryna match chat/chat/getupdates/3
+Failed to match chat/chat/getupdates/3
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: account/index
+Tryna match account/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"account","action":"index"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: info/location/
+Tryna match info/location
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"info","action":"location"}
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: 
+Tryna match 
+Matched to /^$/i
+Params: {"controller":"Login","action":"login"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: login/login
+Tryna match login/login
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"login","action":"login"}
+Received URI: account/index
+Tryna match account/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"account","action":"index"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/index
+Received URI: chat/getupdates/3
+Tryna match chat/index
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Received URI: chat/getupdates/3
+Params: {"controller":"chat","action":"index"}
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Tryna match chat/getupdates/3
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Received URI: chat/getdialogues/
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Tryna match chat/getdialogues
+Params: {"controller":"chat","action":"getavatar"}
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getdialogues/
+Received URI: chat/getavatar
+Tryna match chat/getdialogues
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/1
+Tryna match chat/getupdates/1
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"1"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/getupdates/3
+Tryna match chat/getupdates/3
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)\/(?P<param>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getupdates","param":"3"}
+Received URI: chat/index
+Tryna match chat/index
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"index"}
+Received URI: chat/getdialogues/
+Tryna match chat/getdialogues
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getdialogues"}
+Received URI: chat/getavatar
+Tryna match chat/getavatar
+Matched to /^(?P<controller>[a-z0-9]+)\/(?P<action>[a-z0-9]+)$/i
+Params: {"controller":"chat","action":"getavatar"}
+Received URI: favicon.ico
+Tryna match favicon.ico
+Failed to match favicon.ico

@@ -29,21 +29,55 @@ class Chat extends \Core\Model
 		));
 	}
 
+//	public function getUpdates($counterpart) {
+//		$sql = "SELECT
+//					COUNT(*)
+//				FROM
+//					messages
+//				WHERE
+//					(sender = :cp AND receiver = :u)";
+//		$countStatement = $this->connection->prepare($sql);
+//		$queryArgs = array(
+//			':u' => $_SESSION['user_id'],
+//			':cp' => $counterpart
+//		);
+//		$countStatement->execute($queryArgs);
+//		$initHistLen = $countStatement->fetchColumn(0);
+////		print($initHistLen);
+//
+//		while (strlen('true') == 4) {
+//			$countStatement->execute($queryArgs);
+//			$currHistLen = $countStatement->fetchColumn(0);
+//			if ($currHistLen > $initHistLen) {
+//				$sql = "SELECT
+//							text
+//						FROM
+//							messages
+//						WHERE
+//							(sender = :cp AND receiver = :u)
+//						ORDER BY
+//							`time` DESC
+//						LIMIT 1";
+//				$lastMsgStatement = $this->connection->prepare($sql);
+//				$lastMsgStatement->execute($queryArgs);
+//				$messageText = $lastMsgStatement->fetchColumn(0);
+//				echo $messageText;
+//				break;
+//			} else {
+//				sleep (1);
+//				continue;
+//			}
+//		}
+//	}
+
 	public function getUpdates($counterpart) {
 		$sql = "SELECT
-					COUNT(*)
+					text
 				FROM
 					messages
 				WHERE
-					(sender = :u AND receiver = :cp) OR
-					(sender = :cp AND receiver = :u)";
-		$countStatement = $this->connection->prepare($sql);
-		$countStatement->execute(array(
-			':u' => $_SESSION['user_id'],
-			':cp' => $counterpart
-		));
-		$currentHistLen = $countStatement->fetchColumn(0);
-		print($currentHistLen);
+					(sender = :cp AND receiver = :u) AND
+					delivered = 'N'";
 	}
 
 	public function getDialogues() {
