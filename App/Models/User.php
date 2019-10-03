@@ -127,17 +127,21 @@ class User extends \Core\Model
     {
         $db = static::getDB();
 
-        $action = $db->prepare("SELECT id FROM `user_action` WHERE first_user = ? AND second_user = ? AND ban = 'ban'");
+        $action = $db->prepare("SELECT * FROM `user_action` WHERE first_user = ? AND second_user = ? AND ban = 'ban'");
         $action->execute([$id['id'], $this->user_id]);
-        $action = $action->fetchColumn();
+        $action = $action->fetchAll(PDO::FETCH_ASSOC);
 
-        if (!$action)
-            return 'none';
-        else {
-            $action = $db->prepare("SELECT id FROM `user_action` WHERE first_user = ? AND second_user = ? AND ban = 'ban'");
-            $action->execute([$this->user_id, $id['id']]);
-            $action = $action->fetchColumn();
+        if ($action)
             return $action;
+
+        if (!$action){
+            return 'none';
         }
+//        else {
+//            $action = $db->prepare("SELECT id FROM `user_action` WHERE first_user = ? AND second_user = ? AND ban = 'ban'");
+//            $action->execute([$this->user_id, $id['id']]);
+//            $action = $action->fetchColumn();
+//            return $action;
+//        }
     }
 }
