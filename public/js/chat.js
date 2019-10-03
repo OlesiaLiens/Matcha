@@ -94,14 +94,18 @@ const openDialogue = event => {
 
 	$('#messagesBlock').empty();
 	Array.from(counterpart.messages).forEach(drawMessage);
-	interval = setInterval(getUpdates, 1000, counterpart.counterpartID);
+	interval = setInterval(getUpdates, 10000, counterpart.counterpartID);
 }
 
 const getUpdates = id => {
 	$.ajax({
 		url: '/chat/getupdates/' + id,
 		type: 'get',
-		success: response => {console.log(response)}
+		success: response => {
+			console.log(response)
+			// let decoded = JSON.parse(response);
+			// console.log(decoded);
+		}
 	});
 }
 
