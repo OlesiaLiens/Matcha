@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use App\Models\Actions as ActionsModel;
+use Core\View;
 
 class Actions extends \Core\LoginController
 {
@@ -46,7 +47,12 @@ class Actions extends \Core\LoginController
         $ban = new ActionsModel($_POST);
         $res = $ban->banUser($user);
         if ($res)
+        {
+            $ban = $this->get_ban($user);
+            View::render('Account/index.php', $ban);
             return;
+        }
+
     }
 
     public function unBanAction()

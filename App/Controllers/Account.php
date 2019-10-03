@@ -23,6 +23,9 @@ class Account extends \Core\LoginController
 
 		$params['ban'] = 'none';
 
+//        $actions = $this->userActions($user);
+//
+        $params['first_user'] = 'none';
 
 		$params['id'] = $user['id'];
 		$params['last_see'] = $user['last_see'];

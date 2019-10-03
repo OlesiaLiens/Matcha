@@ -41,11 +41,10 @@ class User extends \Core\LoginController
         $params['liked'] = $actions[0]['liked'];
         $params['matched'] = $actions[0]['matched'];
 
-        $params['ban'] = $ban;
-        //todo нормально вытащить ban - и тимплейт все ок отрисует
+        $params['ban'] = $ban[0]['ban'] ?? 'none';
         $params['fake'] = $actions[0]['fake'];
 
-        $params['id'] = $user['id'];
+        $params['id'] = $user['id']; //todo
         $params['last_see'] = $user['last_see'];
         $params['online'] = $user['online'];
         $params['email'] = $user['email'];
