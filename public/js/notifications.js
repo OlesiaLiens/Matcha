@@ -56,7 +56,8 @@ const checkUpdates = () => {
         }
     });
 };
-
+//
+// hulla.send("Someone has a great interest int your profile...", "success");
 
 // TODO: Create hullabaloo notifications with these messages
 function notify(typeOfEvent) {
