@@ -28,9 +28,9 @@ abstract class LoginController extends Controller
             $user = new User(0, $_SESSION['user_id']);
             $res = $user->get_user_actions($id);
         }
-        if (!$res) {
-            View::getTemplate('Errors/403error.php');
-        }
+//        if (!$res) {
+//            View::getTemplate('Errors/403error.php');
+//        }
         return $res;
     }
 

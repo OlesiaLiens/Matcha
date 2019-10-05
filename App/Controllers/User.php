@@ -35,14 +35,14 @@ class User extends \Core\LoginController
         $ban = $this->get_ban($user);
 
 
-        $params['first_user'] = $actions[0]['first_user'];
-        $params['second_user'] = $actions[0]['second_user'];
-        $params['see'] = $actions[0]['see'];
-        $params['liked'] = $actions[0]['liked'];
-        $params['matched'] = $actions[0]['matched'];
+        $params['first_user'] = $actions[0]['first_user'] ?? 'none';
+        $params['second_user'] = $actions[0]['second_user'] ?? 'none';
+        $params['see'] = $actions[0]['see'] ?? 'none';
+        $params['liked'] = $actions[0]['liked'] ?? 'none';
+        $params['matched'] = $actions[0]['matched'] ?? 'none';
 
         $params['ban'] = $ban[0]['ban'] ?? 'none';
-        $params['fake'] = $actions[0]['fake'];
+        $params['fake'] = $actions[0]['fake'] ?? 'none';
 
         $params['id'] = $user['id']; //todo
         $params['last_see'] = $user['last_see'];
