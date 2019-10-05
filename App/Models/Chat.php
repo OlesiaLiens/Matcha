@@ -72,12 +72,34 @@ class Chat extends \Core\Model
 
 	public function getUpdates($counterpart) {
 		$sql = "SELECT
-					text
+					id, text, `time`
 				FROM
 					messages
 				WHERE
 					(sender = :cp AND receiver = :u) AND
-					delivered = 'N'";
+					delivered = 'N'
+				LIMIT 1";
+		$newMsgStatement = $this->connection->prepare($sql);
+		$newMsgStatement->execute(array(
+			':cp' => $counterpart,
+			':u' => $_SESSION['user_id']
+		));
+		if ($newMsgStatement->rowCount() == 0) {echo json_encode(array()); return;}
+		$newMsg = $newMsgStatement->fetch(PDO::FETCH_ASSOC);
+
+		$id = $newMsg['id'];
+		$text = $newMsg['text'];
+		$time = $newMsg['time'];
+		$output = array('text' => $text, 'time' => $time);
+		$sql = "UPDATE
+					messages
+				SET
+					delivered = 'Y'
+				WHERE
+					id = {$id}";
+		$this->connection->exec($sql);
+
+		echo json_encode($output);
 	}
 
 	public function getDialogues() {
