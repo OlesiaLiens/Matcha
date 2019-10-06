@@ -17,16 +17,8 @@ class Account extends \Core\LoginController
 		}
 		$params = [];
 
-//		$user_param = new \App\Models\UserProfile($this->route_params);
-//		$user_id = $user_param->user_param();
-
-
 		$params['ban'] = 'none';
-
-//        $actions = $this->userActions($user);
-//
         $params['first_user'] = 'none';
-
 		$params['id'] = $user['id'];
 		$params['last_see'] = $user['last_see'];
 		$params['online'] = $user['online'];
@@ -42,7 +34,6 @@ class Account extends \Core\LoginController
 		$params['bio'] = $user['bio'];
 		$all_photos = new PhotoModel();
 		$params['photos'] = $all_photos->getAllPhotos();
-
 		$tag = new User(null, $user);
 
 		$id_tags = $tag->get_id_tags();

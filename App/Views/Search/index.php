@@ -33,7 +33,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/account/index">Account</a></li>
                 <li><a href="/info/info">Information</a></li>
-                <li class=""><a href="/notification/index">Notification</a></li>
                 <li><a href="/settings/index">Settings</a></li>
                 <li class="active"><a href="/search/index">Search</a></li>
                 <li><a href="/chat/index">Chat</a></li>

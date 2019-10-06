@@ -14,8 +14,8 @@ class Notification extends \Core\Model
 	public function getCounters() {
 		$sql = "SELECT
 					(SELECT COUNT(*) FROM user_action WHERE first_user = :id AND see = 'see') AS 'see',
-					(SELECT COUNT(*) FROM user_action WHERE first_user = :id AND liked = 'like') AS 'like',
-					(SELECT COUNT(*) FROM user_action WHERE first_user = :id AND matched = 'match') AS 'match',
+					(SELECT COUNT(*) FROM user_action WHERE first_user = :id AND liked = 'liked') AS 'like',
+					(SELECT COUNT(*) FROM user_action WHERE first_user = :id AND matched = 'matched') AS 'match',
 					(SELECT COUNT(*) FROM messages WHERE receiver = :id) AS 'msgs'";
 		$countersStatement = $this->connection->prepare($sql);
 		$countersStatement->execute(array(':id' => $_SESSION['user_id']));
