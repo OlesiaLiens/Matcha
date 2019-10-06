@@ -346,7 +346,7 @@
 
     <section class="container w">
         <div class="row centered">
-            <?php if ($args['ban'] === 'none') : ?>
+            <?php if ($args['ban'] === 'none' && $args['first_user'] !== $args['id']): ?>
 
                 <div class="col-lg-3 delete">
                     <img src="/images/idea.png">

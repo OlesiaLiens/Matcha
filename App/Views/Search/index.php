@@ -202,7 +202,11 @@
                 <div class="container-right">
                     <div class="container-results">
                         <?php foreach ($params['users'] as $user): ?>
+
+
                         <a href="/user/<?= $user['id'] ?>">
+
+
                             <figure class="user-snippet"><img src="<?= $user['avatar'] ?>" alt="profile-sample"
                                                               class="background">
                                 <img src="<?= $user['avatar'] ?>" alt="profile-sample" class="profile">

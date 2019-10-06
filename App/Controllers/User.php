@@ -44,7 +44,7 @@ class User extends \Core\LoginController
         $params['ban'] = $ban[0]['ban'] ?? 'none';
         $params['fake'] = $actions[0]['fake'] ?? 'none';
 
-        $params['id'] = $user['id']; //todo
+        $params['id'] = $user['id'];
         $params['last_see'] = $user['last_see'];
         $params['online'] = $user['online'];
         $params['email'] = $user['email'];
