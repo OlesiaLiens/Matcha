@@ -1,0 +1,13 @@
+#jumbo {
+	padding: 1rem 1rem !important;
+}
+
+.card-deck {
+	margin: auto;
+}
+
+@media screen and (min-width: 1700px) {
+	.d-xxl-none {
+		display: none !important;
+	}
+}
