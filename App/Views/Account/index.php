@@ -325,6 +325,7 @@
                 <li class=""><a href="/info/index">Information</a></li>
                 <li class=""><a href="/notification/index">Notification</a></li>
                 <li><a href="/settings/index">Settings</a></li>
+                <li><a href="/browse/index">Browse</a></li>
                 <li><a href="/search/index">Search</a></li>
                 <li><a href="/chat/index">Chat</a></li>
                 <li><a href="/logout/index">Logout</a></li>
