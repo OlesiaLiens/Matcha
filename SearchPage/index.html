@@ -52,6 +52,38 @@
 	  											<!--             -->
 	  
 		<div id="menuCol" class="col-3" style="background-color: coral">
+			<div class="row"><div class="col text-center"><h3>Filter criteria</h3></div></div>
+			
+	  											<!--            -->
+	  											<!-- AGE FILTER -->
+	  											<!--            -->
+
+			<div id="ageBtnRow" class="row justify-content-center text-center">
+				<button class="btn btn-primary m-3" type="button" data-toggle="collapse" data-target="#ageSets" aria-expanded="false" aria-controls="ageSets">Age</button>
+			</div>
+			<div id="ageFiltRow" class="row justify-content-center text-center">
+				<div class="ml-1 mr-1 collapse" id="ageSets" style="width: 100%;">
+					<div class="row no-gutters">
+						<div class="col-5">
+							<select id="minAge" class="custom-select">
+								<option value="any" selected>Any</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+							</select>
+						</div>
+						<div class="col-2"><p>-</p></div>
+						<div class="col-5">
+							<select id="maxAge" class="custom-select">
+								<option value="any" selected>Any</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
 		</div>
 	  											<!--                       -->
 	  											<!-- RESULTS OF THE FILTER -->
