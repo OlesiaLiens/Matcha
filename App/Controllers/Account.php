@@ -64,5 +64,3 @@ class Account extends \Core\LoginController
 		}
 	}
 }
-
-//todo   Block the user
