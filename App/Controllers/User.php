@@ -24,7 +24,8 @@ class User extends \Core\LoginController
         $params = [];
 
         $user_param = new \App\Models\UserProfile($this->route_params);
-        $user = $user_param->user_param();
+        $user = $user_param->user_param(); //инфо юзера на страницу которого мы заходим
+        $params['id'] = $user['id'];
 
 
         $user_param->rating_increment();
@@ -33,6 +34,7 @@ class User extends \Core\LoginController
         $actions = $this->userActions($user);
 
         $ban = $this->get_ban($user);
+        $params['ban'] = $ban[0]['ban'] ?? 'none';
 
 
         $params['first_user'] = $actions[0]['first_user'] ?? 'none';
@@ -41,7 +43,7 @@ class User extends \Core\LoginController
         $params['liked'] = $actions[0]['liked'] ?? 'none';
         $params['matched'] = $actions[0]['matched'] ?? 'none';
 
-        $params['ban'] = $ban[0]['ban'] ?? 'none';
+
         $params['fake'] = $actions[0]['fake'] ?? 'none';
 
         $params['id'] = $user['id'];
