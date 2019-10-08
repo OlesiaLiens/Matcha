@@ -15,13 +15,9 @@ class Browse extends \Core\LoginController
 //		View::render('Search/index.php');
 	}
 
-	public function pageAction($page_number)
-	{
-		if (!(is_numeric($page_number)) || $page_number > 1000 || $page_number < 1) {
-			View::getTemplate('Errors/404error.php');
-			return;
-		}
-		$this->viewGallery($page_number);
+	public function getusersAction() {
+		$browse = new BrowseModel;
+		$browse->getUsersGallery();
 	}
 
 	private function viewGallery($page_number)

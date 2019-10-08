@@ -33,4 +33,9 @@ class Browse extends \Core\Model
 		}
 		return 0;
 	}
+
+	public function getUsersGallery() {
+		$output = file_get_contents('../Test/browseJSON.json');
+		echo $output;
+	}
 }

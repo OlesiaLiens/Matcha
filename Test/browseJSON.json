@@ -1,0 +1,105 @@
+[
+	{
+		"userID" : 1,
+		"avatar" : "/images/1photo.png",
+		"firstName" : "Admin",
+		"lastName" : "De",
+		"bio" : "Currently the only damn user with a biography",
+		"age" : 1337,
+		"rating" : 100500,
+		"location" : "Kyiv",
+		"longitude" : 30.4642,
+		"latutide" : 50.4706
+	},
+
+	{
+		"userID" : 2,
+		"avatar" : "/default/jean.jpg",
+		"firstName" : "Klava",
+		"lastName" : "Klava",
+		"bio" : "Actually not Klava, but Jean, according to the avatar name",
+		"age" : 64,
+		"rating" : 0,
+		"location" : "Kyiv",
+		"longitude" : 30.5238,
+		"latutide" : 50.4547
+	},
+
+	{
+		"userID" : 3,
+		"avatar" : "/default/zaria.jpg",
+		"firstName" : "Zaria",
+		"lastName" : "Maxwell",
+		"bio" : "This a one was in the chat cause she matched admin",
+		"age" : 31,
+		"rating" : 0,
+		"location" : "Cherkasy",
+		"longitude" : 30.5238,
+		"latutide" : 50.4547
+	},
+
+	{
+		"userID" : 4,
+		"avatar" : "/default/claire.jpg",
+		"firstName" : "Claire",
+		"lastName" : "Flores",
+		"bio" : "Resembles Skylar from Breaking bad in some weird way",
+		"age" : 36,
+		"rating" : 0,
+		"location" : "Vyshneve",
+		"longitude" : 30.5238,
+		"latutide" : 50.4547
+	},
+
+	{
+		"userID" : 5,
+		"avatar" : "/default/gina.jpg",
+		"firstName" : "Gina",
+		"lastName" : "Matthews",
+		"bio" : "Currently, well, not the only damn user with a biography",
+		"age" : 22,
+		"rating" : 0,
+		"location" : "Brovary",
+		"longitude" : 30.5238,
+		"latutide" : 50.4547
+	},
+
+	{
+		"userID" : 10,
+		"avatar" : "/default/helen.jpg",
+		"firstName" : "Helen",
+		"lastName" : "Odom",
+		"bio" : "Had to pull this one from the master branch, cause I only had 5 results in a sample",
+		"age" : 22,
+		"rating" : 0,
+		"location" : "Kyiv",
+		"longitude" : 30.5238,
+		"latutide" : 50.4547
+	},
+
+	{
+		"userID" : 87,
+		"avatar" : "/women/woman0.jpg",
+		"firstName" : "Xyla",
+		"lastName" : "Valencia",
+		"bio" : "A short bio",
+		"age" : 24,
+		"rating" : 0,
+		"location" : "Kyiv",
+		"longitude" : 30.5238,
+		"latutide" : 50.4547
+	},
+
+	{
+		"userID" : 90,
+		"avatar" : "/women/woman3.jpg",
+		"firstName" : "Jade",
+		"lastName" : "Craig",
+		"bio" : "An extremely super-duper long bio, as long a bavin apes cap on the end. An extremely super-duper long bio, as long a bavin apes cap on the end An extremely super-duper long bio, as long a bavin apes cap on the end.",
+		"age" : 23,
+		"rating" : 0,
+		"location" : "Kyiv",
+		"longitude" : 30.5238,
+		"latutide" : 50.4547
+	}	
+]
