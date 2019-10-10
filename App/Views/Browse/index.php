@@ -134,13 +134,13 @@
 							<div class="row no-gutters">
 								<div class="col-5">
 									<select id="minAge" class="custom-select">
-										<option value="any" selected>Any</option>
+										<!-- <option value="any" selected>Any</option> -->
 									</select>
 								</div>
 								<div class="col-2"><p>-</p></div>
 								<div class="col-5">
 									<select id="maxAge" class="custom-select">
-										<option value="any" selected>Any</option>
+										<!-- <option value="any" selected>Any</option> -->
 									</select>
 								</div>
 							</div>

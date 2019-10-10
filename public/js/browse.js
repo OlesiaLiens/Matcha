@@ -20,7 +20,7 @@ let cards = [];
 let constraints = {
 	minAge : 18, // Let's play it safe and assume the site isn't suitable for minors
 	maxAge : 116, // The oldest known person alive is 116 years old
-	reqTags : 'n'
+	reqTags : false
 };
 
 const fillOptions = () => {
@@ -28,6 +28,8 @@ const fillOptions = () => {
 		$('#minAge').append(`<option value="${i}">${i}</option>`);
 		$('#maxAge').append(`<option value="${i}">${i}</option>`);
 	}
+	$('#minAge').val('18'); // Must re-do this the clever way
+	$('#maxAge').val('116'); // that considers 1st & last elements
 }
 
 const getOwnData = () => {
@@ -156,15 +158,35 @@ const setFilterControl = () => {
 	})
 	$('#reqTags').change(event => {
 		if(event.target.checked)
-			constraints.reqTags = 'y';
+			constraints.reqTags = true;
 		else
-			constraints.reqTags = 'n';
+			constraints.reqTags = false;
 		filterResults();
 	})
 }
 
 const filterResults = () => {
-	console.log(constraints);
+	Object.values(cards).forEach(card => {
+		if (meetsConstraints(card.profile))
+			$(card).show();
+		else
+			$(card).hide();
+	});
+}
+
+function meetsConstraints(profile) {
+	if (profile.age < constraints.minAge)
+		return false;
+	if (profile.age > constraints.maxAge)
+		return false;
+	if (profile.rate < constraints.minRate)
+		return false;
+	if (profile.rate > constraints.maxRate)
+		return false;
+	if (constraints.reqTags &&
+		!(profile.tags.some(tag => {return ownTags.includes(tag)})))
+		return false;
+	return true;
 }
 
 $(document).ready(() => {
