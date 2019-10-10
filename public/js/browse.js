@@ -17,6 +17,26 @@ let ownLongitude;
 let ownLatitude;
 let ownTags = [];
 let cards = [];
+let constraints = {
+	minAge : 18,
+	maxAge : 116 // The oldest known person alive is 116 years old
+};
+
+const getOwnData = () => {
+	$.ajax({
+		url: '/browse/getowndata',
+		type: 'get',
+		success: response => {
+			responseObj = JSON.parse(response);
+			ownLongitude = responseObj.longitude;
+			ownLatitude = responseObj.latitude;
+			ownTags = responseObj.tags;
+			console.log('Longitude: ', ownLongitude)
+			console.log('Latitude: ', ownLatitude)
+			console.log('Tags: ', ownTags)
+		}
+	})
+}
 
 /* I know this creates hella load and makes transaction time
    super long, but the deadlines are too close */
@@ -37,7 +57,7 @@ const getUserGallery = () => {
 				card.appendChild(avatar);
 
 				let cb = document.createElement('div');
-				cb.setAttribute('class', 'card-body');
+				cb.setAttribute('class', 'card-body collapse');
 				card.appendChild(cb);
 
 				let name = document.createElement('h5');
@@ -51,7 +71,7 @@ const getUserGallery = () => {
 				cb.appendChild(bio);
 
 				let details = document.createElement('ul');
-				details.setAttribute('class', 'list-group list-group-flush');
+				details.setAttribute('class', 'list-group list-group-flush collapse');
 				card.appendChild(details);
 
 				let age = document.createElement('li');
@@ -73,11 +93,16 @@ const getUserGallery = () => {
 				footer.setAttribute('class', 'card-footer text-center');
 				card.appendChild(footer);
 
-				let viewProfBtn = document.createElement('button');
+				let viewProfBtn = document.createElement('a');
 				viewProfBtn.setAttribute('class', 'btn btn-primary');
+				viewProfBtn.setAttribute('href', `/user/${profile.userID}`);
 				viewProfBtn.innerText = 'View profile';
 				footer.appendChild(viewProfBtn);
 
+				avatar.onclick = () => {
+					$(cb).toggle('slow');
+					$(details).toggle('slow');
+				}
 				card.profile = profile;
 				cards.push(card);
 				resultsContainer.appendChild(card);
@@ -88,7 +113,7 @@ const getUserGallery = () => {
 }
 
 $(document).ready(() => {
-
+	getOwnData();
 	getUserGallery();
-
+	setFilterControl();
 });

@@ -4,7 +4,7 @@
 
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Search | MATCHA</title>
+	<title>Browse | MATCHA</title>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!--        <link rel="stylesheet" href="/styles/bootstrap.css">-->
 <!--    <link rel="stylesheet" href="./search_files/bootstrap.min.css">-->
@@ -224,12 +224,8 @@
 						<div class="ml-2 mr-2 collapse" id="tagsSets" style="width: 100%;">
 							<div class="row no-gutters">
 								<div class="col">
-									<input id="reqTags"
-										   class="form-control input-group-lg reg_name"
-										   type="text"
-										   name="reqTags"
-										   title="Required tags"
-										   placeholder="Required tags (commas)"/>
+									 <input type="checkbox" id="reqTags">
+									 <label for="reqTags" class="text-white">Common tags are a must</label>
 								</div>
 							</div>
 						</div>
@@ -251,7 +247,7 @@
 												<!-- PAGINATION -->
 												<!--            -->
 		  
-			<div id="pagRow" class="row justify-content-center" style="margin-bottom: 140px">
+			<!-- <div id="pagRow" class="row justify-content-center" style="margin-bottom: 140px">
 				<nav aria-label="Page navigation example">
 					<ul class="pagination">
 						<li class="page-item">
@@ -269,7 +265,7 @@
 						</li>
 					</ul>
 				</nav>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	

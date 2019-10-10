@@ -7,35 +7,48 @@ use PDO;
 
 class Browse extends \Core\Model
 {
-	public static function getUserByPage($page_number)
-	{
-		$db = static::getDB();
-		$start_index = $page_number * 5 - 5;
-
-		$all_photos = "SELECT * FROM users LIMIT $start_index, 5";
-		$res = $db->query($all_photos);
-		$row = $res->fetchAll(PDO::FETCH_ASSOC);
-		if ($row) {
-			return $row;
-		}
-		return [];
-	}
-
-	public static function getUsersCount()
-	{
-		$db = static::getDB();
-
-		$all_photos = "SELECT count(*) FROM users";
-		$res = $db->query($all_photos);
-		$row = $res->fetchColumn();
-		if ($row) {
-			return $row;
-		}
-		return 0;
+	public function __construct() {
+		session_start();
+		$this->connection = static::getDB();
 	}
 
 	public function getUsersGallery() {
 		$output = file_get_contents('../Test/browseJSON.json');
 		echo $output;
+	}
+
+	public function getOwnData() {
+		$output = array();
+		$queryArg = array(':userid' => $_SESSION['user_id']);
+
+		$sql = "SELECT
+					longitude, latitude
+				FROM
+					users
+				WHERE
+					id = :userid";
+		$longLatStatement = $this->connection->prepare($sql);
+		$longLatStatement->execute($queryArg);
+		$queryRes = $longLatStatement->fetch(PDO::FETCH_ASSOC);
+		$output = array_merge($output, $queryRes);
+
+		$tags = array();
+		$sql = "SELECT
+					tags.tag
+				FROM
+					tags
+					INNER JOIN users_tags
+					ON tags.id = users_tags.tag_id
+				WHERE
+					user_id = :userid";
+		$tagsStatement = $this->connection->prepare($sql);
+		$tagsStatement->execute($queryArg);
+		$queryRes = $tagsStatement->fetchAll(PDO::FETCH_ASSOC);
+		// print_r($queryRes);
+		foreach ($queryRes as $row) {
+			array_push($tags, $row['tag']);
+		}
+		$output['tags'] = $tags;
+		echo json_encode($output);
 	}
 }
