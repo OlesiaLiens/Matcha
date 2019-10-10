@@ -30,5 +30,22 @@ function isAlphaNumeric(str) {
 }
 
 function emailValid (email) {
-  return /\S+@\S+\.\S+/.test(email);
+	return /\S+@\S+\.\S+/.test(email);
+}
+
+function getDistance(latitudeOrig, longitudeOrig, latitudeDest, longitudeDest) {
+	let R = 6371; // Radius of the earth in km
+	let degLat = deg2rad(latitudeDest - latitudeOrig);
+	let degLon = deg2rad(longitudeDest - longitudeOrig);
+	let a = 
+		Math.sin(degLat/2) * Math.sin(degLat/2) +
+		Math.cos(deg2rad(latitudeOrig)) * Math.cos(deg2rad(latitudeDest)) * 
+		Math.sin(degLon/2) * Math.sin(degLon/2)
+		; 
+	let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); 
+	return (R * c); // Distance in km
+}
+
+function deg2rad(deg) {
+	return deg * (Math.PI/180)
 }

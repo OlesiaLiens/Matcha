@@ -167,6 +167,10 @@ const setFilterControl = () => {
 
 const filterResults = () => {
 	Object.values(cards).forEach(card => {
+		card.profile.distance = getDistance(ownLatitude,
+																				ownLongitude,
+																				card.profile.latitude,
+																				card.profile.longitude);
 		if (meetsConstraints(card.profile))
 			$(card).show();
 		else
@@ -182,6 +186,10 @@ function meetsConstraints(profile) {
 	if (profile.rate < constraints.minRate)
 		return false;
 	if (profile.rate > constraints.maxRate)
+		return false;
+	if (profile.distance < constraints.minDist)
+		return false;
+	if (profile.distance > constraints.maxDist)
 		return false;
 	if (constraints.reqTags &&
 		!(profile.tags.some(tag => {return ownTags.includes(tag)})))

@@ -9,7 +9,7 @@
 		"rating" : 100500,
 		"location" : "Kyiv",
 		"longitude" : 30.4642,
-		"latutide" : 50.4706,
+		"latitude" : 50.4706,
 		"tags" : []
 	},
 
@@ -23,7 +23,7 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547,
+		"latitude" : 50.4547,
 		"tags" :
 			[
 				"Historical",
@@ -42,7 +42,7 @@
 		"rating" : 0,
 		"location" : "Cherkasy",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547,
+		"latitude" : 50.4547,
 		"tags" :
 			[
 				"Python",
@@ -61,7 +61,7 @@
 		"rating" : 0,
 		"location" : "Vyshneve",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547,
+		"latitude" : 50.4547,
 		"tags" :
 			[
 				"Oracle",
@@ -80,7 +80,7 @@
 		"rating" : 0,
 		"location" : "Brovary",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547,
+		"latitude" : 50.4547,
 		"tags" :
 			[
 				"React",
@@ -99,7 +99,7 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547,
+		"latitude" : 50.4547,
 		"tags" :
 			[
 				"Python",
@@ -118,7 +118,7 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547,
+		"latitude" : 50.4547,
 		"tags" :
 			[
 				"React",
@@ -137,7 +137,7 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547,
+		"latitude" : 50.4547,
 		"tags" :
 			[
 				"Hip Hop / Rap",
