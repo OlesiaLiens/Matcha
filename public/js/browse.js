@@ -122,6 +122,10 @@ const getUserGallery = () => {
 					$(details).toggle('slow');
 				}
 				card.profile = profile;
+				card.profile.distance = getDistance(ownLatitude,
+																						ownLongitude,
+																						card.profile.latitude,
+																						card.profile.longitude);
 				cards.push(card);
 				resultsContainer.appendChild(card);
 			});
@@ -135,11 +139,11 @@ const setFilterControl = () => {
 	$('#minAge').change(() => {
 		constraints.minAge = $('#minAge').children('option:selected').val();
 		filterResults();
-	});
+	})
 	$('#maxAge').change(() => {
 		constraints.maxAge = $('#maxAge').children('option:selected').val();
 		filterResults();
-	});
+	})
 	$('#minDist').blur(() => {
 		constraints.minDist = $('#minDist').val();
 		filterResults();
@@ -163,14 +167,17 @@ const setFilterControl = () => {
 			constraints.reqTags = false;
 		filterResults();
 	})
+
+	$('#sortCriteria').change(() => {
+		sortResults($('#sortCriteria').val(), $('#sortDirection').val())
+	})
+	$('#sortDirection').change(() => {
+		sortResults($('#sortCriteria').val(), $('#sortDirection').val())
+	})
 }
 
 const filterResults = () => {
 	Object.values(cards).forEach(card => {
-		card.profile.distance = getDistance(ownLatitude,
-																				ownLongitude,
-																				card.profile.latitude,
-																				card.profile.longitude);
 		if (meetsConstraints(card.profile))
 			$(card).show();
 		else
@@ -195,6 +202,29 @@ function meetsConstraints(profile) {
 		!(profile.tags.some(tag => {return ownTags.includes(tag)})))
 		return false;
 	return true;
+}
+
+const sortResults = (criterium, direction) => {
+	let modifier = direction == 'htl' ? 1 : -1;
+	console.log(criterium);
+	console.log(modifier);
+	switch (criterium) {
+		case 'age':
+			sortByAge(modifier);
+			break;
+		case 'distance':
+			sortByDistance(modifier);
+			break;
+		case 'rating':
+			sortByRating(modifier);
+			break;
+		case 'tags':
+			sortByTags(modifier);
+			break;
+		default:
+			console.log('You\'re holding it wrong')
+			break;
+	}
 }
 
 $(document).ready(() => {
