@@ -135,16 +135,12 @@
 								<div class="col-5">
 									<select id="minAge" class="custom-select">
 										<option value="any" selected>Any</option>
-										<option value="18">18</option>
-										<option value="19">19</option>
 									</select>
 								</div>
 								<div class="col-2"><p>-</p></div>
 								<div class="col-5">
 									<select id="maxAge" class="custom-select">
 										<option value="any" selected>Any</option>
-										<option value="18">18</option>
-										<option value="19">19</option>
 									</select>
 								</div>
 							</div>

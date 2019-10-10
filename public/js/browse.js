@@ -19,8 +19,16 @@ let ownTags = [];
 let cards = [];
 let constraints = {
 	minAge : 18, // Let's play it safe and assume the site isn't suitable for minors
-	maxAge : 116 // The oldest known person alive is 116 years old
+	maxAge : 116, // The oldest known person alive is 116 years old
+	reqTags : 'n'
 };
+
+const fillOptions = () => {
+	for (var i = 18; i <= 116; i++) {
+		$('#minAge').append(`<option value="${i}">${i}</option>`);
+		$('#maxAge').append(`<option value="${i}">${i}</option>`);
+	}
+}
 
 const getOwnData = () => {
 	$.ajax({
@@ -120,11 +128,47 @@ const getUserGallery = () => {
 	})
 }
 
+// I repeat myself a lot here, redo this with array & callback using "this"
 const setFilterControl = () => {
+	$('#minAge').change(() => {
+		constraints.minAge = $('#minAge').children('option:selected').val();
+		filterResults();
+	});
+	$('#maxAge').change(() => {
+		constraints.maxAge = $('#maxAge').children('option:selected').val();
+		filterResults();
+	});
+	$('#minDist').blur(() => {
+		constraints.minDist = $('#minDist').val();
+		filterResults();
+	})
+	$('#maxDist').blur(() => {
+		constraints.maxDist = $('#maxDist').val();
+		filterResults();
+	})
+	$('#minRate').blur(() => {
+		constraints.minRate = $('#minRate').val();
+		filterResults();
+	})
+	$('#maxRate').blur(() => {
+		constraints.maxRate = $('#maxRate').val();
+		filterResults();
+	})
+	$('#reqTags').change(event => {
+		if(event.target.checked)
+			constraints.reqTags = 'y';
+		else
+			constraints.reqTags = 'n';
+		filterResults();
+	})
+}
 
+const filterResults = () => {
+	console.log(constraints);
 }
 
 $(document).ready(() => {
+	fillOptions();
 	getOwnData();
 	getUserGallery();
 	setFilterControl();
