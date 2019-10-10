@@ -18,7 +18,7 @@ let ownLatitude;
 let ownTags = [];
 let cards = [];
 let constraints = {
-	minAge : 18,
+	minAge : 18, // Let's play it safe and assume the site isn't suitable for minors
 	maxAge : 116 // The oldest known person alive is 116 years old
 };
 
@@ -89,6 +89,14 @@ const getUserGallery = () => {
 				location.innerText = `Age: ${profile.location}`;
 				details.appendChild(location);
 
+				let interests = document.createElement('li');
+				interests.setAttribute('class', 'list-group-item');
+				interests.innerText = 'Interests: ';
+				Object.values(profile.tags).forEach(tag => {
+					interests.innerHTML += `${tag} <br />`
+				});
+				details.appendChild(interests);
+
 				let footer = document.createElement('div');
 				footer.setAttribute('class', 'card-footer text-center');
 				card.appendChild(footer);
@@ -110,6 +118,10 @@ const getUserGallery = () => {
 			console.log(cards);
 		}
 	})
+}
+
+const setFilterControl = () => {
+
 }
 
 $(document).ready(() => {

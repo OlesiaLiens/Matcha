@@ -44,7 +44,6 @@ class Browse extends \Core\Model
 		$tagsStatement = $this->connection->prepare($sql);
 		$tagsStatement->execute($queryArg);
 		$queryRes = $tagsStatement->fetchAll(PDO::FETCH_ASSOC);
-		// print_r($queryRes);
 		foreach ($queryRes as $row) {
 			array_push($tags, $row['tag']);
 		}

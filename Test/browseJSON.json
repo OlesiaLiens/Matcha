@@ -9,7 +9,8 @@
 		"rating" : 100500,
 		"location" : "Kyiv",
 		"longitude" : 30.4642,
-		"latutide" : 50.4706
+		"latutide" : 50.4706,
+		"tags" : []
 	},
 
 	{
@@ -22,7 +23,13 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547
+		"latutide" : 50.4547,
+		"tags" :
+			[
+				"Historical",
+				"Historical fiction",
+				"JavaScript"
+			]
 	},
 
 	{
@@ -35,7 +42,13 @@
 		"rating" : 0,
 		"location" : "Cherkasy",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547
+		"latutide" : 50.4547,
+		"tags" :
+			[
+				"Python",
+				"Hip Hop / Rap",
+				"PostgreSQL"
+			]
 	},
 
 	{
@@ -48,7 +61,13 @@
 		"rating" : 0,
 		"location" : "Vyshneve",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547
+		"latutide" : 50.4547,
+		"tags" :
+			[
+				"Oracle",
+				"Swift",
+				"PostgreSQL"
+			]
 	},
 
 	{
@@ -61,7 +80,13 @@
 		"rating" : 0,
 		"location" : "Brovary",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547
+		"latutide" : 50.4547,
+		"tags" :
+			[
+				"React",
+				"PostgreSQL",
+				"Hip Hop / Rap"
+			]
 	},
 
 	{
@@ -74,7 +99,13 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547
+		"latutide" : 50.4547,
+		"tags" :
+			[
+				"Python",
+				"Lua",
+				"PostgreSQL"
+			]
 	},
 
 	{
@@ -87,7 +118,13 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547
+		"latutide" : 50.4547,
+		"tags" :
+			[
+				"React",
+				"Redis",
+				"Romance"
+			]
 	},
 
 	{
@@ -100,6 +137,12 @@
 		"rating" : 0,
 		"location" : "Kyiv",
 		"longitude" : 30.5238,
-		"latutide" : 50.4547
+		"latutide" : 50.4547,
+		"tags" :
+			[
+				"Hip Hop / Rap",
+				"Python",
+				"Satire"
+			]
 	}	
 ]
