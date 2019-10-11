@@ -148,19 +148,19 @@ const setFilterControl = () => {
 		filterResults();
 	})
 	$('#minDist').blur(() => {
-		constraints.minDist = $('#minDist').val();
+		constraints.minDist = $('#minDist').val() || 0;
 		filterResults();
 	})
 	$('#maxDist').blur(() => {
-		constraints.maxDist = $('#maxDist').val();
+		constraints.maxDist = $('#maxDist').val() || 99999;
 		filterResults();
 	})
 	$('#minRate').blur(() => {
-		constraints.minRate = $('#minRate').val();
+		constraints.minRate = $('#minRate').val() || 0;
 		filterResults();
 	})
 	$('#maxRate').blur(() => {
-		constraints.maxRate = $('#maxRate').val();
+		constraints.maxRate = $('#maxRate').val() || 99999;
 		filterResults();
 	})
 	$('#reqTags').change(event => {
