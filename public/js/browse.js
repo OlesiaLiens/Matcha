@@ -67,7 +67,7 @@ const getUserGallery = () => {
 				card.appendChild(avatar);
 
 				let cb = document.createElement('div');
-				cb.setAttribute('class', 'card-body collapse');
+				cb.setAttribute('class', 'card-body hideable collapse');
 				card.appendChild(cb);
 
 				let name = document.createElement('h5');
@@ -81,7 +81,7 @@ const getUserGallery = () => {
 				cb.appendChild(bio);
 
 				let details = document.createElement('ul');
-				details.setAttribute('class', 'list-group list-group-flush collapse');
+				details.setAttribute('class', 'list-group list-group-flush hideable collapse');
 				card.appendChild(details);
 
 				let age = document.createElement('li');
@@ -117,10 +117,10 @@ const getUserGallery = () => {
 				viewProfBtn.innerText = 'View profile';
 				footer.appendChild(viewProfBtn);
 
-				avatar.onclick = () => {
-					$(cb).toggle('slow');
-					$(details).toggle('slow');
-				}
+				// avatar.onclick = () => {
+				// 	$(cb).toggle('slow');
+				// 	$(details).toggle('slow');
+				// }
 				card.profile = profile;
 				card.profile.distance = getDistance(ownLatitude,
 																						ownLongitude,
@@ -128,6 +128,9 @@ const getUserGallery = () => {
 																						card.profile.longitude);
 				cards.push(card);
 				resultsContainer.appendChild(card);
+			});
+			$('img').click(function() {
+				$(this).siblings('.hideable').toggle('slow');
 			});
 			console.log(cards);
 		}
@@ -225,6 +228,82 @@ const sortResults = (criterium, direction) => {
 			console.log('You\'re holding it wrong')
 			break;
 	}
+	$('img').click(function() {
+				$(this).siblings('.hideable').toggle('slow');
+			});
+}
+
+const sortByAge = modifier => {
+	if (cards.length < 2) return;
+
+	for (var i = 1; i < cards.length; i++) {
+		if ((cards[i].profile.age) * modifier < (cards[i - 1].profile.age) * modifier) {
+			let bufferProfile = cards[i].profile;
+			let bufferHTML = $(cards[i]).html();
+			$(cards[i]).html($(cards[i - 1]).html());
+			cards[i].profile = cards[i - 1].profile;
+			$(cards[i - 1]).html(bufferHTML);
+			cards[i - 1].profile = bufferProfile;
+			i = 0;
+		}
+	}
+}
+
+const sortByDistance = modifier => {
+	if (cards.length < 2) return;
+
+	for (var i = 1; i < cards.length; i++) {
+		if ((cards[i].profile.distance) * modifier < (cards[i - 1].profile.distance) * modifier) {
+			let bufferProfile = cards[i].profile;
+			let bufferHTML = $(cards[i]).html();
+			$(cards[i]).html($(cards[i - 1]).html());
+			cards[i].profile = cards[i - 1].profile;
+			$(cards[i - 1]).html(bufferHTML);
+			cards[i - 1].profile = bufferProfile;
+			i = 0;
+		}
+	}
+}
+
+const sortByRating = modifier => {
+	if (cards.length < 2) return;
+
+	for (var i = 1; i < cards.length; i++) {
+		if ((cards[i].profile.rating) * modifier < (cards[i - 1].profile.rating) * modifier) {
+			let bufferProfile = cards[i].profile;
+			let bufferHTML = $(cards[i]).html();
+			$(cards[i]).html($(cards[i - 1]).html());
+			cards[i].profile = cards[i - 1].profile;
+			$(cards[i - 1]).html(bufferHTML);
+			cards[i - 1].profile = bufferProfile;
+			i = 0;
+		}
+	}
+}
+
+const sortByTags = modifier => {
+	if (cards.length < 2) return;
+
+	for (var i = 1; i < cards.length; i++) {
+		if (countCommonTags(cards[i].profile.tags) * modifier < countCommonTags(cards[i - 1].profile.tags) * modifier) {
+			let bufferProfile = cards[i].profile;
+			let bufferHTML = $(cards[i]).html();
+			$(cards[i]).html($(cards[i - 1]).html());
+			cards[i].profile = cards[i - 1].profile;
+			$(cards[i - 1]).html(bufferHTML);
+			cards[i - 1].profile = bufferProfile;
+			i = 0;
+			console.log('flip')
+		}
+	}
+}
+
+const countCommonTags = counterpartTags => {
+	let intersection = ownTags.filter(tag => counterpartTags.includes(tag));
+	console.log('OTags', ownTags)
+	console.log('CPags', counterpartTags)
+	console.log('INTER', intersection)
+	return intersection.length;
 }
 
 $(document).ready(() => {
