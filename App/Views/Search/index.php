@@ -49,67 +49,11 @@
 		<div class="col-xs-12 col-sm-4 col-md-2">
 			<select id="minAge" class="custom-select">
 				<option selected>Min. age</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-				<option value="24">24</option>
-				<option value="25">25</option>
-				<option value="26">26</option>
-				<option value="27">27</option>
-				<option value="28">28</option>
-				<option value="29">29</option>
-				<option value="30">30</option>
-				<option value="31">31</option>
-				<option value="32">32</option>
-				<option value="33">33</option>
-				<option value="34">34</option>
-				<option value="35">35</option>
-				<option value="36">36</option>
-				<option value="37">37</option>
-				<option value="38">38</option>
-				<option value="39">39</option>
-				<option value="40">40</option>
-				<option value="41">41</option>
-				<option value="42">42</option>
-				<option value="43">43</option>
-				<option value="44">44</option>
-				<option value="45">45</option>
 			</select>
 		</div>
 		<div class="col-xs-12 col-sm-4 col-md-2">
 			<select id="maxAge" class="custom-select">
 				<option selected>Max. age</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-				<option value="24">24</option>
-				<option value="25">25</option>
-				<option value="26">26</option>
-				<option value="27">27</option>
-				<option value="28">28</option>
-				<option value="29">29</option>
-				<option value="30">30</option>
-				<option value="31">31</option>
-				<option value="32">32</option>
-				<option value="33">33</option>
-				<option value="34">34</option>
-				<option value="35">35</option>
-				<option value="36">36</option>
-				<option value="37">37</option>
-				<option value="38">38</option>
-				<option value="39">39</option>
-				<option value="40">40</option>
-				<option value="41">41</option>
-				<option value="42">42</option>
-				<option value="43">43</option>
-				<option value="44">44</option>
-				<option value="45">45</option>
 			</select>
 		</div>
 		<div class="form-group col-xs-12 col-sm-4 col-md-2">
@@ -129,11 +73,11 @@
 			 placeholder="Max. rating"/>
 		</div>
 		<div class="form-group col-xs-12 col-sm-4 col-md-2">
-			<input id="maxDist"
+			<input id="minDist"
 						 class="form-control input-group-lg reg_name"
 						 type="text"
-						 name="maxDist"
-			 title="Maximal distance"
+						 name="minDist"
+			 title="Minimal distance"
 			 placeholder="Min. distance"/>
 		</div>
 		<div class="form-group col-xs-12 col-sm-4 col-md-2">
@@ -159,7 +103,7 @@
 	
 	<div class="row justify-content-center">
 		<div class="col-3 text-center">
-			<button type="button" class="btn btn-primary">Search</button>
+			<button id="searchBtn" type="button" class="btn btn-primary">Search</button>
 		</div>
 	</div>
 </div>
@@ -172,108 +116,8 @@
 	</div>
 	
 	<div id="resRow" class="row justify-content-center">
-		<div class="card-deck ml-5 mr-5">
-			<div class="card mb-4">
-				<img src="/images/1photo.png" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Admin De</h5>
-					<p class="card-text">Currently the only damn user with a biography</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Age: 1337</li>
-					<li class="list-group-item">Rating: 100500</li>
-					<li class="list-group-item">Location: Kyiv</li>
-				</ul>
-				<div class="card-footer text-center">
-					<button class="btn btn-primary">View profile</button>
-				</div>
-			</div>
-			
-			<div class="card mb-4">
-				<img src="/default/jean.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Klava Klava</h5>
-					<p class="card-text">Actually not Klava, but Jean, according to the avatar name</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Age: 64</li>
-					<li class="list-group-item">Rating: 0</li>
-					<li class="list-group-item">Location: Kyiv</li>
-				</ul>
-				<div class="card-footer text-center">
-					<button class="btn btn-primary">View profile</button>
-				</div>
-			</div>
-			
-			<div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-			
-			<div class="card mb-4">
-				<img src="/default/zaria.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Zaria Maxwell</h5>
-					<p class="card-text">This a one was in the chat cause she matched admin</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Age: 31</li>
-					<li class="list-group-item">Rating: 0</li>
-					<li class="list-group-item">Location: Cherkassy</li>
-				</ul>
-				<div class="card-footer text-center">
-					<button class="btn btn-primary">View profile</button>
-				</div>
-			</div>
-			
-			<div class="w-100 d-none d-md-block d-xxl-none"><!-- wrap every 3 on md--></div>
-			
-			<div class="card mb-4">
-				<img src="/default/claire.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Claire Flores</h5>
-					<p class="card-text">Resembles Skylar from Breaking bad in some weird way</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Age: 36</li>
-					<li class="list-group-item">Rating: 0</li>
-					<li class="list-group-item">Location: Vyshneve</li>
-				</ul>
-				<div class="card-footer text-center">
-					<button class="btn btn-primary">View profile</button>
-				</div>
-			</div>
-			
-			<div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-			
-			<div class="card mb-4">
-				<img src="/default/gina.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Gina Matthews</h5>
-					<p class="card-text">Currently the only damn user with a biography</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Age: 28</li>
-					<li class="list-group-item">Rating: 0</li>
-					<li class="list-group-item">Location: Brovary</li>
-				</ul>
-				<div class="card-footer text-center">
-					<button class="btn btn-primary">View profile</button>
-				</div>
-			</div>
-			
-			<div class="card mb-4">
-				<img src="/default/helen.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Helen Odom</h5>
-					<p class="card-text">Had to pull this one from the master branch, cause I only had 5 results in a sample</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Age: 22</li>
-					<li class="list-group-item">Rating: 0</li>
-					<li class="list-group-item">Location: Kyiv</li>
-				</ul>
-				<div class="card-footer text-center">
-					<button class="btn btn-primary">View profile</button>
-				</div>
-			</div>
+		<div id="resultsContainer" class="card-deck ml-5 mr-5">
+			<!-- Generated dynamically -->
 		</div>
 	</div>
 	

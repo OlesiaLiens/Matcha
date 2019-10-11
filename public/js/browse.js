@@ -117,10 +117,6 @@ const getUserGallery = () => {
 				viewProfBtn.innerText = 'View profile';
 				footer.appendChild(viewProfBtn);
 
-				// avatar.onclick = () => {
-				// 	$(cb).toggle('slow');
-				// 	$(details).toggle('slow');
-				// }
 				card.profile = profile;
 				card.profile.distance = getDistance(ownLatitude,
 																						ownLongitude,
