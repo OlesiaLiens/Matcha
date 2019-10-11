@@ -124,7 +124,7 @@
 	<div id="pagRow" class="row justify-content-center" style="margin-bottom: 140px">
 		<nav aria-label="Page navigation example">
 			<ul class="pagination">
-				<li class="page-item">
+				<!-- <li class="page-item">
 					<a class="page-link" href="#" aria-label="Previous">
 						<span aria-hidden="true">&laquo;</span>
 					</a>
@@ -136,7 +136,7 @@
 					<a class="page-link" href="#" aria-label="Next">
 						<span aria-hidden="true">&raquo;</span>
 					</a>
-				</li>
+				</li> -->
 			</ul>
 		</nav>
 	</div>

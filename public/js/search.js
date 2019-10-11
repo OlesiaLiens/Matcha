@@ -86,68 +86,94 @@ const getSearchResults = () => {
 	})
 }
 
-const drawResults = sixBlock => {
+const drawResults = results => {
+	let pagesCount = Math.ceil(results.length / 6);
+	$('.pagination').append(
+		'<li class="page-item">' +
+			'<a class="page-link" href="#" aria-label="Previous">' +
+				'<span aria-hidden="true">&laquo;</span>' +
+			'</a>' +
+		'</li>'
+	);
+
+	for(var i = 1; i <= pagesCount; i++) {
+		$('.pagination').append(
+			`<li class="page-item" name="${i}"><a class="page-link" href="#">${i}</a></li>`
+		)
+	}
+
+	$('.pagination').append(
+		'<li class="page-item">' +
+			'<a class="page-link" href="#" aria-label="Next">' +
+				'<span aria-hidden="true">&raquo;</span>' +
+			'</a>' +
+		'</li>'
+	);
+}
+
+const drawSixBlock = sixBlock => {
 	let counter = 0;
+	$('#resultsContainer').empty();
 	Object.values(sixBlock).forEach(profile => {
 		console.log(profile);
 		let card = document.createElement('div');
-				card.setAttribute('class', 'card mb-4');
+		card.setAttribute('class', 'card mb-4');
 		resultsContainer.appendChild(card);
 
 		let avatar = document.createElement('img');
-				avatar.setAttribute('class', 'card-img-top');
-				avatar.setAttribute('src', profile.avatar);
+		avatar.setAttribute('class', 'card-img-top');
+		avatar.setAttribute('src', profile.avatar);
 		card.appendChild(avatar);
 
 		let cb = document.createElement('div');
-				cb.setAttribute('class', 'card-body');
+		cb.setAttribute('class', 'card-body');
 		card.appendChild(cb);
 
 		let name = document.createElement('h5');
-				name.setAttribute('class', 'card-title');
-				name.innerText = `${profile.firstName} ${profile.lastName}`;
+		name.setAttribute('class', 'card-title');
+		name.innerText = `${profile.firstName} ${profile.lastName}`;
 		cb.appendChild(name);
 
 		let bio = document.createElement('p');
-				bio.setAttribute('class', 'card-text');
-				bio.innerText = profile.bio;
+		bio.setAttribute('class', 'card-text');
+		bio.innerText = profile.bio;
 		cb.appendChild(bio);
 
 		let details = document.createElement('ul');
-				details.setAttribute('class', 'list-group list-group-flush');
+		details.setAttribute('class', 'list-group list-group-flush');
 		card.appendChild(details);
 
 		let age = document.createElement('li');
-				age.setAttribute('class', 'list-group-item');
-				age.innerText = `Age: ${profile.age}`;
+		age.setAttribute('class', 'list-group-item');
+		age.innerText = `Age: ${profile.age}`;
 		details.appendChild(age);
 
 		let rating = document.createElement('li');
-				rating.setAttribute('class', 'list-group-item');
-				rating.innerText = `Rating: ${profile.rating}`;
+		rating.setAttribute('class', 'list-group-item');
+		rating.innerText = `Rating: ${profile.rating}`;
 		details.appendChild(rating);
 
 		let location = document.createElement('li');
-				location.setAttribute('class', 'list-group-item');
-				location.innerText = `Age: ${profile.location}`;
+		location.setAttribute('class', 'list-group-item');
+		location.innerText = `Age: ${profile.location}`;
 		details.appendChild(location);
 
 		let interests = document.createElement('li');
-				interests.setAttribute('class', 'list-group-item');
-				interests.innerText = 'Interests: ';
-				Object.values(profile.tags).forEach(tag => {
-					interests.innerHTML += `${tag} <br />`
-				});
+		interests.setAttribute('class', 'list-group-item');
+		interests.innerText = 'Interests: ';
+		Object.values(profile.tags).forEach(tag => {
+			interests.innerHTML += `${tag} <br />`
+		});
 		details.appendChild(interests);
 
 		let footer = document.createElement('div');
-				footer.setAttribute('class', 'card-footer text-center');
+		footer.setAttribute('class', 'card-footer text-center');
 		card.appendChild(footer);
 
 		let viewProfBtn = document.createElement('a');
-				viewProfBtn.setAttribute('class', 'btn btn-primary');
-				viewProfBtn.setAttribute('href', `/user/${profile.userID}`);
-				viewProfBtn.innerText = 'View profile';
+		viewProfBtn.setAttribute('class', 'btn btn-primary');
+		viewProfBtn.setAttribute('href', `/user/${profile.userID}`);
+		viewProfBtn.innerText = 'View profile';
 		footer.appendChild(viewProfBtn);
 
 		counter++;
@@ -157,50 +183,3 @@ const drawResults = sixBlock => {
 			$('#resultsContainer').append('<div class="w-100 d-none d-md-block d-xxl-none" />');
 	});
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
