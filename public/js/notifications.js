@@ -17,10 +17,12 @@ let seeCounter;
 let likeCounter;
 let matchCounter;
 let msgsCounter;
+let interactor;
+var hulla = new hullabaloo();
 
 const checkUpdates = () => {
     $.ajax({
-        url: '/notification/getcounters',
+        url: '/notification/getCounters',
         type: 'get',
         success: countersJSON => {
             let counters = JSON.parse(countersJSON);
@@ -56,30 +58,56 @@ const checkUpdates = () => {
         }
     });
 };
-//
-// hulla.send("Someone has a great interest int your profile...", "success");
 
-// TODO: Create hullabaloo notifications with these messages
+const getInteractor = interaction => {
+    console.log(interaction);
+    if (interaction == 'see') {
+        $.ajax({
+            url: '/notification/getInteractor/see',
+            type: 'get',
+            success: response => {
+                hulla.send(`${response} has a great interest int your profile...`, "success");
+            }
+        });
+    }
+
+    if (interaction == 'like') {
+        $.ajax({
+            url: '/notification/getInteractor/like',
+            type: 'get',
+            success: response => {
+                hulla.send(`${response} Congrats! Someone has liked you`, "success");
+            }
+        });
+    }
+
+    if (interaction == 'match') {
+        $.ajax({
+            url: '/notification/getInteractor/match',
+            type: 'get',
+            success: response => {
+                hulla.send(`${response} Yay! You matched with someone, check the chat now to see who that was!`, "success");
+            }
+        });
+    }
+    console.log(interaction);
+}
+
 function notify(typeOfEvent) {
-
-    var hulla = new hullabaloo();
 
 
     if (typeOfEvent == 'see') {
-        hulla.send("Someone has a great interest int your profile...", "success");
-        console.log('Someone has a great interest int your profile...')
+        getInteractor('see')
     }
     if (typeOfEvent == 'like') {
-        hulla.send("Congrats! Someone has liked you", "success");
-        console.log('Congrats! Someone has liked you!')
+        getInteractor('like')
     }
     if (typeOfEvent == 'unlike') {
         hulla.send("Too bad! Someone who liked you previously doesn\'t like you anymore :(", "success");
         console.log('Too bad! Someone who liked you previously doesn\'t like you anymore :(')
     }
     if (typeOfEvent == 'match') {
-        hulla.send("Yay! You matched with someone, check the chat now to see who that was!", "success");
-        console.log('Yay! You matched with someone, check the chat now to see who that was!')
+        getInteractor('match')
     }
     if (typeOfEvent == 'unmatch') {
         hulla.send("Too bad, someone you previously matched with isn\'t that fond of you now :(", "success");
@@ -93,9 +121,10 @@ function notify(typeOfEvent) {
 
 $(document).ready(() => {
     $.ajax({
-        url: '/notification/getcounters',
+        url: '/notification/getCounters',
         type: 'get',
         success: countersJSON => {
+            console.log(countersJSON);
             let counters = JSON.parse(countersJSON);
             console.log(counters);
             seeCounter = counters.see;

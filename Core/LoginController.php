@@ -37,7 +37,6 @@ abstract class LoginController extends Controller
     protected function get_ban($id)
     {
         $ban = false;
-//		session_start();
         if (isset($_SESSION['user_id']))
         {
             $user = new User(0, $_SESSION['user_id']);
@@ -48,6 +47,4 @@ abstract class LoginController extends Controller
 //        }
         return $ban;
     }
-
-
 }

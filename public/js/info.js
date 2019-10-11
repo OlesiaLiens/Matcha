@@ -12,50 +12,46 @@
 //      "*%%%%%%**~  ""    "**"`    //
 //——————————————————————————————————//
 
-let tags = [];
 
 function infoFunction() {
-	let interestSelection = document.getElementById('interest');
-	let selectedTags = document.getElementById('selectedTags');
-	let okBtn = document.getElementById('okBtn');
+    console.log('HHHHHH!');
+    let tags = [];
+    let interestSelection = document.getElementById('interest');
+    let selectedTags = document.getElementById('selectedTags');
+    let okBtn = document.getElementById('okBtn');
 
-	interestSelection.onchange = () => {
-		let selectedTag = interestSelection.value;
-		tags.push(selectedTag);
-		console.log(tags);
-		let newTag = document.createElement('span');
-		newTag.setAttribute('class', 'badge badge-primary');
-		newTag.innerHTML = selectedTag;
-		selectedTags.appendChild(newTag);
+    interestSelection.onchange = () => {
+        let selectedTag = interestSelection.value;
+        tags.push(selectedTag);
+        console.log(tags);
+        let newTag = document.createElement('span');
+        newTag.setAttribute('class', 'badge badge-primary');
+        newTag.innerHTML = selectedTag;
+        selectedTags.appendChild(newTag);
 
-		newTag.onclick = event => {
-			let target = event.target;
-			target.parentNode.removeChild(target);
-			let idx = tags.indexOf(target.innerHTML);
-			tags.splice(idx, 1);
-			console.log(tags);
-		}
-	};
+        newTag.onclick = event => {
+            let target = event.target;
+            target.parentNode.removeChild(target);
+            let idx = tags.indexOf(target.innerHTML);
+            tags.splice(idx, 1);
+            console.log(tags);
+        }
+    };
 
-	okBtn.onclick = () => {
-		const xhr = new XMLHttpRequest();
-		let url = '/info/tags/' + fixedEncodeURIComponent2(JSON.stringify(tags));
-		xhr.open("GET", url);
-		xhr.onload = () => {console.log(xhr.responseText)};
-		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-		// xhr.send('tags=' + encodeURIComponent(JSON.stringify(tags)));
-		xhr.send();
-		console.log('v5');
-		console.log(url);
-	};
+    okBtn.onclick = () => {
+
+        $.ajax({
+            url: '/info/tags/',
+            type: 'post',
+            dataType: 'json',
+            //contentType: 'application/json',
+            data: {"data": JSON.stringify(tags)}
+        });
+
+    };
 }
 
-function fixedEncodeURIComponent(str) {
-	return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
-		return '%' + c.charCodeAt(0).toString(16);
-	});
-}
-
-function fixedEncodeURIComponent2(str) {
-	return encodeURIComponent(str).replace('.', '%2E').replace('/', '\/');
+window.onload = function () {
+    infoFunction();
+    console.log('Im here');
 }

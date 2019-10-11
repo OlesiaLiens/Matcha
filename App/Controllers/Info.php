@@ -34,13 +34,13 @@ class Info extends \Core\LoginController
 		}
 	}
 
-	public function tagsAction($tagsList)
+	public function tagsAction()
 	{
 		session_start();
 
 //		file_put_contents('../Logs/log.txt', $tagsList . PHP_EOL, FILE_APPEND);
-		$info = new InfoModel(array(), $tagsList);
-		$info->save_tags($tagsList);
+		$info = new InfoModel(array());
+		$info->save_tags($_POST['data']);
 	}
 
 	public function locationAction($locationJSON = "[]")
