@@ -215,12 +215,12 @@
                             <label class="col-md-4 control-label" for="radios">Sexual preferences:</label>
                             <div class="col-md-4">
                                 <label class="radio-inline" for="radios-0">
-                                    <input type="radio" name="preferences" id="man" value="man" checked="checked">
-                                    Man
+                                    <input type="radio" name="preferences" id="male" value="male" checked="checked">
+                                    Male
                                 </label>
                                 <label class="radio-inline" for="radios-1">
-                                    <input type="radio" name="preferences" id="women" value="women">
-                                    Women
+                                    <input type="radio" name="preferences" id="female" value="female">
+                                    Female
                                 </label>
                                 <label class="radio-inline" for="radios-1">
                                     <input type="radio" name="preferences" id="both" value="both">

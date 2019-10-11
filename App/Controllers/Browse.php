@@ -13,11 +13,13 @@ class Browse extends \Core\LoginController
 	{
 		// $this->viewGallery(1);
 		View::render('Browse/index.php');
+
 	}
 
 	public function getusersAction() {
+        $user = $this->before();
 		$browse = new BrowseModel;
-		$browse->getUsersGallery();
+		$browse->getUsersGallery($user);
 	}
 
 	public function getowndataAction() {

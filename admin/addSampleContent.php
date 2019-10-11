@@ -48,6 +48,12 @@ $connection->exec("INSERT INTO
 						(1, 51), (1,87), (1, 9);
 ");
 
+$connection->exec("INSERT INTO
+						users_tags(user_id, tag_id)
+					VALUES
+						(1, 51), (1,87), (1, 9), (2, 2), (2, 56), (2, 51), (3, 87), (3, 9), (3, 2), (4, 95), (4, 81), (4, 40), (5, 2), (5, 37), (5, 66), (6, 51), (6, 87), (6, 9), (7, 22), (7, 59), (7, 98), (8, 87), (8, 54), (8, 12), (9, 33), (9, 52), (9, 98), (10, 12), (10, 99), (10, 22), (11, 11), (11, 77), (11, 44);
+");
+
 print('Added sample tags for admin' . PHP_EOL);
 
 $connection->exec("INSERT INTO 
