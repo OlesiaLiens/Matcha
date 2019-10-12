@@ -43,6 +43,10 @@
 				column-count: 5;
 			}
 		}
+
+        .hiden{
+            height: 150px;
+        }
 	</style>
 </head>
 <body>
