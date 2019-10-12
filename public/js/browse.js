@@ -55,6 +55,7 @@ const getUserGallery = () => {
 		url: '/browse/getusers',
 		type: 'get',
 		success: response => {
+			console.log(response);
 			responseObj = JSON.parse(response);
 			Object.values(responseObj).forEach(profile =>{
 				console.log(profile);
@@ -117,6 +118,10 @@ const getUserGallery = () => {
 				viewProfBtn.innerText = 'View profile';
 				footer.appendChild(viewProfBtn);
 
+				// avatar.onclick = () => {
+				// 	$(cb).toggle('slow');
+				// 	$(details).toggle('slow');
+				// }
 				card.profile = profile;
 				card.profile.distance = getDistance(ownLatitude,
 																						ownLongitude,
@@ -144,19 +149,19 @@ const setFilterControl = () => {
 		filterResults();
 	})
 	$('#minDist').blur(() => {
-		constraints.minDist = $('#minDist').val() || 0;
+		constraints.minDist = $('#minDist').val();
 		filterResults();
 	})
 	$('#maxDist').blur(() => {
-		constraints.maxDist = $('#maxDist').val() || 99999;
+		constraints.maxDist = $('#maxDist').val();
 		filterResults();
 	})
 	$('#minRate').blur(() => {
-		constraints.minRate = $('#minRate').val() || 0;
+		constraints.minRate = $('#minRate').val();
 		filterResults();
 	})
 	$('#maxRate').blur(() => {
-		constraints.maxRate = $('#maxRate').val() || 99999;
+		constraints.maxRate = $('#maxRate').val();
 		filterResults();
 	})
 	$('#reqTags').change(event => {

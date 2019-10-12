@@ -9,8 +9,8 @@ class Browse extends \Core\Model
 {
     public function __construct()
     {
-        session_start();
-        $this->connection = static::getDB();
+//        session_start();
+//        $this->connection = static::getDB();
     }
 
 
@@ -23,65 +23,48 @@ class Browse extends \Core\Model
         $user_gender = $user['gender'];
         $user_preference = $user['preference'];
 
-
-        $current_user_id_tags = $db->prepare("SELECT tag_id FROM users_tags WHERE user_id = ?");
-        $current_user_id_tags->execute([$user_id]);
-        $res = $current_user_id_tags->fetchAll(PDO::FETCH_ASSOC);
-        if ($res) {
-            $tags = [];
-
-            foreach ($res as $id) {
-                $tag = $db->prepare("SELECT tag FROM tags WHERE id = :id");
-                $tag->execute(array(':id' => $id['tag_id']));
-                $res_1 = $tag->fetchColumn(0);
-                array_push($tags, $res_1);
-            }
-        }
-
-        $all_users = $db->prepare("SELECT id AS userID, avatar, first_name AS firstName, last_name AS lastName, bio, bday AS age, rating, location, longitude, latitude FROM users WHERE gender = ? AND preference = ? ORDER BY rating");
-        $all_users->execute([$user_preference, $user_gender]);
+        $all_users = $db->prepare("SELECT id AS userID, avatar, first_name AS firstName, last_name AS lastName, bio, bday AS age, rating, location, longitude, latitude FROM users WHERE gender = ? AND preference = ? AND id != ? ORDER BY rating");
+        $all_users->execute([$user_preference, $user_gender, $user_id]);
         $users = $all_users->fetchAll(PDO::FETCH_ASSOC);
 
 
-        $tags_1 = [];
-
-        foreach ($users as $user) {
+        $tags_id = [];
+        $output = array();
+        foreach ($users as $user)
+        {
             $users_id = $db->prepare("SELECT tag_id FROM users_tags WHERE user_id = :id");
             $users_id->execute(array(':id' => $user['userID']));
-            $arr = $users_id->fetchColumn();
+            $arr = $users_id->fetchAll(PDO::FETCH_ASSOC);
             if ($arr !== false)
-                array_push($tags_1, $arr);
-        }
+                array_push($tags_id, $arr);
 
 
-        if ($tags_1) {
             $tags_2 = [];
+            if ($tags_id)
+            {
 
-            foreach ($tags_1 as $id) {
-                $tag = $db->prepare("SELECT tag FROM tags WHERE id = :id");
-                $tag->execute(array(':id' => $id));
-                $res_1 = $tag->fetchColumn(0);
-                array_push($tags_2, $res_1);
+                foreach ($tags_id as $key)
+                {
+                    foreach ($key as $value)
+                    {
+                        $tag = $db->prepare("SELECT tag FROM tags WHERE id = :id");
+                        $tag->execute(array(':id' => $value['tag_id']));
+                        $res_1 = $tag->fetchColumn();
+                        if ($res_1)
+                        {
+                            array_push($tags_2, $res_1);
+                        }
+                    }
+//                    $tags_2 = [];
+                }
+
             }
-//            $res = json_encode($tags_2);
+            $user['tags'] = $tags_2;
+            array_push($output, $user);
+
         }
-
-
-//        echo json_encode($users);
-
-
-//        $sql = "SELECT
-//                    *
-//                FROM
-//                    users
-//                WHERE
-//                    gender = :userPreference AND
-//                    (preference = :userGender OR preference = 'all'
-//                ORDER BY rating";
-
-
-//		$output = file_get_contents('../Test/browseJSON.json');
-//		echo $output;
+        $res =  json_encode($output);
+        echo $res;
     }
 
     public function getOwnData()
