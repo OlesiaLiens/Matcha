@@ -122,8 +122,10 @@ const getUserGallery = () => {
 																						ownLongitude,
 																						card.profile.latitude,
 																						card.profile.longitude);
-				cards.push(card);
-				resultsContainer.appendChild(card);
+				if (distance <= 200) {
+					cards.push(card);
+					resultsContainer.appendChild(card);
+				} // We consider everything < 200km away the same region
 			});
 			$('img').click(function() {
 				$(this).siblings('.hideable').toggle('slow');

@@ -23,7 +23,7 @@ let request = {
 	minRate : 0,
 	maxRate : 99999,
 	minDist : 0,
-	maxDist : 99999,
+	maxDist : 200, // Let's concider same region everything that's < 200km away
 	tags : []
 };
 let results = [];
@@ -75,20 +75,30 @@ const setControlElements = () => {
 	$('#searchBtn').click(() => {getSearchResults()})
 }
 
-// TODO: Resplace with an actual search request url
 const getSearchResults = () => {
 	$.ajax({
 		url: '/search/getResults',
 		type: 'post',
 		dataType: 'json',
 		data: {"data" : JSON.stringify(request)},
-		success: res => {drawResults(res)}
+		success: res => {
+			let filtered = res.filter(element => {
+				let distance = getDistance(ownLatitude,
+																	ownLongitude,
+																	element.latitude,
+																	element.longitude);
+				console.log('dist', distance);
+				return (distance >= request.minDist && distance <= request.maxDist);
+			});
+			drawResults(filtered);
+		}
 	})
 }
 
 const drawResults = results => {
 	let pagesCount = Math.ceil(results.length / 6);
 
+	$('.pagination').empty();
 	for(var i = 1; i <= pagesCount; i++) {
 		$('.pagination').append(
 			`<li class="page-item"><a id="page${i}" class="page-link">${i}</a></li>`
