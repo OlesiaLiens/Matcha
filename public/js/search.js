@@ -78,7 +78,7 @@ const setControlElements = () => {
 // TODO: Resplace with an actual search request url
 const getSearchResults = () => {
 	$.ajax({
-		url: '/browse/getusers',
+		url: '/search/getResults',
 		type: 'post',
 		dataType: 'json',
 		data: {"data" : JSON.stringify(request)},
@@ -88,27 +88,25 @@ const getSearchResults = () => {
 
 const drawResults = results => {
 	let pagesCount = Math.ceil(results.length / 6);
-	$('.pagination').append(
-		'<li class="page-item">' +
-			'<a class="page-link" href="#" aria-label="Previous">' +
-				'<span aria-hidden="true">&laquo;</span>' +
-			'</a>' +
-		'</li>'
-	);
 
 	for(var i = 1; i <= pagesCount; i++) {
 		$('.pagination').append(
-			`<li class="page-item" name="${i}"><a class="page-link" href="#">${i}</a></li>`
-		)
+			`<li class="page-item"><a id="page${i}" class="page-link">${i}</a></li>`
+		);
 	}
 
-	$('.pagination').append(
-		'<li class="page-item">' +
-			'<a class="page-link" href="#" aria-label="Next">' +
-				'<span aria-hidden="true">&raquo;</span>' +
-			'</a>' +
-		'</li>'
-	);
+	$('.page-link').click(function() {
+		let pageNum = this.innerText;
+		if (6 * pageNum > results.len)
+			drawSixBlock(results.slice(6 * (pageNum - 1), -1));
+		else
+			drawSixBlock(results.slice(6 * (pageNum - 1), 6 * pageNum));
+	})
+
+	if (results.length <= 6)
+		drawSixBlock(results.slice(0, -1));
+	else
+		drawSixBlock(results.slice(0, 6));
 }
 
 const drawSixBlock = sixBlock => {

@@ -7,6 +7,11 @@ use PDO;
 
 class Search extends \Core\Model
 {
+	public function __construct() {
+		session_start();
+		$this->connection = static::getDB();
+	}
+
 	public static function getUserByPage($page_number)
 	{
 		$db = static::getDB();
@@ -32,5 +37,11 @@ class Search extends \Core\Model
 			return $row;
 		}
 		return 0;
+	}
+
+	public function getResults($requestJSON) {
+		$request = json_decode($requestJSON);
+		$output = file_get_contents('../Test/browseJSON.json');
+		echo $output;
 	}
 }
