@@ -7,98 +7,116 @@ use PDO;
 
 class Search extends \Core\Model
 {
-    public function __construct()
-    {
-        session_start();
-        $this->connection = static::getDB();
-    }
+	public function __construct()
+	{
+		session_start();
+		$this->connection = static::getDB();
+	}
 
-    public static function getUserByPage($page_number)
-    {
-        $db = static::getDB();
-        $start_index = $page_number * 5 - 5;
+	public static function getUserByPage($page_number)
+	{
+		$db = static::getDB();
+		$start_index = $page_number * 5 - 5;
 
-        $all_photos = "SELECT * FROM users LIMIT $start_index, 5";
-        $res = $db->query($all_photos);
-        $row = $res->fetchAll(PDO::FETCH_ASSOC);
-        if ($row) {
-            return $row;
-        }
-        return [];
-    }
+		$all_photos = "SELECT * FROM users LIMIT $start_index, 5";
+		$res = $db->query($all_photos);
+		$row = $res->fetchAll(PDO::FETCH_ASSOC);
+		if ($row) {
+			return $row;
+		}
+		return [];
+	}
 
-    public static function getUsersCount()
-    {
-        $db = static::getDB();
+	public static function getUsersCount()
+	{
+		$db = static::getDB();
 
-        $all_photos = "SELECT count(*) FROM users";
-        $res = $db->query($all_photos);
-        $row = $res->fetchColumn();
-        if ($row) {
-            return $row;
-        }
-        return 0;
-    }
+		$all_photos = "SELECT count(*) FROM users";
+		$res = $db->query($all_photos);
+		$row = $res->fetchColumn();
+		if ($row) {
+			return $row;
+		}
+		return 0;
+	}
 
-    public function getResults($requestJSON)
-    {
-        $request = json_decode($requestJSON);
+	public function getResults($requestJSON)
+	{
+		$sql = "SELECT
+					gender, preference
+				FROM
+					users
+				WHERE
+					id = :id";
+		$ownDataStatement = $this->connection->prepare($sql);
+		$ownDataStatement->execute(array(':id' => $_SESSION['user_id']));
+		$ownData = $ownDataStatement->fetch(PDO::FETCH_ASSOC);
 
+		$request = json_decode($requestJSON);
+		$queryArray = array(
+			':minAge' => $request->minAge,
+			':maxAge' => $request->maxAge,
+			':minRate' => $request->minRate,
+			':maxRate' => $request->maxRate,
+			':preference' => ($ownData['preference'] == 'all' ? '%' : $ownData['preference']),
+			':gender' => $ownData['gender']
+		);
+//		print_r($queryArray);
 
-        $min_age = $request->minAge;
-        $max_age = $request->maxAge;
-        $min_rate = $request->minRate;
-        $max_rate = $request->maxRate;
-        $tags = $request->tags;
+		$sql = "SELECT
+					id AS userID,
+					avatar,
+					first_name AS firstName,
+					last_name AS lastName,
+					bio,
+					bday AS age,
+					rating,
+					location,
+					longitude,
+					latitude
+				FROM
+					users
+				WHERE
+					bday >= :minAge AND
+					bday <= :maxAge AND
+					rating >= :minRate AND
+					rating <= :maxRate AND
+					gender LIKE :preference AND
+					(preference = :gender OR
+					preference = 'all')
+				ORDER BY
+					rating";
+		$searchStatement = $this->connection->prepare($sql);
+		$searchStatement->execute($queryArray);
+		$users = $searchStatement->fetchAll(PDO::FETCH_ASSOC);
 
-        $db = static::getDB();
+		$sql = "SELECT
+					tag
+				FROM
+					tags
+					INNER JOIN users_tags ON
+					tags.id = users_tags.tag_id
+				WHERE
+					users_tags.user_id = :id";
+		$tagsStatement = $this->connection->prepare($sql);
+		foreach ($users as $idx => $user) {
+			$tags = array();
+			$tagsStatement->execute(array(':id' => $user['userID']));
+			$queryRes = $tagsStatement->fetchAll(PDO::FETCH_ASSOC);
+			foreach ($queryRes as $row) {
+				array_push($tags, $row['tag']);
+			}
+			$users[$idx]['tags'] = $tags;
+		}
 
-        $get_users = $db->prepare("SELECT id AS userID, avatar, first_name AS firstName, last_name AS lastName, bio, bday AS age, rating, location, longitude, latitude FROM users WHERE bday > $min_age AND bday < $max_age AND rating > $min_rate AND rating < $max_rate ");
-        $get_users->execute([]);
-        $users = $get_users->fetchAll(PDO::FETCH_ASSOC);
-
-        $tags_id = [];
-        $output = array();
-        if ($tags) {
-            foreach ($users as $user) {
-                $users_id = $db->prepare("SELECT tag_id FROM users_tags WHERE user_id = :id");
-                $users_id->execute(array(':id' => $user['userID']));
-                $arr = $users_id->fetchAll(PDO::FETCH_ASSOC);
-                if ($arr !== false)
-                    array_push($tags_id, $arr);
-
-                $tags_2 = [];
-                if ($tags_id) {
-
-                    foreach ($tags_id as $key) {
-                        foreach ($key as $value) {
-                            $tag = $db->prepare("SELECT tag FROM tags WHERE id = :id");
-                            $tag->execute(array(':id' => $value['tag_id']));
-                            $res_1 = $tag->fetchColumn();
-                            if ($res_1) {
-                                array_push($tags_2, $res_1);
-                            }
-                        }
-                    }
-
-                }
-                $true = array_intersect($tags, $tags_2);
-                if ($true) {
-                    $user['tags'] = $tags_2;
-                    $tags_2 = array();
-                    $tags_id = array();
-                    array_push($output, $user);
-
-                }
-
-            }
-        } else {
-            foreach ($users as $user) {
-                $user['tags'] = $tags;
-                array_push($output, $user);
-            }
-        }
-        $res = json_encode($output);
-        echo $res;
-    }
+		if (count($request->tags) == 0) {
+			echo json_encode($users);
+		} else {
+			$filtered = array();
+			foreach ($users as $user)
+				if (count(array_intersect($request->tags, $user['tags'])) > 0)
+					array_push($filtered, $user);
+			echo json_encode($filtered);
+		}
+	}
 }

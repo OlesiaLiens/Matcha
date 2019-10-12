@@ -34,6 +34,15 @@ $(document).ready(() => {
 	setControlElements();
 });
 
+// const testFunc = () => {
+// 	$.ajax({
+// 		url: '/search/getResults',
+// 		type: 'post',
+// 		data: {"data" : JSON.stringify(request)},
+// 		success: res => {$('#resultsContainer').html(res.replace(/(?:\r\n|\r|\n)/g, '<br>'))}
+// 	})
+// }
+
 const fillOptions = () => {
 	for (var i = 18; i <= 116; i++) {
 		$('#minAge').append(`<option value="${i}">${i}</option>`);
@@ -82,6 +91,7 @@ const setControlElements = () => {
 	})
 	$('#tags').focus(() => {request.tags = []})
 	$('#searchBtn').click(() => {getSearchResults()})
+	// $('#searchBtn').click(() => {testFunc()})
 }
 
 const getSearchResults = () => {
@@ -91,6 +101,7 @@ const getSearchResults = () => {
 		dataType: 'json',
 		data: {"data" : JSON.stringify(request)},
 		success: res => {
+			console.log(res)
 			let filtered = res.filter(element => {
 				let distance = getDistance(ownLatitude,
 																	ownLongitude,

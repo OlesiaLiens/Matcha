@@ -237,8 +237,8 @@ const sortResults = (criterium, direction) => {
 			break;
 	}
 	$('img').click(function() {
-				$(this).siblings('.hideable').toggle('slow');
-			});
+		$(this).siblings('.hideable').toggle('slow');
+	});
 }
 
 const sortByAge = modifier => {
