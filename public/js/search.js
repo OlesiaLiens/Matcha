@@ -80,6 +80,7 @@ const setControlElements = () => {
 			console.log(request.tags)
 		})
 	})
+	$('#tags').focus(() => {request.tags = []})
 	$('#searchBtn').click(() => {getSearchResults()})
 }
 
