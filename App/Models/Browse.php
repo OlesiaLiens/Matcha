@@ -55,15 +55,15 @@ class Browse extends \Core\Model
                             array_push($tags_2, $res_1);
                         }
                     }
-//                    $tags_2 = [];
                 }
-
             }
-            $user['tags'] = $tags_2;
-            array_push($output, $user);
 
+            $user['tags'] = $tags_2;
+            $tags_2 = array();
+            $tags_id = array();
+            array_push($output, $user);
         }
-        $res =  json_encode($output);
+        $res = json_encode($output);
         echo $res;
     }
 
