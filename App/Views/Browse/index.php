@@ -234,7 +234,8 @@
 												<!--                       -->
 		<div id="resCol" class="col-9 col-xs-12">
 			<div id="resRow" class="row">
-				<div id="resultsContainer" class="card-columns ml-5 mr-5">
+				<!-- <div id="resultsContainer" class="card-columns ml-5 mr-5"> -->
+				<div id="resultsContainer" class="card-deck ml-5 mr-5">
 					<!-- Content of this div i dinamically generated -->
 				</div>
 			</div>

@@ -12,6 +12,8 @@
 //      "*%%%%%%**~  ""    "**"`    //
 //——————————————————————————————————//
 
+//TODO: Create a compiled SaaS to enable more breakpoints
+
 let resultsContainer = document.getElementById('resultsContainer');
 let ownLongitude;
 let ownLatitude;
@@ -41,6 +43,7 @@ const getOwnData = () => {
 			ownLongitude = responseObj.longitude;
 			ownLatitude = responseObj.latitude;
 			ownTags = responseObj.tags;
+			getUserGallery();
 			console.log('Longitude: ', ownLongitude)
 			console.log('Latitude: ', ownLatitude)
 			console.log('Tags: ', ownTags)
@@ -55,7 +58,7 @@ const getUserGallery = () => {
 		url: '/browse/getusers',
 		type: 'get',
 		success: response => {
-			console.log(response);
+			let counter = 0;
 			responseObj = JSON.parse(response);
 			Object.values(responseObj).forEach(profile =>{
 				console.log(profile);
@@ -118,18 +121,20 @@ const getUserGallery = () => {
 				viewProfBtn.innerText = 'View profile';
 				footer.appendChild(viewProfBtn);
 
-				// avatar.onclick = () => {
-				// 	$(cb).toggle('slow');
-				// 	$(details).toggle('slow');
-				// }
 				card.profile = profile;
 				card.profile.distance = getDistance(ownLatitude,
 																						ownLongitude,
 																						card.profile.latitude,
 																						card.profile.longitude);
-				if (distance <= 200) {
+				
+				if (card.profile.distance <= 200) {
 					cards.push(card);
 					resultsContainer.appendChild(card);
+					counter++;
+					if (counter % 2 == 0)
+						$('#resultsContainer').append('<div class="w-100 d-none d-sm-block d-md-none" />');
+					if (counter % 3 == 0)
+						$('#resultsContainer').append('<div class="w-100 d-none d-md-block" />');
 				} // We consider everything < 200km away the same region
 			});
 			$('img').click(function() {
@@ -312,6 +317,5 @@ const countCommonTags = counterpartTags => {
 $(document).ready(() => {
 	fillOptions();
 	getOwnData();
-	getUserGallery();
 	setFilterControl();
 });

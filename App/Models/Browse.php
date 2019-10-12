@@ -69,6 +69,8 @@ class Browse extends \Core\Model
 
     public function getOwnData()
     {
+		session_start();
+		$this->connection = static::getDB();
         $output = array();
         $queryArg = array(':userid' => $_SESSION['user_id']);
 
