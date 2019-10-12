@@ -72,6 +72,14 @@ const setControlElements = () => {
 	$('#maxRate').on('input', () => {request.maxRate = $('#maxRate').val() || 99999})
 	$('#minDist').on('input', () => {request.minDist = $('#minDist').val() || 0})
 	$('#maxDist').on('input', () => {request.maxDist = $('#maxDist').val() || 99999})
+	$('#tags').blur(() => {
+		let tagsStr = $('#tags').val();
+		let tagsArr = tagsStr.split(',');
+		Object.values(tagsArr).forEach(tag => {
+			request.tags.push(tag.trim());
+			console.log(request.tags)
+		})
+	})
 	$('#searchBtn').click(() => {getSearchResults()})
 }
 
