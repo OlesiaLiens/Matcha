@@ -1,10 +1,5 @@
 <?php
 
-if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == '') {
-	$loginPrompt = file_get_contents('../App/Views/Login/index.php');
-	echo $loginPrompt . PHP_EOL;
-	exit;
-}
 
 define("BASE_PATH", __DIR__);
 error_reporting(E_ALL);
