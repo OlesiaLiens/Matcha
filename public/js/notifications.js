@@ -67,7 +67,8 @@ const getInteractor = interaction => {
             url: '/notification/getInteractor/see',
             type: 'get',
             success: response => {
-                hulla.send(`${response} has a great interest int your profile...`, "success");
+                let name = JSON.parse(response);
+                hulla.send(`${name.first_name} ${name.last_name} has a great interest int your profile...`, "success");
             }
         });
     }
@@ -77,7 +78,8 @@ const getInteractor = interaction => {
             url: '/notification/getInteractor/like',
             type: 'get',
             success: response => {
-                hulla.send(`${response} Congrats! Someone has liked you`, "success");
+                let name = JSON.parse(response);
+                hulla.send(`Congrats! ${name.first_name} ${name.last_name} has liked you`, "success");
             }
         });
     }
