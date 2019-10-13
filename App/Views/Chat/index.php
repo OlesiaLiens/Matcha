@@ -15,6 +15,20 @@
 		<script type="text/javascript" src="/js/chat.js"></script>
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/account/index">Account</a></li>
+					<li class="nav-item"><a class="nav-link" href="/info/info">Information</a></li>
+					<li class="nav-item"><a class="nav-link" href="/notification/index">Notification</a></li>
+					<li class="nav-item"><a class="nav-link" href="/settings/index">Settings</a></li>
+					<li class="nav-item"><a class="nav-link" href="/browse/index">Browse</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/search/index">Search</a></li>
+					<li class="nav-item"><a class="nav-link" href="/chat/index">Chat</a></li>
+					<li class="nav-item"><a class="nav-link" href="/logout/index">Logout</a></li>
+				</ul>
+			</div>
+		</nav>
 		<!-- <div class="bg-img"></div> -->
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">
@@ -64,6 +78,12 @@
 									<span class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="position: absolute; bottom: 0px; display: block !important; background-color: #2b2b2b; width: 120vh; height: 50px;">
+					<div class="container">
+						<div class="row centered myhover">
 						</div>
 					</div>
 				</div>
