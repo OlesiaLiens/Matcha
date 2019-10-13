@@ -8,7 +8,7 @@
 	<title>Registration</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/styles/register.css"/>
-		<link rel="stylesheet" href="../styles/font-awesome.min.css">
+<!--		<link rel="stylesheet" href="../styles/font-awesome.min.css">-->
 	<!--	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 	<!--	<link rel="stylesheet" type="text/css" href="/styles/gallery.css">-->
 	<!--	<link rel="stylesheet" href="../../../styles/register.css"/>-->

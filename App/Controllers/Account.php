@@ -32,6 +32,8 @@ class Account extends \Core\LoginController
 		$params['location'] = $user['location'];
 		$params['bday'] = $user['bday'];
 		$params['bio'] = $user['bio'];
+
+//		$params['id'] = '';
 		$all_photos = new PhotoModel();
 		$params['photos'] = $all_photos->getAllPhotos();
 		$tag = new User(null, $user);

@@ -289,12 +289,13 @@
 
 <script  type="text/javascript" src="/js/info.js"></script>
 
+<script src="/js/hullabaloo.js"></script>
+
 <script type="text/javascript" src="/js/notifications.js"></script>
 
 
 <script src="/styles/bootstrap.min.js"></script>
 
-<script src="/js/hullabaloo.js"></script>
 
 </body>
 </html>
