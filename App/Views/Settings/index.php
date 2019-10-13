@@ -169,6 +169,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="/account/index">Account</a></li>
                 <li class=""><a href="/info/index">Information</a></li>
+                <li class="nav-item"><a class="nav-link" href="/interaction/index">Interactions</a></li>
                 <li class="active"><a href="/settings/index">Settings</a></li>
                 <li><a href="/browse/index">Browse</a></li>
                 <li class=""><a href="/search/index">Search</a></li>

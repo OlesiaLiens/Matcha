@@ -25,7 +25,7 @@
 
     <link rel="stylesheet" href="/styles/main.css">
 
-<!--    <script type="text/javascript" src="/js/onload.js"></script>-->
+    <!--    <script type="text/javascript" src="/js/onload.js"></script>-->
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -88,6 +88,14 @@
 
         }
 
+        #bday {
+            width: 500px;
+        }
+
+        #city {
+            width: 500px;
+        }
+
         .othertop {
             text-align: center;
 
@@ -96,6 +104,12 @@
         main {
             border: black solid 1px;
             display: flex;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+
+        #biography {
+            width: 500px;
         }
 
         .container {
@@ -107,6 +121,14 @@
 
         .photos img {
             flex-direction: row;
+        }
+
+        #interest {
+            width: 500px;
+        }
+
+        .col-xs-12 {
+            margin-bottom: 20px;
         }
 
         img {
@@ -159,6 +181,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="/account/index">Account</a></li>
                 <li class="active"><a href="/info/index">Information</a></li>
+                <li class="nav-item"><a class="nav-link" href="/interaction/index">Interactions</a></li>
                 <li><a href="/settings/index">Settings</a></li>
                 <li><a href="/browse/index">Browse</a></li>
                 <li class=""><a href="/search/index">Search</a></li>
@@ -181,20 +204,11 @@
                     <fieldset>
                         <legend>User profile information</legend>
 
-                        <!--					Date Of Birth-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="Date Of Birth">How old are you?</label>
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-birthday-cake"></i>
-                                    </div>
-                                    <input id="bday" name="bday" type="text"
-                                           placeholder=""
-                                           class="form-control input-md"/>
-                                </div>
-                            </div>
-                        </div>
+
+                        <input id="bday" name="bday" type="text"
+                               placeholder="How old are you?"
+                               class="form-control input-md"/>
+
 
                         <!--					Gender-->
                         <div class="form-group">
@@ -230,46 +244,33 @@
                             </div>
                         </div>
 
-                        <!--					City-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label col-xs-12" for="city">City</label>
-                            <div class="col-md-2 col-xs-4">
-                                <input id="city" name="city" type="text" placeholder="City"
-                                       class="form-control input-md ">
-                            </div>
-                        </div>
+
+                        <input id="city" name="city" type="text" placeholder="City"
+                               class="form-control input-md ">
 
 
-						<!--					interests>-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="">A list of interests</label>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<label class="input-group-text" for="">Options</label>
-								</div>
-								<select class="custom-select" id="interest" name="interest">
-									<?php foreach ($params as $param => $tag): ?>
-										<option selected><?= $tag['tag'] ?></option>
-									<?php endforeach; ?>
-								</select>
-							</div>
-						</div>
+                        <label class="input-group-text" for="">Interests</label> <br>
+                        <select class="custom-select" id="interest" name="interest">
+                            <?php foreach ($params as $param => $tag): ?>
+                                <option selected><?= $tag['tag'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+
 
                         <div class="form-group" id="selectedTags">
 
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="Overview (max 200 words)">A biography</label>
                             <div class="col-md-4">
 							<textarea class="form-control" rows="10" id="biography"
-                                      name="bio">Overview</textarea>
+                                      name="bio">A biography</textarea>
                             </div>
                         </div>
 
                     </fieldset>
 
-                    <div class="text-center col-xs-12">
+                    <div class="text-center col-xs-12 ">
                         <input id="okBtn" type="submit" name="submit" value="OK" class="btn btn-default"/>
                     </div>
 
@@ -287,7 +288,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-<script  type="text/javascript" src="/js/info.js"></script>
+<script type="text/javascript" src="/js/info.js"></script>
 
 <script src="/js/hullabaloo.js"></script>
 
