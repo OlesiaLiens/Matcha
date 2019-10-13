@@ -321,10 +321,13 @@
 
 
 //todo (у нас загружаються только png формат / jpg  - не обрабатьваеться)
+//todo fix Upload photos in account !!!
 
+//todo пофиксить хедер в Browse/ Search / Chat
 
-// todo добавить все нужные части хзедера на страницы
-//todo пофиксить верстку в information (сделать адаптивной, поле city)
+//todo пофиксить верстку в information (сделать адаптивной mobile)
+
 // todo если юзер выбрал preference BOTH в BROWSE ВООБЩЕ не выводяться юзеры
 
+//todo убрать все console.log перед тем как пушить на фогсферу
 
