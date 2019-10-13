@@ -25,6 +25,7 @@ const checkUpdates = () => {
         url: '/notification/getCounters',
         type: 'get',
         success: countersJSON => {
+            console.log(countersJSON);
             let counters = JSON.parse(countersJSON);
             let newSee = counters.see;
             let newLike = counters.like;

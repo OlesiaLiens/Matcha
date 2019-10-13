@@ -33,12 +33,12 @@ class Notification extends \Core\Model
                 FROM
                     user_action
                     INNER JOIN users
-                    ON user_action.user_id = users.id
+                    ON user_action.second_user = users.id
                 WHERE
                     first_user = :id AND
                     see = 'see'
                 ORDER BY
-                    id DESC
+                    users.id DESC
                 LIMIT 1";
         $countersStatement = $this->connection->prepare($sql);
         $countersStatement->execute(array(':id' => $_SESSION['user_id']));
@@ -53,12 +53,12 @@ class Notification extends \Core\Model
                 FROM
                     user_action
                     INNER JOIN users
-                    ON user_action.user_id = users.id
+                    ON user_action.second_user = users.id
                 WHERE
                     first_user = :id AND
                     liked = 'liked'
                 ORDER BY
-                    id DESC
+                    users.id DESC
                 LIMIT 1";
         $countersStatement = $this->connection->prepare($sql);
         $countersStatement->execute(array(':id' => $_SESSION['user_id']));
@@ -74,12 +74,12 @@ class Notification extends \Core\Model
                 FROM
                     user_action
                     INNER JOIN users
-                    ON user_action.user_id = users.id
+                    ON user_action.second_user = users.id
                 WHERE
                     first_user = :id AND
                     matched = 'matched'
                 ORDER BY
-                    id DESC
+                    users.id DESC
                 LIMIT 1";
         $countersStatement = $this->connection->prepare($sql);
         $countersStatement->execute(array(':id' => $_SESSION['user_id']));
