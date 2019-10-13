@@ -598,9 +598,9 @@
 
 <script type="text/javascript" src="/js/notifications.js"></script>
 
+<script type="text/javascript" src="/js/photo.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
 <script type="text/javascript" src="/js/position.js"></script>
-<script type="text/javascript" src="/js/photo.js"></script>
 
 </body>
 </html>
