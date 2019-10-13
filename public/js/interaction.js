@@ -20,10 +20,10 @@ $(document).ready(() => {
 		success: response => {
 			let likers = response.likers;
 			let liked = response.liked;
-			let matches = response.matches;
+			let viewers = response.viewers;
 			// console.log('Likers', likers);
 			// console.log('Liked', liked);
-			// console.log('Matches', matches);
+			// console.log('Viewers', viewers);
 
 			Object.values(likers).forEach(liker => {
 				$('#likers').append(`
@@ -34,18 +34,18 @@ $(document).ready(() => {
 			});
 
 			Object.values(liked).forEach(crush => {
-				$('#matches').append(`
+				$('#liked').append(`
 					<li class="list-group-item user" onclick="window.location = '/user/${crush.id}';">
 						${crush.first_name} ${crush.last_name}
 					</li>
 				`)
 			});
 
-			Object.values(matches).forEach(match => {
-				console.log(match);
-				$('#matches').append(`
-					<li class="list-group-item user" onclick="window.location = '/user/${match.id}';">
-						${match.first_name} ${match.last_name}
+			Object.values(viewers).forEach(viewer => {
+				console.log(viewer);
+				$('#viewers').append(`
+					<li class="list-group-item user" onclick="window.location = '/user/${viewer.id}';">
+						${viewer.first_name} ${viewer.last_name}
 					</li>
 				`)
 			});
