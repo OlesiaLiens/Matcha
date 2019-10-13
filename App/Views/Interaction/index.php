@@ -11,6 +11,18 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/styles/login.css">
 	<link rel="stylesheet" type="text/css" href="/styles/search.css">
+	<style type="text/css">
+		.user {
+			transition: background-color 0.5s ease;
+		}
+		.user:hover {
+			background-color: #bfbfbf !important;
+			cursor: pointer !important;
+		}
+		.user:active {
+			background-color: #989898 !important;
+		}
+	</style>
 </head>
 <body>
 
@@ -28,7 +40,6 @@
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="/account/index">Account</a></li>
 			<li class="nav-item"><a class="nav-link" href="/info/info">Information</a></li>
-			<li class="nav-item"><a class="nav-link" href="/notification/index">Notification</a></li>
 			<li class="nav-item active"><a class="nav-link" href="/interaction/index">Interactions</a></li>
 			<li class="nav-item"><a class="nav-link" href="/settings/index">Settings</a></li>
 			<li class="nav-item"><a class="nav-link" href="/browse/index">Browse</a></li>
@@ -41,9 +52,40 @@
 	
 <div class="container">
 	<div class="row justify-content-center align-content-center">
-		<div class="col-xs-12 col-md-6 col-lg-3"></div>
-		<div class="col-xs-12 col-md-6 col-lg-3"></div>
-		<div class="col-xs-12 col-md-6 col-lg-3"></div>
+
+		<div class="col-xs-12 col-md-6 col-lg-3 mb-3">
+			<div class="card">
+				<div class="card-header">
+					Who liked you
+				</div>
+				<ul id="likers" class="list-group list-group-flush">
+					<!-- Dynamically generated content, example: -->
+					<!-- <li class="list-group-item user">Snoop Dogg</li> -->
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-6 col-lg-3 mb-3">
+			<div class="card">
+				<div class="card-header">
+					Who did you like
+				</div>
+				<ul id="liked" class="list-group list-group-flush">
+					<!-- Dynamically generated content-->
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-6 col-lg-3 mb-3">
+			<div class="card">
+				<div class="card-header">
+					With whom do you match
+				</div>
+				<ul id="matches" class="list-group list-group-flush">
+				<!-- Dynamically generated content -->
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 

@@ -10,14 +10,16 @@ class Interaction extends \Core\LoginController
 {
 	public function indexAction()
 	{
-        $user = $this->before();
+		$user = $this->before();
 
-        if (!$user) {
-            return;
-        }
-		// $this->viewGallery(1);
+		if (!$user)
+			return;
 		View::render('Interaction/index.php');
+	}
 
+	public function getInteractionsAction() {
+		$interactions = new InteractionModel();
+		$interactions->getInteractions();
 	}
 
 }
