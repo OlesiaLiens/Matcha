@@ -59,12 +59,12 @@ print('Added sample tags for admin' . PHP_EOL);
 $connection->exec("INSERT INTO 
 						user_action(first_user, second_user, matched)
 					VALUES
-						(1, 3, 'match'),
-						(1, 5, 'match'),
-						(1, 13, 'match'),
-						(3, 1, 'match'),
-						(5, 1, 'match'),
-						(13, 1, 'match')
+						(1, 3, 'matched'),
+						(1, 5, 'matched'),
+						(1, 13, 'matched'),
+						(3, 1, 'matched'),
+						(5, 1, 'matched'),
+						(13, 1, 'matched')
 ");
 
 print('Sample matches added' . PHP_EOL);

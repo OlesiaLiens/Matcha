@@ -114,7 +114,7 @@ class Chat extends \Core\Model
 
 	protected function getCounterparts($id) {
 
-		$sql = "SELECT second_user FROM user_action WHERE first_user = :fid AND matched = 'match'";
+		$sql = "SELECT second_user FROM user_action WHERE first_user = :fid AND matched = 'matched'";
 		$counterpartsStatement = $this->connection->prepare($sql);
 		$counterpartsStatement->execute(array(':fid' => $id));
 		$queryResult = $counterpartsStatement->fetchAll(PDO::FETCH_ASSOC);
