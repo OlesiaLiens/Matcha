@@ -57,6 +57,7 @@ const getOwnData = () => {
 		url: '/browse/getowndata',
 		type: 'get',
 		success: response => {
+			console.log(response)
 			responseObj = JSON.parse(response);
 			ownLongitude = responseObj.longitude;
 			ownLatitude = responseObj.latitude;

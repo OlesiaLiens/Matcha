@@ -100,7 +100,7 @@ const getUserGallery = () => {
 
 				let location = document.createElement('li');
 				location.setAttribute('class', 'list-group-item');
-				location.innerText = `Age: ${profile.location}`;
+				location.innerText = `Location: ${profile.location}`;
 				details.appendChild(location);
 
 				let interests = document.createElement('li');

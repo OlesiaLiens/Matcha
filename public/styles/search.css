@@ -2,6 +2,10 @@
 	padding: 1rem 1rem !important;
 }
 
+.jumbotron{
+	margin-top: 200px;
+}
+
 .card-deck {
 	margin: auto;
 }
