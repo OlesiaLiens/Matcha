@@ -10,6 +10,12 @@ class Notification extends \Core\LoginController
 {
     public function indexAction()
     {
+//        $user = $this->before();
+//
+//        if (!$user) {
+//            return;
+//        }
+
         View::render('Notification/index.php');
     }
 

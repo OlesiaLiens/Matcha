@@ -11,6 +11,7 @@ class ResetPassword extends \Core\Controller
 {
 	public function resetAction()
 	{
+
 		View::getTemplate('Reset/reset.php');
 	}
 

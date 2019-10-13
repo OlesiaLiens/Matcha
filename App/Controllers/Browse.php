@@ -11,6 +11,11 @@ class Browse extends \Core\LoginController
 {
 	public function indexAction()
 	{
+        $user = $this->before();
+
+        if (!$user) {
+            return;
+        }
 		// $this->viewGallery(1);
 		View::render('Browse/index.php');
 

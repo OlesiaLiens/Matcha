@@ -9,6 +9,12 @@ class Chat extends \Core\LoginController
 {
 	public function indexAction()
 	{
+        $user = $this->before();
+
+        if (!$user) {
+            return;
+        }
+
 		View::render('Chat/index.php');
 	}
 
