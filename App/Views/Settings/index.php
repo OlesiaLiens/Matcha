@@ -255,20 +255,6 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 col-md-offset-3 well">
-                <form method="post">
-                    <p>Send you comments notifications:</p>
-                    <div>
-                        <input type="checkbox" value="OK"
-                               name="notification" <?= $params['notification'] == 1 ? 'checked' : '' ?>>
-                        <input type="submit" name="submit" value="notification">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <div class="hiden">
     </div>
