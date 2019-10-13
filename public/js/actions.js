@@ -1,7 +1,8 @@
 var like = document.getElementById('like_user');
 var ban = document.getElementById('ban_user');
 var fake = document.getElementById('fake_user');
-var user_email = document.getElementsByClassName('user_email')[0].id;
+if (typeof (document.getElementsByClassName('user_email')[0]) !== 'undefined')
+var user_email = document.getElementsByClassName('user_email')[0].id || '';
 
 if (like) {
     like.addEventListener('click', likeUser, true);
