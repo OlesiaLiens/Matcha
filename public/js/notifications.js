@@ -89,7 +89,7 @@ const getInteractor = interaction => {
             url: '/notification/getInteractor/match',
             type: 'get',
             success: response => {
-                hulla.send(`${response} Yay! You matched with someone, check the chat now to see who that was!`, "success");
+                hulla.send(`Yay! You matched with someone, check the chat now to see who that was!`, "success");
             }
         });
     }

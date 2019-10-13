@@ -31,7 +31,7 @@ class Interaction extends \Core\Model
 				FROM
 					users
 					INNER JOIN user_action
-					ON users.id = user_action.first_user
+					ON users.id = user_action.second_user
 				WHERE
 					first_user = :uid AND
 					liked = 'liked'";
