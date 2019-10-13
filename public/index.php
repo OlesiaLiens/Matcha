@@ -1,4 +1,11 @@
 <?php
+
+if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == '') {
+	$loginPrompt = file_get_contents('../App/Views/Login/index.php');
+	echo $loginPrompt . PHP_EOL;
+	exit;
+}
+
 define("BASE_PATH", __DIR__);
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -22,7 +29,6 @@ $router->add('{controller}/{action}/{param}');
 $uri = $_SERVER['QUERY_STRING'];
 file_put_contents('../Logs/log.txt', 'Received URI: ' . $uri . PHP_EOL, FILE_APPEND);
 $tmp = explode('/', $uri);
-//var_dump($tmp);
 if ($tmp[0] != 'public') {
 	$router->dispatch($uri);
 }
