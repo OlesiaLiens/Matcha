@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
-<!--          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
@@ -37,6 +37,45 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        /*.row {*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*}*/
+
+        @media (min-width: 1200px) {
+            #interest {
+                padding-left: 25px;
+            }
+
+            #photos img {
+                margin-left: 140px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .info {
+                margin-left: 60px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .photos {
+                margin-left: 70px;
+                /*margin-top: 40px;*/
+            }
+        }
+
+        .photos {
+            margin-top: 20px;
+        }
+
+        #photos {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: space-between;
         }
 
         .btn-default {
@@ -349,7 +388,7 @@
         <div class="row centered">
             <?php if ($args['ban'] === 'none' && $args['first_user']): ?>
 
-                <div class="col-lg-3 delete">
+                <div  class="col-lg-3 delete info">
                     <img src="/images/idea.png">
                     <h4>Information</h4>
                     <p>
@@ -371,18 +410,17 @@
                 </div>
 
 
-                <div class="col-lg-3 delete">
+                <div class="col-lg-3 delete info">
                     <img src="/images/plane.png">
-                    <h4>Interests</h4>
+                    <h4 id="interest">Interests</h4>
                     <p><?= $args[0] ?? null ?> <br></p>
                     <p><?= $args[1] ?? null ?> <br></p>
                     <p><?= $args[2] ?? null ?> <br></p>
                     <p><?= $args[3] ?? null ?> <br></p>
                     <p><?= $args[4] ?? null ?> <br></p>
-                    <p><?= $args[5] ?? null ?> <br></p>
                 </div>
 
-                <div class="col-lg-3 delete">
+                <div class="col-lg-3 delete info">
                     <img src="/images/planet.png">
                     <h4>Fame Rating</h4>
                     <p> <?= $args['rating'] ?> </p>
@@ -391,7 +429,7 @@
 
                 <?php if ($args['id'] != $_SESSION['user_id']) : ?>
 
-                    <div class="col-lg-10 delete">
+                    <div class="col-lg-10 delete photos">
                         <ul>
                             <li class="like ">
                                 <div id="like_user"
@@ -409,7 +447,7 @@
                     </div>
 
 
-                    <div class="col-lg-10 delete">
+                    <div class="col-lg-10 delete photos">
                         <ul>
                             <li class="like ">
                                 <div id="fake_user"
@@ -431,7 +469,7 @@
 
             <?php if ($args['id'] != $_SESSION['user_id']) : ?>
 
-                <div class="col-lg-10 ">
+                <div class="col-lg-10 photos">
                     <ul>
                         <li class="like ">
                             <div id="ban_user"
@@ -496,7 +534,7 @@
                 </div>
 
                 <div class="col-lg-2"></div>
-                <div class="col-lg-10 col-lg-offset-1">
+                <div id="photos" class="col-lg-10 col-lg-offset-1">
                     <?php if (count($args['photos']) < 4): ?>
                         <?php if ($args['id'] === $_SESSION['user_id']) : ?>
                             <label for="photos" class="btn btn-default">
@@ -549,7 +587,6 @@
 
 <footer>
 </footer>
-
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
