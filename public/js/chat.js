@@ -80,12 +80,15 @@ const openDialogue = event => {
 		target = event.target.closest('.dialogue');
 	let selectedDialogue = target.getAttribute('name');
 	counterpart = dialogues[selectedDialogue];
+	console.log(counterpart)
 
 	Array.from(document.getElementsByClassName('dialogue')).forEach(
 		dialogue => {dialogue.classList.remove('active')});
 	target.classList.add('active');
 
 	$('#selectedAvatar').attr('src', counterpart.avatar);
+	$('#selectedAvatar').click(() => {window.location = `/user/${counterpart.counterpartID}`;});
+	$('#selectedAvatar').css('cursor', 'pointer');
 	$('#title').text(`Chat with ${counterpart.firstName} ${counterpart.lastName}`);
 	$('#selectedOnline').attr('class', getOnlineClass(counterpart));
 	msgCounter = Object.keys(counterpart.messages).length;
