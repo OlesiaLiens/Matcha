@@ -134,7 +134,7 @@ const drawResults = results => {
 	})
 
 	if (results.length <= 6)
-		drawSixBlock(results.slice(0, -1));
+		drawSixBlock(results);
 	else
 		drawSixBlock(results.slice(0, 6));
 }
