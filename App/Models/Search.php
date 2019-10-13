@@ -58,10 +58,10 @@ class Search extends \Core\Model
 			':maxAge' => $request->maxAge,
 			':minRate' => $request->minRate,
 			':maxRate' => $request->maxRate,
-			':preference' => ($ownData['preference'] == 'all' ? '%' : $ownData['preference']),
+			':preference' => ($ownData['preference'] == 'both' ? '%' : $ownData['preference']),
 			':gender' => $ownData['gender']
 		);
-//		print_r($queryArray);
+		// print_r($queryArray);
 
 		$sql = "SELECT
 					id AS userID,
@@ -83,7 +83,7 @@ class Search extends \Core\Model
 					rating <= :maxRate AND
 					gender LIKE :preference AND
 					(preference = :gender OR
-					preference = 'all')
+					preference = 'both')
 				ORDER BY
 					rating";
 		$searchStatement = $this->connection->prepare($sql);
@@ -109,7 +109,7 @@ class Search extends \Core\Model
 			$users[$idx]['tags'] = $tags;
 		}
 
-		if (count($request->tags) == 0) {
+		if ((count($request->tags) == 0) || strlen($request->tags[0]) == 0) {
 			echo json_encode($users);
 		} else {
 			$filtered = array();
