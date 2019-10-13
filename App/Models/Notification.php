@@ -28,7 +28,18 @@ class Notification extends \Core\Model
 
     public function getSee()
     {
-        $sql = "SELECT second_user FROM user_action WHERE first_user = :id AND see = 'see' ORDER BY id DESC LIMIT 1";
+        $sql = "SELECT
+                    first_name, last_name
+                FROM
+                    user_action
+                    INNER JOIN users
+                    ON user_action.user_id = users.id
+                WHERE
+                    first_user = :id AND
+                    see = 'see'
+                ORDER BY
+                    id DESC
+                LIMIT 1";
         $countersStatement = $this->connection->prepare($sql);
         $countersStatement->execute(array(':id' => $_SESSION['user_id']));
         $see = $countersStatement->fetch(PDO::FETCH_ASSOC);
@@ -37,7 +48,18 @@ class Notification extends \Core\Model
 
     public function getLike()
     {
-        $sql = "SELECT second_user FROM user_action WHERE first_user = :id AND liked = 'liked' ORDER BY id DESC LIMIT 1";
+        $sql = "SELECT
+                    first_name, last_name
+                FROM
+                    user_action
+                    INNER JOIN users
+                    ON user_action.user_id = users.id
+                WHERE
+                    first_user = :id AND
+                    liked = 'liked'
+                ORDER BY
+                    id DESC
+                LIMIT 1";
         $countersStatement = $this->connection->prepare($sql);
         $countersStatement->execute(array(':id' => $_SESSION['user_id']));
         $like = $countersStatement->fetch(PDO::FETCH_ASSOC);
@@ -47,7 +69,18 @@ class Notification extends \Core\Model
 
     public function getMatch()
     {
-        $sql = "SELECT second_user FROM user_action WHERE first_user = :id AND matched = 'matched' ORDER BY id DESC LIMIT 1";
+        $sql = "SELECT
+                    first_name, last_name
+                FROM
+                    user_action
+                    INNER JOIN users
+                    ON user_action.user_id = users.id
+                WHERE
+                    first_user = :id AND
+                    matched = 'matched'
+                ORDER BY
+                    id DESC
+                LIMIT 1";
         $countersStatement = $this->connection->prepare($sql);
         $countersStatement->execute(array(':id' => $_SESSION['user_id']));
         $matched = $countersStatement->fetch(PDO::FETCH_ASSOC);

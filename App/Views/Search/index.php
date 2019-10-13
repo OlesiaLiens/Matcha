@@ -29,6 +29,7 @@
 			<li class="nav-item"><a class="nav-link" href="/account/index">Account</a></li>
 			<li class="nav-item"><a class="nav-link" href="/info/info">Information</a></li>
 			<li class="nav-item"><a class="nav-link" href="/notification/index">Notification</a></li>
+			<li class="nav-item"><a class="nav-link" href="/interaction/index">Interactions</a></li>
 			<li class="nav-item"><a class="nav-link" href="/settings/index">Settings</a></li>
 			<li class="nav-item"><a class="nav-link" href="/browse/index">Browse</a></li>
 			<li class="nav-item active"><a class="nav-link" href="/search/index">Search</a></li>
@@ -155,6 +156,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		crossorigin="anonymous"></script>
+<script src="/js/hullabaloo.js"></script>
 <script type="text/javascript" src="/js/notifications.js"></script>
 <script type="text/javascript" src="/js/utils.js"></script>
 <script type="text/javascript" src="/js/search.js"></script>
