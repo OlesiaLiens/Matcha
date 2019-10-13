@@ -21,17 +21,17 @@ let ownTags = [];
 let cards = [];
 let constraints = {
 	minAge : 18, // Let's play it safe and assume the site isn't suitable for minors
-	maxAge : 116, // The oldest known person alive is 116 years old
+	maxAge : 99, // The oldest known person alive is 116 years old
 	reqTags : false
 };
 
 const fillOptions = () => {
-	for (var i = 18; i <= 116; i++) {
+	for (var i = 18; i <= 99; i++) {
 		$('#minAge').append(`<option value="${i}">${i}</option>`);
 		$('#maxAge').append(`<option value="${i}">${i}</option>`);
 	}
 	$('#minAge').val('18'); // Must re-do this the clever way
-	$('#maxAge').val('116'); // that considers 1st & last elements
+	$('#maxAge').val('99'); // that considers 1st & last elements
 }
 
 const getOwnData = () => {
@@ -216,6 +216,7 @@ function meetsConstraints(profile) {
 }
 
 const sortResults = (criterium, direction) => {
+	resetFilter();
 	let modifier = direction == 'htl' ? 1 : -1;
 	console.log(criterium);
 	console.log(modifier);
@@ -239,6 +240,22 @@ const sortResults = (criterium, direction) => {
 	$('img').click(function() {
 		$(this).siblings('.hideable').toggle('slow');
 	});
+}
+
+const resetFilter = () => {
+	constraints = {
+		minAge : 18,
+		maxAge : 99,
+		reqTags : false
+	};
+	$('#minAge').val('18');
+	$('#maxAge').val('99');
+	$('#minDist').val('');
+	$('#maxDist').val('');
+	$('#minRate').val('');
+	$('#maxRate').val('');
+	$('#reqTags').prop('checked', false);
+	filterResults();
 }
 
 const sortByAge = modifier => {
