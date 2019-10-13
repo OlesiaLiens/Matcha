@@ -79,9 +79,9 @@
 		<div class="col-xs-12 col-md-6 col-lg-3 mb-3">
 			<div class="card">
 				<div class="card-header">
-					With whom do you match
+					Who checked your profile
 				</div>
-				<ul id="matches" class="list-group list-group-flush">
+				<ul id="viewers" class="list-group list-group-flush">
 				<!-- Dynamically generated content -->
 				</ul>
 			</div>
