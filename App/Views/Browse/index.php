@@ -52,31 +52,19 @@
 			height: 150px;
 		}
 
+	</style>
+	<style>
 		#navbarNav {
-			height: 50px;
-			background: #2d2d2d;
+			/*height: 50px;*/
+			/*background: #2d2d2d;*/
+			background-color: #2d2d2d !important;
 			border-color: #2d2d2d;
 		}
-
-		#genRow {
-			margin-left: 20px;
-		}
-
-
 	</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-	<!--
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-	-->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #2d2d2d !important;">
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="/account/index">Account</a></li>
@@ -84,11 +72,14 @@
 			<li class="nav-item"><a class="nav-link" href="/interaction/index">Interactions</a></li>
 			<li class="nav-item"><a class="nav-link" href="/settings/index">Settings</a></li>
 			<li class="nav-item active"><a class="nav-link" href="/browse/index">Browse</a></li>
-			<li class="nav-item"><a class="nav-link" href="/search/index">Search</a></li>
+			<li class="nav-item "><a class="nav-link" href="/search/index">Search</a></li>
 			<li class="nav-item"><a class="nav-link" href="/chat/index">Chat</a></li>
 			<li class="nav-item"><a class="nav-link" href="/logout/index">Logout</a></li>
 		</ul>
 	</div>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+	</button>
 </nav>
 
 <div id="resContainer" class="container-fluid m-4 mx-auto">
@@ -129,7 +120,7 @@
 								<option value="tags">Common Tags</option>
 							</select>
 						</div>
-						<div id="sortDirectionCol" class="col-xs-12 col-sm-12 col-md-2">
+						<div id="sortDirectionCol" class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
 							<select id="sortDirection">
 								<option value="htl" selected>↓</option>
 								<option value="lth">↑</option>

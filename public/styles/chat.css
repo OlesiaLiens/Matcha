@@ -34,7 +34,7 @@ body,html{
 	background-color: rgba(0,0,0,0.4) !important;
 }
 
-@media (min-width: 575.98px) {
+@media (min-width: 100.98px) {
 	div.card {
 		height: 45vh;
 	}

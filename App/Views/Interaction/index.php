@@ -4,7 +4,7 @@
 
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Search | MATCHA</title>
+	<title>Interactions | MATCHA</title>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!--        <link rel="stylesheet" href="/styles/bootstrap.css">-->
 <!--    <link rel="stylesheet" href="./search_files/bootstrap.min.css">-->
@@ -23,19 +23,18 @@
 			background-color: #989898 !important;
 		}
 	</style>
+	<style>
+		#navbarNav {
+			/*height: 50px;*/
+			/*background: #2d2d2d;*/
+			background-color: #2d2d2d !important;
+			border-color: #2d2d2d;
+		}
+	</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-<!--
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
--->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #2d2d2d !important;">
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="/account/index">Account</a></li>
@@ -43,11 +42,14 @@
 			<li class="nav-item active"><a class="nav-link" href="/interaction/index">Interactions</a></li>
 			<li class="nav-item"><a class="nav-link" href="/settings/index">Settings</a></li>
 			<li class="nav-item"><a class="nav-link" href="/browse/index">Browse</a></li>
-			<li class="nav-item"><a class="nav-link" href="/search/index">Search</a></li>
+			<li class="nav-item "><a class="nav-link" href="/search/index">Search</a></li>
 			<li class="nav-item"><a class="nav-link" href="/chat/index">Chat</a></li>
 			<li class="nav-item"><a class="nav-link" href="/logout/index">Logout</a></li>
 		</ul>
 	</div>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+	</button>
 </nav>
 	
 <div class="container">

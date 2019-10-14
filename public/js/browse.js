@@ -58,6 +58,7 @@ const getUserGallery = () => {
 		url: '/browse/getusers',
 		type: 'get',
 		success: response => {
+			console.log(response);
 			let counter = 0;
 			responseObj = JSON.parse(response);
 			Object.values(responseObj).forEach(profile =>{
