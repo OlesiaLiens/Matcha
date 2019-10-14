@@ -12,7 +12,16 @@ class Chat extends \Core\Model
 	}
 
 	public function getAvatar() {
-		echo '/men/man42.jpg';
+		$sql = "SELECT
+					avatar
+				FROM
+					users;
+				WHERE
+					id = :uid";
+		$avatarStatement = $this->connection->prepare($sql);
+		$avatarStatement->execute(array(':uid' => $_SESSION['user_id']));
+		$result = $avatarStatement->fetchColumn(0);
+		echo $result;
 	}
 
 	public function sendMessage($receiver) {
