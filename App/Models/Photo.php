@@ -9,6 +9,7 @@ class Photo extends \Core\Model
 	public function savePhoto()
 	{
 		$data = $_POST['img'];
+
 		$img = str_replace('data:image/png;base64,', '', $data);
 		$img = str_replace(' ', '+', $img);
 		$fileData = base64_decode($img);

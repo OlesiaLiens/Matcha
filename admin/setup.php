@@ -23,7 +23,7 @@ $sqlUsers = "CREATE TABLE users(
 				password     varchar(255) NOT NULL,
 				active       varchar(50)  NOT NULL,
 				gender       VARCHAR(50)  NOT NULL DEFAULT 'male',
-				preference   VARCHAR(50)  NOT NULL DEFAULT 'all',
+				preference   VARCHAR(50)  NOT NULL DEFAULT 'both',
 				bio          TEXT,
 				longitude    FLOAT,
 				latitude     FLOAT,
