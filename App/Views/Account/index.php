@@ -49,7 +49,7 @@
                 padding-left: 25px;
             }
 
-            #photos img {
+            #photo img {
                 margin-left: 140px;
             }
         }
@@ -71,15 +71,24 @@
             margin-top: 20px;
         }
 
-        #photos {
+        #photo {
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
             align-content: space-between;
         }
 
+        label {
+            width: 114px;
+            margin-left: 200px;
+        }
+
+        /*#photo.btn.btn-default{*/
+        /*    */
+        /*}*/
+
         .btn-default {
-            background-color: #f2f2f2;;;
+            background-color: #f2f2f2;
 
         }
 
@@ -118,6 +127,7 @@
                 transform: rotate(-360deg);
             }
         }
+
 
         @-webkit-keyframes rotate {
             0% {
@@ -389,7 +399,7 @@
         <div class="row centered">
             <?php if ($args['ban'] === 'none' && $args['first_user']): ?>
 
-                <div  class="col-lg-3 delete info">
+                <div class="col-lg-3 delete info">
                     <img src="/images/idea.png">
                     <h4>Information</h4>
                     <p>
@@ -535,11 +545,11 @@
                 </div>
 
                 <div class="col-lg-2"></div>
-                <div id="photos" class="col-lg-10 col-lg-offset-1">
+                <div id="photo" class="col-lg-10 col-lg-offset-1">
                     <?php if (count($args['photos']) < 4): ?>
                         <?php if ($args['id'] === $_SESSION['user_id']) : ?>
                             <label for="photos" class="btn btn-default">
-                                <div id="image_2"></div>
+                                <div></div>
                                 Upload photos<input type="file" id="photos" hidden style="display:none">
                             </label>
                         <?php endif; ?>
@@ -598,9 +608,9 @@
 
 <script type="text/javascript" src="/js/notifications.js"></script>
 
-<script type="text/javascript" src="/js/photo.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
 <script type="text/javascript" src="/js/position.js"></script>
+<script type="text/javascript" src="/js/photo.js"></script>
 
 </body>
 </html>
