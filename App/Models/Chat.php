@@ -15,15 +15,15 @@ class Chat extends \Core\Model
 		$sql = "SELECT
 					avatar
 				FROM
-					users;
+					users
 				WHERE
 					id = :uid";
+		$queryArr = array(':uid' => $_SESSION['user_id']);
 		$avatarStatement = $this->connection->prepare($sql);
-		$avatarStatement->execute(array(':uid' => $_SESSION['user_id']));
+		$avatarStatement->execute($queryArr);
 		$result = $avatarStatement->fetchColumn(0);
 		echo $result;
 	}
-
 	public function sendMessage($receiver) {
 		$message = json_decode($_POST['data']);
 		$sql = "INSERT INTO
