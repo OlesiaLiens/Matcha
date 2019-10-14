@@ -321,11 +321,8 @@
 
 
 //todo (у нас загружаються только png формат / jpg  - не обрабатьваеться)
-//todo fix Upload photos in account !!!
 
-//todo пофиксить хедер в Browse/ Search / Chat
-
-//todo пофиксить верстку в information (сделать адаптивной mobile)
+//todo пофиксить верстку в information (сделать адаптивной mobile) (не обязательно)
 
 //todo убрать все console.log перед тем как пушить на вогсферу
 
