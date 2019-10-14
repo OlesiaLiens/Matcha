@@ -31,8 +31,7 @@ class Router
 	}
 
 	public function match($url)
-	{
-		file_put_contents('../Logs/log.txt', 'Tryna match ' . $url . PHP_EOL, FILE_APPEND);
+    {
 		foreach ($this->routes as $route => $params) {
 			if (preg_match($route, $url, $matches)) {
 				foreach ($matches as $key => $match) {
@@ -41,12 +40,9 @@ class Router
 					}
 				}
 				$this->params = $params;
-				file_put_contents('../Logs/log.txt', 'Matched to ' . $route . PHP_EOL, FILE_APPEND);
-				file_put_contents('../Logs/log.txt', 'Params: ' . json_encode($params) . PHP_EOL, FILE_APPEND);
 				return true;
 			}
 		}
-		file_put_contents('../Logs/log.txt', 'Failed to match ' . $url . PHP_EOL, FILE_APPEND);
 		return false;
 	}
 

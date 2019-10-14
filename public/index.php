@@ -22,7 +22,6 @@ $router->add('{controller}/{action}');
 $router->add('{controller}/{action}/{param}');
 //$router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 $uri = $_SERVER['QUERY_STRING'];
-file_put_contents('../Logs/log.txt', 'Received URI: ' . $uri . PHP_EOL, FILE_APPEND);
 $tmp = explode('/', $uri);
 if ($tmp[0] != 'public') {
 	$router->dispatch($uri);

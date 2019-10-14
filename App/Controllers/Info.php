@@ -38,7 +38,6 @@ class Info extends \Core\LoginController
 	{
 		session_start();
 
-//		file_put_contents('../Logs/log.txt', $tagsList . PHP_EOL, FILE_APPEND);
 		$info = new InfoModel(array());
 		$info->save_tags($_POST['data']);
 	}
