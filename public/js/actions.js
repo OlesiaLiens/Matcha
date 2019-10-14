@@ -80,7 +80,6 @@ function banUser() {
         // if (ban.classList.contains('baned')) {
         //     like.setAttribute('display', 'none');
         // }
-        console.log('We here');
         $('.delete').hide();
 
         $.ajax({

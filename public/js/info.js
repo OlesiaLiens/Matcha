@@ -14,7 +14,6 @@
 
 
 function infoFunction() {
-    console.log('HHHHHH!');
     let tags = [];
     let interestSelection = document.getElementById('interest');
     let selectedTags = document.getElementById('selectedTags');
@@ -23,7 +22,7 @@ function infoFunction() {
     interestSelection.onchange = () => {
         let selectedTag = interestSelection.value;
         tags.push(selectedTag);
-        console.log(tags);
+        // console.log(tags);
         let newTag = document.createElement('span');
         newTag.setAttribute('class', 'badge badge-primary');
         newTag.innerHTML = selectedTag;
@@ -34,7 +33,7 @@ function infoFunction() {
             target.parentNode.removeChild(target);
             let idx = tags.indexOf(target.innerHTML);
             tags.splice(idx, 1);
-            console.log(tags);
+            // console.log(tags);
         }
     };
 
@@ -53,5 +52,4 @@ function infoFunction() {
 
 window.onload = function () {
     infoFunction();
-    console.log('Im here');
 }

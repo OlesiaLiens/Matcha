@@ -80,7 +80,7 @@ const openDialogue = event => {
 		target = event.target.closest('.dialogue');
 	let selectedDialogue = target.getAttribute('name');
 	counterpart = dialogues[selectedDialogue];
-	console.log(counterpart)
+	// console.log(counterpart)
 
 	Array.from(document.getElementsByClassName('dialogue')).forEach(
 		dialogue => {dialogue.classList.remove('active')});
@@ -198,7 +198,7 @@ $(document).ready(() => {
 			data: {"data" : JSON.stringify(message)}
 		});
 
-		console.log('/chat/sendmessage'+ '/' + counterpart.counterpartID);
+		// console.log('/chat/sendmessage'+ '/' + counterpart.counterpartID);
 
 		$('#counter').text(`${msgCounter += 1} messages`);
 		$('#msgInput').val('');
@@ -206,5 +206,5 @@ $(document).ready(() => {
 	});
 	getAvatar();
 	loadMessages();
-	console.log('ok');
+	// console.log('ok');
 });

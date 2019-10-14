@@ -25,7 +25,7 @@ const checkUpdates = () => {
         url: '/notification/getCounters',
         type: 'get',
         success: countersJSON => {
-            console.log(countersJSON);
+            // console.log(countersJSON);
             let counters = JSON.parse(countersJSON);
             let newSee = counters.see;
             let newLike = counters.like;
@@ -61,7 +61,7 @@ const checkUpdates = () => {
 };
 
 const getInteractor = interaction => {
-    console.log(interaction);
+    // console.log(interaction);
     if (interaction == 'see') {
         $.ajax({
             url: '/notification/getInteractor/see',
@@ -93,7 +93,7 @@ const getInteractor = interaction => {
             }
         });
     }
-    console.log(interaction);
+    // console.log(interaction);
 }
 
 function notify(typeOfEvent) {
@@ -107,18 +107,15 @@ function notify(typeOfEvent) {
     }
     if (typeOfEvent == 'unlike') {
         hulla.send("Too bad! Someone who liked you previously doesn\'t like you anymore :(", "success");
-        console.log('Too bad! Someone who liked you previously doesn\'t like you anymore :(')
     }
     if (typeOfEvent == 'match') {
         getInteractor('match')
     }
     if (typeOfEvent == 'unmatch') {
         hulla.send("Too bad, someone you previously matched with isn\'t that fond of you now :(", "success");
-        console.log('Too bad, someone you previously matched with isn\'t that fond of you now :(')
     }
     if (typeOfEvent == 'msgs') {
         hulla.send("Hey! Check the chat, someone wrote you!", "success");
-        console.log('Hey! Check the chat, someone wrote you!')
     }
 }
 

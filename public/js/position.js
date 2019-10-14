@@ -52,7 +52,7 @@ const getGPS = () => {
 					type: 'get',
 					success: ip => {
 						let gps = {"gps" : "fail", "ip" : ip};
-						console.log(ip);
+						// console.log(ip);
 						$.ajax({
 							url: '/info/location/',
 							type: "POST",

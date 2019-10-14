@@ -67,7 +67,7 @@ $connection->exec("INSERT INTO
 						(13, 1, 'matched')
 ");
 
-print('Sample matches added' . PHP_EOL);
+// print('Sample matches added' . PHP_EOL);
 
 $day = '01';
 $day2 = '01';

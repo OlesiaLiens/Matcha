@@ -57,14 +57,14 @@ const getOwnData = () => {
 		url: '/browse/getowndata',
 		type: 'get',
 		success: response => {
-			console.log(response)
+			// console.log(response)
 			responseObj = JSON.parse(response);
 			ownLongitude = responseObj.longitude;
 			ownLatitude = responseObj.latitude;
 			ownTags = responseObj.tags;
-			console.log('Longitude: ', ownLongitude)
-			console.log('Latitude: ', ownLatitude)
-			console.log('Tags: ', ownTags)
+			// console.log('Longitude: ', ownLongitude)
+			// console.log('Latitude: ', ownLatitude)
+			// console.log('Tags: ', ownTags)
 		}
 	})
 }
@@ -87,7 +87,7 @@ const setControlElements = () => {
 		let tagsArr = tagsStr.split(',');
 		Object.values(tagsArr).forEach(tag => {
 			request.tags.push(tag.trim());
-			console.log(request.tags)
+			// console.log(request.tags)
 		})
 	})
 	$('#tags').focus(() => {request.tags = []})
@@ -102,13 +102,13 @@ const getSearchResults = () => {
 		dataType: 'json',
 		data: {"data" : JSON.stringify(request)},
 		success: res => {
-			console.log(res)
+			// console.log(res)
 			let filtered = res.filter(element => {
 				let distance = getDistance(ownLatitude,
 																	ownLongitude,
 																	element.latitude,
 																	element.longitude);
-				console.log('dist', distance);
+				// console.log('dist', distance);
 				return (distance >= request.minDist && distance <= request.maxDist);
 			});
 			drawResults(filtered);
@@ -144,7 +144,7 @@ const drawSixBlock = sixBlock => {
 	let counter = 0;
 	$('#resultsContainer').empty();
 	Object.values(sixBlock).forEach(profile => {
-		console.log(profile);
+		// console.log(profile);
 		let card = document.createElement('div');
 		card.setAttribute('class', 'card mb-4');
 		resultsContainer.appendChild(card);

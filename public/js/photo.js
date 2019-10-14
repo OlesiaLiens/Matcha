@@ -31,14 +31,14 @@ function readURL() {
 			fetch('http://localhost:1997/account/saveAvatar', header)
 				.then(res => res.text())
 				.then(result => {
-					console.log(result)
+					// console.log(result)
 				})
 		}
 	}
 	if (file) {
 		reader.readAsDataURL(file);
 	} else {
-		console.log("Error");
+		// console.log("Error");
 	}
 }
 
@@ -77,13 +77,13 @@ function readURLPhotos() {
 			fetch('http://localhost:1997/account/savePhoto', header)
 				.then(res => res.text())
 				.then(result => {
-					console.log(result)
+					// console.log(result)
 				})
 		}
 	}
 	if (file) {
 		reader.readAsDataURL(file);
 	} else {
-		console.log("Error");
+		// console.log("Error");
 	}
 }

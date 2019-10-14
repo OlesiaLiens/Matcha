@@ -42,7 +42,6 @@ $(document).ready(() => {
 			});
 
 			Object.values(viewers).forEach(viewer => {
-				console.log(viewer);
 				$('#viewers').append(`
 					<li class="list-group-item user" onclick="window.location = '/user/${viewer.id}';">
 						${viewer.first_name} ${viewer.last_name}

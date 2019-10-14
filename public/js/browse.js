@@ -44,9 +44,9 @@ const getOwnData = () => {
 			ownLatitude = responseObj.latitude;
 			ownTags = responseObj.tags;
 			getUserGallery();
-			console.log('Longitude: ', ownLongitude)
-			console.log('Latitude: ', ownLatitude)
-			console.log('Tags: ', ownTags)
+			// console.log('Longitude: ', ownLongitude)
+			// console.log('Latitude: ', ownLatitude)
+			// console.log('Tags: ', ownTags)
 		}
 	})
 }
@@ -58,11 +58,11 @@ const getUserGallery = () => {
 		url: '/browse/getusers',
 		type: 'get',
 		success: response => {
-			console.log(response);
+			// console.log(response);
 			let counter = 0;
 			responseObj = JSON.parse(response);
 			Object.values(responseObj).forEach(profile =>{
-				console.log(profile);
+				// console.log(profile);
 				let card = document.createElement('div');
 				card.setAttribute('class', 'card mb-4');
 
@@ -141,7 +141,7 @@ const getUserGallery = () => {
 			$('img').click(function() {
 				$(this).siblings('.hideable').toggle('slow');
 			});
-			console.log(cards);
+			// console.log(cards);
 		}
 	})
 }
@@ -326,9 +326,9 @@ const sortByTags = modifier => {
 
 const countCommonTags = counterpartTags => {
 	let intersection = ownTags.filter(tag => counterpartTags.includes(tag));
-	console.log('OTags', ownTags)
-	console.log('CPags', counterpartTags)
-	console.log('INTER', intersection)
+	// console.log('OTags', ownTags)
+	// console.log('CPags', counterpartTags)
+	// console.log('INTER', intersection)
 	return intersection.length;
 }
 
