@@ -33,6 +33,35 @@ body,html{
 	border-radius: 15px !important;
 	background-color: rgba(0,0,0,0.4) !important;
 }
+
+@media (min-width: 575.98px) {
+	div.card {
+		height: 45vh;
+	}
+	div.chat {
+		margin-bottom: 5px;
+		margin-top: auto;
+	}
+	div.chat-msg-block {
+		height: auto;
+		margin-top: 5px;
+	}
+}
+
+@media (min-width: 768px) {
+	div.card {
+		height: 80vh;
+	}
+	div.chat {
+		margin-bottom: auto;
+		margin-top: auto;
+	}
+		div.chat-msg-block {
+		height: 80vh;
+		margin-top: auto;
+	}
+}
+
 .contacts_body{
 	padding:  0.75rem 0 !important;
 	overflow-y: auto;

@@ -19,8 +19,9 @@
 	<script type="text/javascript" src="/js/chat.js"></script>
 	<style>
 		#navbarNav {
-			height: 50px;
-			background: #2d2d2d;
+			/*height: 50px;*/
+			/*background: #2d2d2d;*/
+			background-color: #2d2d2d !important;
 			border-color: #2d2d2d;
 		}
 
@@ -43,7 +44,7 @@
 	</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #2d2d2d !important;">
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="/account/index">Account</a></li>
@@ -56,11 +57,14 @@
 			<li class="nav-item"><a class="nav-link" href="/logout/index">Logout</a></li>
 		</ul>
 	</div>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+	</button>
 </nav>
 <!-- <div class="bg-img"></div> -->
 <div class="container-fluid h-100">
 	<div class="row justify-content-center h-100">
-		<div class="col-md-4 col-xl-3 chat">
+		<div class="col-xs-12 col-md-4 col-xl-3 chat">
 			<div class="card mb-sm-3 mb-md-0 contacts_card">
 				<div class="card-header">
 					<div class="input-group">
@@ -76,7 +80,7 @@
 				<div class="card-footer"></div>
 			</div>
 		</div>
-		<div class="col-md-8 col-xl-6 chat">
+		<div class="col-xs-12 col-md-8 col-xl-6 chat chat-msg-block">
 			<div class="card">
 				<div class="card-header msg_head">
 					<div id="chatHeader" class="d-flex bd-highlight" style="display: none !important">
