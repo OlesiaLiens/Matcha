@@ -10,7 +10,8 @@ class Photo extends \Core\Model
 	{
 		$data = $_POST['img'];
 
-		$img = str_replace('data:image/png;base64,', '', $data);
+//		$img = str_replace('data:image/png;base64,', '', $data);
+        $img = explode(',', $data)[1];
 		$img = str_replace(' ', '+', $img);
 		$fileData = base64_decode($img);
 		$pathToSave = BASE_PATH . '/images/';
